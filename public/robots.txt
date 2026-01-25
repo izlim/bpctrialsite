@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bethanypc.org.sg/sitemap.xml
