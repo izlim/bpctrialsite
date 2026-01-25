@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function MinistriesPage() {
   const ministries = [
     {
-      title: 'Children\'s Ministry',
+      title: 'Children&apos;s Ministry',
       description: 'Nurturing the faith of our youngest members through age-appropriate Bible teaching, songs, and activities.',
       ageRange: 'Ages 0-12',
       contact: 'children@bethanypc.org.sg',
@@ -27,13 +27,13 @@ export default function MinistriesPage() {
       contact: 'smallgroups@bethanypc.org.sg',
     },
     {
-      title: 'Women\'s Ministry',
+      title: 'Women&apos;s Ministry',
       description: 'Building community among women through Bible studies, retreats, and fellowship events.',
       ageRange: 'Women of All Ages',
       contact: 'women@bethanypc.org.sg',
     },
     {
-      title: 'Men\'s Ministry',
+      title: 'Men&apos;s Ministry',
       description: 'Encouraging men to grow in faith and character through accountability, study, and service.',
       ageRange: 'Men of All Ages',
       contact: 'men@bethanypc.org.sg',
@@ -63,8 +63,8 @@ export default function MinistriesPage() {
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl font-bold mb-4">Ministries</h1>
         <p className="text-lg text-gray-600 mb-12">
-          At Bethany Presbyterian Church, we believe that every member has a role to play 
-          in the body of Christ. Explore our ministries and find a place to serve, grow, 
+          At Bethany Presbyterian Church, we believe that every member has a role to play
+          in the body of Christ. Explore our ministries and find a place to serve, grow,
           and connect with others.
         </p>
 
@@ -91,8 +91,8 @@ export default function MinistriesPage() {
         <div className="mt-12 bg-primary-50 p-8 rounded-lg text-center">
           <h2 className="text-2xl font-semibold mb-4">Interested in Serving?</h2>
           <p className="text-gray-700 mb-6">
-            We'd love to help you find a place to serve and use your gifts for God's kingdom. 
-            Whether you're interested in one of these ministries or have other ideas, we're 
+            We&apos;d love to help you find a place to serve and use your gifts for God&apos;s kingdom.
+            Whether you&apos;re interested in one of these ministries or have other ideas, we&apos;re
             here to help you get connected.
           </p>
           <Link

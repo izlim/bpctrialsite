@@ -13,8 +13,8 @@ export default function GivePage() {
 
         <div className="bg-primary-50 border-l-4 border-primary-600 p-6 mb-12">
           <p className="text-lg text-gray-700">
-            Thank you for your heart to support the ministry of Bethany Presbyterian Church. 
-            Your generous giving enables us to serve our community, support missions, and 
+            Thank you for your heart to support the ministry of Bethany Presbyterian Church.
+            Your generous giving enables us to serve our community, support missions, and
             share the love of Christ.
           </p>
         </div>
@@ -24,23 +24,23 @@ export default function GivePage() {
           <h2 className="text-3xl font-semibold mb-6">Why We Give</h2>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <p className="text-gray-700 mb-4">
-              Giving is an act of worship and a response to God's grace in our lives. 
-              The Bible teaches us that everything we have comes from God, and we are 
+              Giving is an act of worship and a response to God&apos;s grace in our lives.
+              The Bible teaches us that everything we have comes from God, and we are
               called to be good stewards of His resources.
             </p>
             <p className="text-gray-700 mb-4">
               When we give, we:
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
-              <li>Express our trust in God's provision</li>
-              <li>Participate in God's work in the world</li>
+              <li>Express our trust in God&apos;s provision</li>
+              <li>Participate in God&apos;s work in the world</li>
               <li>Support the ministry of the local church</li>
               <li>Help those in need in our community and beyond</li>
               <li>Invest in the next generation of believers</li>
             </ul>
             <p className="text-gray-600 text-sm italic">
-              "Each of you should give what you have decided in your heart to give, 
-              not reluctantly or under compulsion, for God loves a cheerful giver." 
+              &quot;Each of you should give what you have decided in your heart to give,
+              not reluctantly or under compulsion, for God loves a cheerful giver.&quot;
               - 2 Corinthians 9:7
             </p>
           </div>
@@ -56,7 +56,7 @@ export default function GivePage() {
                 Online Giving
               </h3>
               <p className="text-gray-700 mb-4">
-                Give securely online using your credit card or bank account. 
+                Give securely online using your credit card or bank account.
                 Set up one-time or recurring donations.
               </p>
               <a
@@ -89,8 +89,8 @@ export default function GivePage() {
                 Check or Cash
               </h3>
               <p className="text-gray-700 mb-4">
-                You can give by check or cash during our Sunday services. 
-                Place your offering in the collection plate or drop it off 
+                You can give by check or cash during our Sunday services.
+                Place your offering in the collection plate or drop it off
                 at the church office during office hours.
               </p>
             </div>
@@ -117,7 +117,7 @@ export default function GivePage() {
               <h3 className="text-xl font-semibold mb-3">Local Ministry</h3>
               <ul className="list-disc list-inside text-gray-700 space-y-1 text-sm">
                 <li>Sunday worship services</li>
-                <li>Children's and youth programs</li>
+                <li>Children&apos;s and youth programs</li>
                 <li>Small groups and Bible studies</li>
                 <li>Pastoral care and counseling</li>
                 <li>Facility maintenance and operations</li>
@@ -141,9 +141,9 @@ export default function GivePage() {
           <h2 className="text-3xl font-semibold mb-6">Financial Transparency</h2>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <p className="text-gray-700 mb-4">
-              We are committed to financial integrity and transparency. Our finances are 
-              overseen by our board of elders and audited annually. If you have questions 
-              about our financial practices or would like to see our annual report, please 
+              We are committed to financial integrity and transparency. Our finances are
+              overseen by our board of elders and audited annually. If you have questions
+              about our financial practices or would like to see our annual report, please
               contact the church office.
             </p>
             <a
@@ -159,11 +159,11 @@ export default function GivePage() {
         <section className="bg-gray-50 p-8 rounded-lg">
           <h2 className="text-2xl font-semibold mb-4">Tax-Deductible Giving</h2>
           <p className="text-gray-700 mb-4">
-            All contributions to Bethany Presbyterian Church are tax-deductible in Singapore. 
+            All contributions to Bethany Presbyterian Church are tax-deductible in Singapore.
             You will receive a receipt for your giving that can be used for tax purposes.
           </p>
           <p className="text-gray-600 text-sm">
-            For questions about giving receipts or tax documentation, please contact 
+            For questions about giving receipts or tax documentation, please contact
             our finance office at <a href="mailto:finance@bethanypc.org.sg" className="text-primary-600 hover:text-primary-700">finance@bethanypc.org.sg</a>
           </p>
         </section>

@@ -19,7 +19,7 @@ export default function VisitPage() {
               <h3 className="text-2xl font-semibold mb-3">Sunday Morning Service</h3>
               <p className="text-lg text-gray-700 mb-2"><strong>Time:</strong> 9:30 AM - 11:00 AM</p>
               <p className="text-gray-600 mb-4">Traditional worship with hymns and contemporary elements</p>
-              <p className="text-sm text-gray-500">Children's Sunday School available during service</p>
+              <p className="text-sm text-gray-500">Children&apos;s Sunday School available during service</p>
             </div>
             <div className="bg-white border-2 border-primary-200 p-6 rounded-lg">
               <h3 className="text-2xl font-semibold mb-3">Sunday Evening Service</h3>
@@ -65,8 +65,8 @@ export default function VisitPage() {
                 By MRT
               </h3>
               <p className="text-gray-700">
-                Take the [Line Name] to [Station Name] Station. Exit at [Exit Number] and 
-                walk approximately 5 minutes. The church is located on the corner of 
+                Take the [Line Name] to [Station Name] Station. Exit at [Exit Number] and
+                walk approximately 5 minutes. The church is located on the corner of
                 Church Street and Main Road.
               </p>
             </div>
@@ -76,8 +76,8 @@ export default function VisitPage() {
                 By Bus
               </h3>
               <p className="text-gray-700">
-                Bus numbers [X], [Y], and [Z] stop near the church. The nearest bus stop 
-                is "Church Street" which is a 2-minute walk from the building.
+                Bus numbers [X], [Y], and [Z] stop near the church. The nearest bus stop
+                is &quot;Church Street&quot; which is a 2-minute walk from the building.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -99,8 +99,8 @@ export default function VisitPage() {
                 Walking
               </h3>
               <p className="text-gray-700">
-                The church is easily accessible on foot from the surrounding neighborhoods. 
-                We're located in a pedestrian-friendly area with sidewalks and crosswalks.
+                The church is easily accessible on foot from the surrounding neighborhoods.
+                We&apos;re located in a pedestrian-friendly area with sidewalks and crosswalks.
               </p>
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function VisitPage() {
         <section className="bg-primary-50 p-8 rounded-lg">
           <h2 className="text-3xl font-semibold mb-4">Plan Your Visit</h2>
           <p className="text-gray-700 mb-6">
-            We'd love to welcome you! If you're planning to visit for the first time, here's what to expect:
+            We&apos;d love to welcome you! If you&apos;re planning to visit for the first time, here&apos;s what to expect:
           </p>
           <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6">
             <li>Services typically last about 90 minutes</li>

@@ -18,7 +18,7 @@ interface LocaleContextType {
   t: Translations;
 }
 
-const LocaleContext = createContext<LocaleContextType | undefined>(undefined);
+export const LocaleContext = createContext<LocaleContextType | undefined>(undefined);
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
   const pathname = usePathname();

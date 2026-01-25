@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'What to Expect | Your First Visit | Bethany Presbyterian Church',
-  description: 'Learn what to expect during your first visit to Bethany Presbyterian Church, including service format, dress code, and children\'s programs.',
+  description: 'Learn what to expect during your first visit to Bethany Presbyterian Church, including service format, dress code, and children&apos;s programs.',
 };
 
 export default function WhatToExpectPage() {
@@ -13,8 +13,8 @@ export default function WhatToExpectPage() {
 
         <div className="bg-primary-50 border-l-4 border-primary-600 p-6 mb-8">
           <p className="text-lg text-gray-700">
-            We're so glad you're considering visiting Bethany Presbyterian Church! 
-            Whether you're new to church or looking for a new church home, we want 
+            We&apos;re so glad you&apos;re considering visiting Bethany Presbyterian Church!
+            Whether you&apos;re new to church or looking for a new church home, we want
             you to feel welcome and comfortable.
           </p>
         </div>
@@ -72,8 +72,8 @@ export default function WhatToExpectPage() {
           <h2 className="text-3xl font-semibold mb-6">What to Wear</h2>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <p className="text-gray-700 mb-4">
-              There's no dress code at Bethany Presbyterian Church. Come as you are! 
-              You'll see people in a variety of styles:
+              There&apos;s no dress code at Bethany Presbyterian Church. Come as you are!
+              You&apos;ll see people in a variety of styles:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
               <div>
@@ -94,7 +94,7 @@ export default function WhatToExpectPage() {
               </div>
             </div>
             <p className="text-gray-600 mt-4 text-sm italic">
-              The most important thing is that you're here, not what you're wearing!
+              The most important thing is that you&apos;re here, not what you&apos;re wearing!
             </p>
           </div>
         </section>
@@ -106,7 +106,7 @@ export default function WhatToExpectPage() {
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-3">Nursery (Ages 0-2)</h3>
               <p className="text-gray-700 mb-2">
-                Safe, loving care for infants and toddlers during both services. 
+                Safe, loving care for infants and toddlers during both services.
                 Our trained volunteers provide age-appropriate activities and care.
               </p>
               <p className="text-sm text-gray-600">
@@ -116,7 +116,7 @@ export default function WhatToExpectPage() {
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-3">Sunday School (Ages 3-12)</h3>
               <p className="text-gray-700 mb-2">
-                Engaging Bible lessons, songs, and activities designed for children. 
+                Engaging Bible lessons, songs, and activities designed for children.
                 Classes are divided by age groups to ensure age-appropriate teaching.
               </p>
               <p className="text-sm text-gray-600">
@@ -126,7 +126,7 @@ export default function WhatToExpectPage() {
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-3">Youth Programs (Ages 13-18)</h3>
               <p className="text-gray-700 mb-2">
-                Dynamic programs designed to help teenagers grow in their faith, 
+                Dynamic programs designed to help teenagers grow in their faith,
                 build friendships, and serve others.
               </p>
               <p className="text-sm text-gray-600">
@@ -145,14 +145,14 @@ export default function WhatToExpectPage() {
               <h4 className="font-semibold mb-2">When You Arrive</h4>
               <ul className="list-disc list-inside text-gray-700 space-y-1 text-sm">
                 <li>Friendly greeters will welcome you at the main entrance</li>
-                <li>Feel free to ask any questions - we're here to help!</li>
+                <li>Feel free to ask any questions - we&apos;re here to help!</li>
                 <li>Pick up a welcome packet with information about the church</li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-2">During Service</h4>
               <ul className="list-disc list-inside text-gray-700 space-y-1 text-sm">
-                <li>You won't be asked to stand up or introduce yourself</li>
+                <li>You won&apos;t be asked to stand up or introduce yourself</li>
                 <li>Offering is for members and regular attendees - guests are not expected to give</li>
                 <li>Feel free to participate in singing and prayer at your comfort level</li>
               </ul>
@@ -183,7 +183,7 @@ export default function WhatToExpectPage() {
               <li>Designated seating areas for wheelchairs</li>
             </ul>
             <p className="text-gray-600 mt-4 text-sm">
-              If you have specific accessibility needs, please contact us in advance 
+              If you have specific accessibility needs, please contact us in advance
               so we can ensure your visit is comfortable.
             </p>
           </div>
@@ -193,8 +193,8 @@ export default function WhatToExpectPage() {
         <section className="bg-primary-600 text-white p-8 rounded-lg text-center">
           <h2 className="text-3xl font-semibold mb-4">Ready to Visit?</h2>
           <p className="text-lg mb-6 text-primary-100">
-            We'd love to see you this Sunday! If you have any questions before your visit, 
-            please don't hesitate to reach out.
+            We&apos;d love to see you this Sunday! If you have any questions before your visit,
+            please don&apos;t hesitate to reach out.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

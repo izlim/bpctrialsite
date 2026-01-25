@@ -15,14 +15,14 @@ export default function AboutPage() {
         <section className="mb-12">
           <h2 className="text-3xl font-semibold mb-4">Our Mission</h2>
           <p className="text-lg text-gray-700 mb-6">
-            To glorify God by making disciples of all nations through the proclamation of the Gospel, 
-            the teaching of God's Word, and the building of a loving community that serves one another 
+            To glorify God by making disciples of all nations through the proclamation of the Gospel,
+            the teaching of God&apos;s Word, and the building of a loving community that serves one another
             and reaches out to the world.
           </p>
           <h2 className="text-3xl font-semibold mb-4">Our Vision</h2>
           <p className="text-lg text-gray-700">
-            To be a vibrant, Christ-centered community where every member is growing in faith, 
-            connected in fellowship, and engaged in ministry, impacting Singapore and beyond 
+            To be a vibrant, Christ-centered community where every member is growing in faith,
+            connected in fellowship, and engaged in fellowship ministry, impacting Singapore and beyond
             with the love and truth of Jesus Christ.
           </p>
         </section>
@@ -31,9 +31,9 @@ export default function AboutPage() {
         <section className="mb-12">
           <h2 className="text-3xl font-semibold mb-4">Our History</h2>
           <p className="text-gray-700 mb-4">
-            Bethany Presbyterian Church was established in [YEAR] with a vision to serve the 
-            community and spread the Gospel in Singapore. What began as a small gathering of 
-            faithful believers has grown into a vibrant congregation committed to God's work.
+            Bethany Presbyterian Church was established in [YEAR] with a vision to serve the
+            community and spread the Gospel in Singapore. What began as a small gathering of
+            faithful believers has grown into a vibrant congregation committed to God&apos;s work.
           </p>
           <p className="text-gray-700 mb-4">
             Throughout our history, we have remained committed to:
@@ -58,8 +58,8 @@ export default function AboutPage() {
               <h3 className="text-xl font-semibold text-center mb-2">Pastor Name</h3>
               <p className="text-gray-600 text-center mb-4">Senior Pastor</p>
               <p className="text-gray-700 text-sm">
-                Pastor Name has been serving at Bethany Presbyterian Church since [YEAR]. 
-                He is passionate about expository preaching and discipleship, with a heart 
+                Pastor Name has been serving at Bethany Presbyterian Church since [YEAR].
+                He is passionate about expository preaching and discipleship, with a heart
                 for seeing people grow in their relationship with Christ.
               </p>
             </div>
@@ -70,7 +70,7 @@ export default function AboutPage() {
               <h3 className="text-xl font-semibold text-center mb-2">Associate Pastor</h3>
               <p className="text-gray-600 text-center mb-4">Youth & Family Ministry</p>
               <p className="text-gray-700 text-sm">
-                Our associate pastor leads our youth and family ministries, helping families 
+                Our associate pastor leads our youth and family ministries, helping families
                 grow together in faith and supporting the next generation of believers.
               </p>
             </div>
@@ -81,7 +81,7 @@ export default function AboutPage() {
         <section className="mb-12">
           <h2 className="text-3xl font-semibold mb-4">Presbyterian Tradition</h2>
           <p className="text-gray-700 mb-4">
-            Bethany Presbyterian Church is part of the Presbyterian denomination, which traces 
+            Bethany Presbyterian Church is part of the Presbyterian denomination, which traces
             its roots to the Protestant Reformation. We value:
           </p>
           <ul className="list-disc list-inside text-gray-700 space-y-2">
