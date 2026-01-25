@@ -33,7 +33,7 @@ export interface ResourceFrontmatter {
 
 export async function getSermons(): Promise<Array<{ slug: string; frontmatter: SermonFrontmatter }>> {
   const sermonsDirectory = path.join(contentDirectory, 'sermons');
-  
+
   if (!fs.existsSync(sermonsDirectory)) {
     return [];
   }
@@ -81,9 +81,9 @@ export async function getSermonBySlug(slug: string): Promise<{ frontmatter: Serm
   };
 }
 
-export async function getEvents(): Promise<Array<{ slug: string; frontmatter: EventFrontmatter }>> {
-  const eventsDirectory = path.join(contentDirectory, 'events');
-  
+export async function getEvents(locale: string = 'en'): Promise<Array<{ slug: string; frontmatter: EventFrontmatter }>> {
+  const eventsDirectory = path.join(contentDirectory, 'events', locale);
+
   if (!fs.existsSync(eventsDirectory)) {
     return [];
   }
@@ -108,8 +108,8 @@ export async function getEvents(): Promise<Array<{ slug: string; frontmatter: Ev
   });
 }
 
-export async function getEventBySlug(slug: string): Promise<{ frontmatter: EventFrontmatter; content: string } | null> {
-  const eventsDirectory = path.join(contentDirectory, 'events');
+export async function getEventBySlug(slug: string, locale: string = 'en'): Promise<{ frontmatter: EventFrontmatter; content: string } | null> {
+  const eventsDirectory = path.join(contentDirectory, 'events', locale);
   const fullPath = path.join(eventsDirectory, `${slug}.md`);
 
   if (!fs.existsSync(fullPath)) {
@@ -131,9 +131,9 @@ export async function getEventBySlug(slug: string): Promise<{ frontmatter: Event
   };
 }
 
-export async function getResources(): Promise<Array<{ slug: string; frontmatter: ResourceFrontmatter }>> {
-  const resourcesDirectory = path.join(contentDirectory, 'resources');
-  
+export async function getResources(locale: string = 'en'): Promise<Array<{ slug: string; frontmatter: ResourceFrontmatter }>> {
+  const resourcesDirectory = path.join(contentDirectory, 'resources', locale);
+
   if (!fs.existsSync(resourcesDirectory)) {
     return [];
   }
@@ -158,8 +158,8 @@ export async function getResources(): Promise<Array<{ slug: string; frontmatter:
   });
 }
 
-export async function getResourceBySlug(slug: string): Promise<{ frontmatter: ResourceFrontmatter; content: string } | null> {
-  const resourcesDirectory = path.join(contentDirectory, 'resources');
+export async function getResourceBySlug(slug: string, locale: string = 'en'): Promise<{ frontmatter: ResourceFrontmatter; content: string } | null> {
+  const resourcesDirectory = path.join(contentDirectory, 'resources', locale);
   const fullPath = path.join(resourcesDirectory, `${slug}.md`);
 
   if (!fs.existsSync(fullPath)) {
