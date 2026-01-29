@@ -4,9 +4,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Navigation from './Navigation';
 import LanguageSwitcher from './LanguageSwitcher';
+import { useLocale } from './LocaleProvider';
+import Logo from './Logo';
 import { getLocaleFromPath, getLocalizedPath } from '@/lib/i18n';
 
 export default function Header() {
+  const { t } = useLocale();
   const pathname = usePathname();
   const locale = getLocaleFromPath(pathname);
   const homePath = getLocalizedPath('/', locale);
@@ -16,12 +19,10 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href={homePath} className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center">
-              <span className="text-white text-xl font-bold">BPC</span>
-            </div>
+            <Logo size={48} />
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">Bethany Presbyterian Church</h1>
-              <p className="text-sm text-gray-600">Singapore</p>
+              <h1 className="text-2xl font-bold text-gray-900">{t.common.siteName}</h1>
+              <p className="text-sm text-gray-600">{t.common.siteLocation}</p>
             </div>
           </Link>
           <div className="flex items-center space-x-4">

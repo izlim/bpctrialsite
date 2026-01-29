@@ -13,6 +13,8 @@
     "contact": "Contact"
   },
   "common": {
+    "siteName": "Bethany Presbyterian Church",
+    "siteLocation": "Singapore",
     "readMore": "Read More",
     "learnMore": "Learn More",
     "back": "Back",
@@ -161,6 +163,13 @@
     "quickLinks": "Quick Links",
     "connect": "Connect",
     "contact": "Contact",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "churchName": "Bethany Presbyterian Church",
+    "churchDesc": "A welcoming community of believers committed to serving God and our neighbors."
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/bethanypcsg/",
+    "instagram": "https://www.instagram.com/bethanypc.sg/?hl=en",
+    "youtube": "https://www.youtube.com/@bethanypresbyterianchurchs3856"
   }
 }

@@ -51,22 +51,28 @@ export default function VisitPageClient() {
         <section className="mb-12">
           <h2 className="text-3xl font-semibold mb-6">{t.visit.location}</h2>
           <div className="bg-white border-2 border-primary-200 p-6 rounded-lg mb-6">
-            <h3 className="text-xl font-semibold mb-4">Bethany Presbyterian Church</h3>
-            <p className="text-lg text-gray-700 mb-2">123 Church Street</p>
-            <p className="text-lg text-gray-700 mb-2">Singapore 123456</p>
+            <h3 className="text-xl font-semibold mb-4">{t.common.siteName}</h3>
+            <p className="text-lg text-gray-700 mb-2">378 Paya Lebar Rd</p>
+            <p className="text-lg text-gray-700 mb-2">Singapore 534971</p>
             <p className="text-gray-600 mb-4">
-              {locale === 'en' ? 'Phone:' : '电话：'} +65 6123 4567
+              {locale === 'en' ? 'Phone:' : '电话：'} +65 6281 1714
             </p>
             <p className="text-gray-600">
-              {locale === 'en' ? 'Email:' : '电子邮件：'} info@bethanypc.org.sg
+              {locale === 'en' ? 'Email:' : '电子邮件：'} admin@bethanypc.org.sg
             </p>
           </div>
 
-          {/* Map Placeholder */}
-          <div className="bg-gray-200 h-96 rounded-lg flex items-center justify-center mb-6">
-            <p className="text-gray-500">
-              {locale === 'en' ? 'Google Maps will be embedded here' : '此处将嵌入Google地图'}
-            </p>
+          {/* Live Google Map */}
+          <div className="w-full aspect-video rounded-lg overflow-hidden border-2 border-primary-100 mb-6 shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7136200268733!2d103.87822937599617!3d1.3483210986389313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da17bcc6871ded%3A0x478e0ddb351b3f80!2sBethany%20Presbyterian%20Church!5e0!3m2!1sen!2ssg!4v1769698378214!5m2!1sen!2ssg"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </section>
 
@@ -80,7 +86,7 @@ export default function VisitPageClient() {
                 {t.visit.byMrt}
               </h3>
               <p className="text-gray-700">
-                {locale === 'en' 
+                {locale === 'en'
                   ? 'Take the [Line Name] to [Station Name] Station. Exit at [Exit Number] and walk approximately 5 minutes. The church is located on the corner of Church Street and Main Road.'
                   : '乘坐[线路名称]到[站名]站。从[出口号码]出口，步行约5分钟。教会在教堂街和主路的拐角处。'}
               </p>

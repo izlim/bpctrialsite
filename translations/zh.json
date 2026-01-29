@@ -13,6 +13,8 @@
     "contact": "联系我们"
   },
   "common": {
+    "siteName": "伯大尼长老会",
+    "siteLocation": "新加坡",
     "readMore": "阅读更多",
     "learnMore": "了解更多",
     "back": "返回",
@@ -161,6 +163,13 @@
     "quickLinks": "快速链接",
     "connect": "联系",
     "contact": "联系",
-    "rights": "版权所有。"
+    "rights": "版权所有。",
+    "churchName": "伯大尼长老会",
+    "churchDesc": "一个致力于服务上帝和邻舍的欢迎信徒社区。加入我们，一起在信心、爱心和服务中成长。"
+  },
+  "social": {
+    "facebook": "https://facebook.com/bethanypc",
+    "instagram": "https://instagram.com/bethanypc",
+    "youtube": "https://youtube.com/@bethanypc"
   }
 }
