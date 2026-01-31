@@ -36,14 +36,32 @@
     "planVisit": "Plan Your Visit",
     "whatToExpect": "What to Expect",
     "joinUs": "Join Us for Worship",
-    "sundayMorning": "Sunday Morning Service",
-    "sundayMorningTime": "9:30 AM",
-    "sundayMorningLocation": "Main Sanctuary (Level 2)",
-    "sundayMorningDesc": "Traditional worship with hymns and contemporary elements",
-    "sundayEvening": "Sunday Evening Service",
-    "sundayEveningTime": "6:00 PM",
-    "sundayEveningLocation": "Main Sanctuary (Level 2)",
-    "sundayEveningDesc": "Contemporary worship with modern music",
+    "services": [
+      {
+        "title": "Sunday Morning Hokkien Service",
+        "time": "9:30 AM",
+        "location": "Grace Auditorium (Level 1)",
+        "description": "Traditional worship with hymns and contemporary elements"
+      },
+      {
+        "title": "Sunday Morning Chinese Service",
+        "time": "11:30 AM",
+        "location": "Main Sanctuary (Level 2)",
+        "description": "Contemporary worship with modern music"
+      },
+      {
+        "title": "Youth Bilingual Service",
+        "time": "11:30 AM",
+        "location": "Upper Room (Level 3)",
+        "description": "Contemporary worship with modern music"
+      },
+      {
+        "title": "Children's Sunday School",
+        "time": "11:30 AM",
+        "location": "Rooms 2/3 (Level 2)",
+        "description": "Children's worship with modern music"
+      }
+    ],
     "latestSermon": "Latest Sermon",
     "upcomingEvents": "Upcoming Events",
     "getConnected": "Get Connected",

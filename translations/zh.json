@@ -36,14 +36,32 @@
     "planVisit": "计划您的访问",
     "whatToExpect": "期待什么",
     "joinUs": "加入我们的敬拜",
-    "sundayMorning": "主日早堂",
-    "sundayMorningTime": "上午 9:30",
-    "sundayMorningLocation": "礼堂（2楼）",
-    "sundayMorningDesc": "传统敬拜，包含赞美诗和现代元素",
-    "sundayEvening": "主日晚堂",
-    "sundayEveningTime": "下午 6:00",
-    "sundayEveningLocation": "礼堂（2楼）",
-    "sundayEveningDesc": "现代敬拜，使用现代音乐",
+    "services": [
+      {
+        "title": "主日福建崇拜",
+        "time": "上午 9:30",
+        "location": "主恩楼（1楼）",
+        "description": "传统敬拜，包含赞美诗和现代元素"
+      },
+      {
+        "title": "主日话语崇拜",
+        "time": "上午 11:30",
+        "location": "礼堂（2楼）",
+        "description": "现代敬拜，使用现代音乐"
+      },
+      {
+        "title": "青年双语崇拜",
+        "time": "上午 11:30",
+        "location": "Upper Room（3楼）",
+        "description": "现代敬拜，使用现代音乐"
+      },
+      {
+        "title": "儿童主日学",
+        "time": "上午 11:30",
+        "location": "Rooms 2/3（2楼）",
+        "description": "儿童主日学，使用现代音乐"
+      }
+    ],
     "latestSermon": "最新讲道",
     "upcomingEvents": "即将举行的活动",
     "getConnected": "建立联系",

@@ -47,18 +47,14 @@ export default function HomePageClient({ featuredSermon, upcomingEvents }: HomeP
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">{t.home.joinUs}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <h3 className="text-2xl font-semibold mb-4">{t.home.sundayMorning}</h3>
-              <p className="text-gray-600 mb-2"><strong>{t.common.time}:</strong> {t.home.sundayMorningTime}</p>
-              <p className="text-gray-600 mb-2"><strong>{t.common.location}:</strong> {t.home.sundayMorningLocation}</p>
-              <p className="text-gray-600">{t.home.sundayMorningDesc}</p>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <h3 className="text-2xl font-semibold mb-4">{t.home.sundayEvening}</h3>
-              <p className="text-gray-600 mb-2"><strong>{t.common.time}:</strong> {t.home.sundayEveningTime}</p>
-              <p className="text-gray-600 mb-2"><strong>{t.common.location}:</strong> {t.home.sundayEveningLocation}</p>
-              <p className="text-gray-600">{t.home.sundayEveningDesc}</p>
-            </div>
+            {t.home.services.map((service: any, index: number) => (
+              <div key={index} className="bg-white p-8 rounded-lg shadow-md">
+                <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
+                <p className="text-gray-600 mb-2"><strong>{t.common.time}:</strong> {service.time}</p>
+                <p className="text-gray-600 mb-2"><strong>{t.common.location}:</strong> {service.location}</p>
+                <p className="text-gray-600">{service.description}</p>
+              </div>
+            ))}
           </div>
           <div className="text-center mt-8">
             <Link href={getLocalizedPath('/visit', locale)} className="text-primary-600 hover:text-primary-700 font-medium">
