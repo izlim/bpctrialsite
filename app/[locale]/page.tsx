@@ -1,9 +1,7 @@
 import { notFound } from 'next/navigation';
-import { getSermons, getEvents } from '@/lib/markdown';
-import SermonCard from '@/components/SermonCard';
+import { getServices, getEvents } from '@/lib/markdown';
 import EventCard from '@/components/EventCard';
 import { locales, type Locale } from '@/lib/i18n';
-import { useLocale } from '@/components/LocaleProvider';
 import HomePageClient from './HomePageClient';
 
 export async function generateStaticParams() {
@@ -15,14 +13,14 @@ export default async function HomePage({ params }: { params: { locale: string } 
     notFound();
   }
 
-  const sermons = await getSermons();
+  const services = await getServices(params.locale);
   const events = await getEvents();
-  const featuredSermon = sermons[0];
+  const featuredService = services[0];
   const upcomingEvents = events.slice(0, 3);
 
   return (
     <HomePageClient
-      featuredSermon={featuredSermon}
+      featuredService={featuredService}
       upcomingEvents={upcomingEvents}
     />
   );

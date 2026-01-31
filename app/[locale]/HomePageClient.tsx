@@ -3,15 +3,15 @@
 import Link from 'next/link';
 import { useLocale } from '@/components/LocaleProvider';
 import { getLocalizedPath } from '@/lib/i18n';
-import SermonCard from '@/components/SermonCard';
+import ServiceCard from '@/components/ServiceCard';
 import EventCard from '@/components/EventCard';
 
 interface HomePageClientProps {
-  featuredSermon: any;
+  featuredService: any;
   upcomingEvents: any[];
 }
 
-export default function HomePageClient({ featuredSermon, upcomingEvents }: HomePageClientProps) {
+export default function HomePageClient({ featuredService, upcomingEvents }: HomePageClientProps) {
   const { locale, t } = useLocale();
 
   return (
@@ -64,18 +64,18 @@ export default function HomePageClient({ featuredSermon, upcomingEvents }: HomeP
         </div>
       </section>
 
-      {/* Featured Sermon */}
-      {featuredSermon && (
+      {/* Featured Service */}
+      {featuredService && (
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl font-bold">{t.home.latestSermon}</h2>
-              <Link href={getLocalizedPath('/sermons', locale)} className="text-primary-600 hover:text-primary-700 font-medium">
+              <h2 className="text-3xl font-bold">{t.home.latestService}</h2>
+              <Link href={getLocalizedPath('/services', locale)} className="text-primary-600 hover:text-primary-700 font-medium">
                 {t.common.viewAll} →
               </Link>
             </div>
             <div className="max-w-4xl">
-              <SermonCard sermon={featuredSermon} />
+              <ServiceCard service={featuredService} />
             </div>
           </div>
         </section>

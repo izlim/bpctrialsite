@@ -5,7 +5,7 @@
     "visit": "访问我们",
     "whatToExpect": "期待什么",
     "beliefs": "信仰",
-    "sermons": "讲道",
+    "services": "崇拜回顾",
     "events": "活动",
     "ministries": "事工",
     "resources": "资源",
@@ -62,7 +62,7 @@
         "description": "儿童主日学，使用现代音乐"
       }
     ],
-    "latestSermon": "最新讲道",
+    "latestService": "最新崇拜录像",
     "upcomingEvents": "即将举行的活动",
     "getConnected": "建立联系",
     "aboutUs": "关于我们",
@@ -128,11 +128,11 @@
     "confessions": "信条标准",
     "questions": "有问题吗？"
   },
-  "sermons": {
-    "title": "讲道",
-    "description": "收听或观看我们每周的讲道。所有信息都基于圣经，旨在帮助您与上帝的关系成长。",
-    "noSermons": "目前没有讲道。",
-    "noSermonsDesc": "一旦将讲道添加到内容文件夹，它们将显示在这里。"
+  "services": {
+    "title": "崇拜回顾",
+    "description": "回顾我们主日崇拜的YouTube直播。所有信息均基于圣经，旨在帮助您与上帝的关系不断成长。",
+    "noServices": "目前没有崇拜录像。",
+    "noServicesDesc": "一旦将崇拜录像添加到内容文件夹，它们将显示在这里。"
   },
   "events": {
     "title": "活动",

@@ -5,7 +5,7 @@
     "visit": "Visit Us",
     "whatToExpect": "What to Expect",
     "beliefs": "Beliefs",
-    "sermons": "Sermons",
+    "services": "Services",
     "events": "Events",
     "ministries": "Ministries",
     "resources": "Resources",
@@ -62,7 +62,7 @@
         "description": "Children's worship with modern music"
       }
     ],
-    "latestSermon": "Latest Sermon",
+    "latestService": "Latest Service",
     "upcomingEvents": "Upcoming Events",
     "getConnected": "Get Connected",
     "aboutUs": "About Us",
@@ -128,11 +128,11 @@
     "confessions": "Confessional Standards",
     "questions": "Have Questions?"
   },
-  "sermons": {
-    "title": "Sermons",
-    "description": "Listen to or watch our weekly sermons. All messages are grounded in Scripture and designed to help you grow in your relationship with God.",
-    "noSermons": "No sermons available yet.",
-    "noSermonsDesc": "Sermons will appear here once they are added to the content folder."
+  "services": {
+    "title": "Services",
+    "description": "Watch our past Sunday service live streams. All messages are grounded in Scripture and designed to help you grow in your relationship with God.",
+    "noServices": "No services available yet.",
+    "noServicesDesc": "Services will appear here once they are added to the content folder."
   },
   "events": {
     "title": "Events",

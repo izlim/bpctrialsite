@@ -7,12 +7,12 @@ import remarkGfm from 'remark-gfm';
 
 const contentDirectory = path.join(process.cwd(), 'content');
 
-export interface SermonFrontmatter {
+export interface ServiceFrontmatter {
   title: string;
   date: string;
   speaker: string;
   series?: string;
-  videoUrl?: string;
+  videoUrl?: string; // This will be used for YouTube live streams
   audioUrl?: string;
   notesUrl?: string;
 }
@@ -31,36 +31,36 @@ export interface ResourceFrontmatter {
   type?: string;
 }
 
-export async function getSermons(): Promise<Array<{ slug: string; frontmatter: SermonFrontmatter }>> {
-  const sermonsDirectory = path.join(contentDirectory, 'sermons');
+export async function getServices(locale: string = 'en'): Promise<Array<{ slug: string; frontmatter: ServiceFrontmatter }>> {
+  const servicesDirectory = path.join(contentDirectory, 'services', locale);
 
-  if (!fs.existsSync(sermonsDirectory)) {
+  if (!fs.existsSync(servicesDirectory)) {
     return [];
   }
 
-  const fileNames = fs.readdirSync(sermonsDirectory);
-  const sermons = fileNames
+  const fileNames = fs.readdirSync(servicesDirectory);
+  const services = fileNames
     .filter(name => name.endsWith('.md'))
     .map((fileName) => {
       const slug = fileName.replace(/\.md$/, '');
-      const fullPath = path.join(sermonsDirectory, fileName);
+      const fullPath = path.join(servicesDirectory, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const { data } = matter(fileContents);
 
       return {
         slug,
-        frontmatter: data as SermonFrontmatter,
+        frontmatter: data as ServiceFrontmatter,
       };
     });
 
-  return sermons.sort((a, b) => {
+  return services.sort((a, b) => {
     return new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime();
   });
 }
 
-export async function getSermonBySlug(slug: string): Promise<{ frontmatter: SermonFrontmatter; content: string } | null> {
-  const sermonsDirectory = path.join(contentDirectory, 'sermons');
-  const fullPath = path.join(sermonsDirectory, `${slug}.md`);
+export async function getServiceBySlug(slug: string, locale: string = 'en'): Promise<{ frontmatter: ServiceFrontmatter; content: string } | null> {
+  const servicesDirectory = path.join(contentDirectory, 'services', locale);
+  const fullPath = path.join(servicesDirectory, `${slug}.md`);
 
   if (!fs.existsSync(fullPath)) {
     return null;
@@ -76,7 +76,7 @@ export async function getSermonBySlug(slug: string): Promise<{ frontmatter: Serm
   const contentHtml = processedContent.toString();
 
   return {
-    frontmatter: data as SermonFrontmatter,
+    frontmatter: data as ServiceFrontmatter,
     content: contentHtml,
   };
 }

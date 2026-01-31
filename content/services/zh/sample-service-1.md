@@ -1,9 +1,9 @@
 ---
-title: "The Foundation of Faith"
-date: "2024-01-14"
-speaker: "Pastor John Smith"
-series: "Building on the Rock"
-videoUrl: "https://youtube.com/watch?v=example1"
+title: "信仰旅程: 身份"
+date: "2026-01-25"
+speaker: "沈洪利牧师"
+series: "信仰旅程"
+videoUrl: "https://www.youtube.com/watch?v=LEGzpm_oI5g"
 audioUrl: "https://example.com/audio/sermon1.mp3"
 ---
 

@@ -21,7 +21,7 @@ export default function Navigation() {
     { href: '/visit', key: 'visit' },
     { href: '/what-to-expect', key: 'whatToExpect' },
     { href: '/beliefs', key: 'beliefs' },
-    { href: '/sermons', key: 'sermons' },
+    { href: '/services', key: 'services' },
     { href: '/events', key: 'events' },
     { href: '/ministries', key: 'ministries' },
     { href: '/resources', key: 'resources' },
@@ -47,11 +47,10 @@ export default function Navigation() {
             <Link
               key={link.href}
               href={localizedHref}
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                isActive(link.href)
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActive(link.href)
                   ? 'bg-primary-100 text-primary-700'
                   : 'text-gray-700 hover:bg-gray-100'
-              }`}
+                }`}
             >
               {t.nav[link.key as keyof typeof t.nav]}
             </Link>
@@ -93,11 +92,10 @@ export default function Navigation() {
                   key={link.href}
                   href={localizedHref}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-4 py-2 rounded-md text-base font-medium ${
-                    isActive(link.href)
+                  className={`block px-4 py-2 rounded-md text-base font-medium ${isActive(link.href)
                       ? 'bg-primary-100 text-primary-700'
                       : 'text-gray-700 hover:bg-gray-100'
-                  }`}
+                    }`}
                 >
                   {t.nav[link.key as keyof typeof t.nav]}
                 </Link>

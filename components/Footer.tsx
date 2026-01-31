@@ -55,7 +55,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">{t.footer.connect}</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href={getLocalizedPath('/sermons', locale)} className="hover:text-white transition-colors">{t.nav.sermons}</Link></li>
+              <li><Link href={getLocalizedPath('/services', locale)} className="hover:text-white transition-colors">{t.nav.services}</Link></li>
               <li><Link href={getLocalizedPath('/events', locale)} className="hover:text-white transition-colors">{t.nav.events}</Link></li>
               <li><Link href={getLocalizedPath('/ministries', locale)} className="hover:text-white transition-colors">{t.nav.ministries}</Link></li>
               <li><Link href={getLocalizedPath('/resources', locale)} className="hover:text-white transition-colors">{t.nav.resources}</Link></li>
