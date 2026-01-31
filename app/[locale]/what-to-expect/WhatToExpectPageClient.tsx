@@ -23,7 +23,7 @@ export default function WhatToExpectPageClient() {
                     <h2 className="text-3xl font-semibold mb-6">{t.whatToExpect.serviceFormat}</h2>
                     <div className="space-y-6">
                         <div className="bg-white p-6 rounded-lg shadow-md">
-                            <h3 className="text-xl font-semibold mb-3">{t.home.sundayMorning} (9:30 AM)</h3>
+                            <h3 className="text-xl font-semibold mb-3">{t.visit.sundayMorning} (9:30 AM)</h3>
                             <ul className="list-disc list-inside text-gray-700 space-y-2">
                                 <li><strong>{locale === 'en' ? 'Welcome & Announcements' : '欢迎与报告'}</strong> {locale === 'en' ? '(5 minutes)' : '(5分钟)'}</li>
                                 <li><strong>{locale === 'en' ? 'Worship Through Music' : '音乐敬拜'}</strong> {locale === 'en' ? '(20 minutes) - Mix of traditional hymns and contemporary songs' : '(20分钟) - 传统赞美诗与现代诗歌'}</li>
@@ -37,7 +37,7 @@ export default function WhatToExpectPageClient() {
                             </p>
                         </div>
                         <div className="bg-white p-6 rounded-lg shadow-md">
-                            <h3 className="text-xl font-semibold mb-3">{t.home.sundayEvening} (6:00 PM)</h3>
+                            <h3 className="text-xl font-semibold mb-3">{t.visit.sundayEvening} (6:00 PM)</h3>
                             <ul className="list-disc list-inside text-gray-700 space-y-2">
                                 <li><strong>{locale === 'en' ? 'Contemporary Worship' : '现代敬拜'}</strong> {locale === 'en' ? '(25 minutes) - Modern Christian music' : '(25分钟) - 现代基督教音乐'}</li>
                                 <li><strong>{locale === 'en' ? 'Message' : '讲道'}</strong> {locale === 'en' ? '(35-40 minutes) - Practical, applicable teaching' : '(35-40分钟) - 实用教导'}</li>
