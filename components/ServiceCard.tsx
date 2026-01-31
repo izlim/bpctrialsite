@@ -61,18 +61,8 @@ export default function ServiceCard({ service }: ServiceCardProps) {
           <p><span className="font-medium">Date:</span> {formatDate(service.frontmatter.date)}</p>
         </div>
         <div className="mt-4 flex space-x-3">
-          {service.frontmatter.audioUrl && (
-            <a
-              href={service.frontmatter.audioUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary-600 hover:text-primary-700 text-sm font-medium"
-            >
-              Listen →
-            </a>
-          )}
           <Link href={servicePath} className="text-primary-600 hover:text-primary-700 text-sm font-medium">
-            Details →
+            Watch →
           </Link>
         </div>
       </div>

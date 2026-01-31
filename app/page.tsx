@@ -7,10 +7,8 @@ export default function RootPage() {
   const router = useRouter();
 
   useEffect(() => {
-    // Detect language preference or default to English
-    const browserLang = navigator.language.split('-')[0];
-    const defaultLang = browserLang === 'zh' ? 'zh' : 'en';
-    router.replace(`/${defaultLang}`);
+    // Default to Chinese as per user request
+    router.replace(`/zh`);
   }, [router]);
 
   return (

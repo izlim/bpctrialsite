@@ -1,9 +1,9 @@
 ---
-title: "The Power of Prayer"
-date: "2024-01-28"
-speaker: "Associate Pastor Mary Johnson"
-series: "Spiritual Disciplines"
-videoUrl: "https://youtube.com/watch?v=example3"
+title: "Faith Journey: Forgiveness"
+date: "2026-01-11"
+speaker: "Rev. Shen Hongli"
+series: "Faith Journey"
+videoUrl: "https://www.youtube.com/watch?v=ak_YQ4NPHcM"
 audioUrl: "https://example.com/audio/sermon3.mp3"
 ---
 

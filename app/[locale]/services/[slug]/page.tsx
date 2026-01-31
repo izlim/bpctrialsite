@@ -83,16 +83,6 @@ export default async function ServicePage({ params }: { params: { locale: string
           )}
 
           <div className="flex flex-wrap gap-4 mb-8">
-            {service.frontmatter.audioUrl && (
-              <a
-                href={service.frontmatter.audioUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-primary-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-primary-700 transition-colors inline-flex items-center"
-              >
-                Listen to Audio →
-              </a>
-            )}
             {service.frontmatter.notesUrl && (
               <a
                 href={service.frontmatter.notesUrl}
@@ -104,11 +94,6 @@ export default async function ServicePage({ params }: { params: { locale: string
               </a>
             )}
           </div>
-
-          <div
-            className="prose prose-lg max-w-none"
-            dangerouslySetInnerHTML={{ __html: service.content }}
-          />
         </article>
       </div>
     </div>

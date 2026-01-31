@@ -1,9 +1,9 @@
 ---
-title: "Walking in Love"
-date: "2024-01-21"
-speaker: "Pastor John Smith"
-series: "The Christian Life"
-videoUrl: "https://youtube.com/watch?v=example2"
+title: "信仰旅程: 接纳"
+date: "2026-01-18"
+speaker: "沈洪利牧师"
+series: "信仰旅程"
+videoUrl: "https://www.youtube.com/watch?v=XKR1ElScWgo"
 audioUrl: "https://example.com/audio/sermon2.mp3"
 ---
 

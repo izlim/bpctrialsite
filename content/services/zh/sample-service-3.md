@@ -1,9 +1,9 @@
 ---
-title: "The Power of Prayer"
-date: "2024-01-28"
-speaker: "Associate Pastor Mary Johnson"
-series: "Spiritual Disciplines"
-videoUrl: "https://youtube.com/watch?v=example3"
+title: "信仰旅程: 饶恕"
+date: "2026-01-11"
+speaker: "沈洪利牧师"
+series: "信仰旅程"
+videoUrl: "https://www.youtube.com/watch?v=ak_YQ4NPHcM"
 audioUrl: "https://example.com/audio/sermon3.mp3"
 ---
 
