@@ -49,15 +49,15 @@ export default function HomePageClient({ featuredSermon, upcomingEvents }: HomeP
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="bg-white p-8 rounded-lg shadow-md">
               <h3 className="text-2xl font-semibold mb-4">{t.home.sundayMorning}</h3>
-              <p className="text-gray-600 mb-2"><strong>{t.common.time}:</strong> 9:30 AM</p>
-              <p className="text-gray-600 mb-2"><strong>{t.common.location}:</strong> Main Sanctuary</p>
-              <p className="text-gray-600">Traditional worship with hymns and contemporary elements</p>
+              <p className="text-gray-600 mb-2"><strong>{t.common.time}:</strong> {t.home.sundayMorningTime}</p>
+              <p className="text-gray-600 mb-2"><strong>{t.common.location}:</strong> {t.home.sundayMorningLocation}</p>
+              <p className="text-gray-600">{t.home.sundayMorningDesc}</p>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-md">
               <h3 className="text-2xl font-semibold mb-4">{t.home.sundayEvening}</h3>
-              <p className="text-gray-600 mb-2"><strong>{t.common.time}:</strong> 6:00 PM</p>
-              <p className="text-gray-600 mb-2"><strong>{t.common.location}:</strong> Main Sanctuary</p>
-              <p className="text-gray-600">Contemporary worship with modern music</p>
+              <p className="text-gray-600 mb-2"><strong>{t.common.time}:</strong> {t.home.sundayEveningTime}</p>
+              <p className="text-gray-600 mb-2"><strong>{t.common.location}:</strong> {t.home.sundayEveningLocation}</p>
+              <p className="text-gray-600">{t.home.sundayEveningDesc}</p>
             </div>
           </div>
           <div className="text-center mt-8">

@@ -64,11 +64,10 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">{t.footer.contact}</h4>
             <ul className="space-y-2 text-sm">
-              <li>378 Paya Lebar Rd</li>
-              <li>Singapore 534971</li>
-              <li>Phone: +65 6281 1714</li>
-              <li>Email: admin@bethanypc.org.sg</li>
-              <li>Office Hours: Mon-Fri 9am-5pm</li>
+              <li className="whitespace-pre-line">{t.contact.addressText}</li>
+              <li>{t.contact.phone}: {t.contact.phoneText}</li>
+              <li>{t.contact.email}: {t.contact.emailText}</li>
+              <li>{t.contact.officeHours}: {t.contact.officeHoursText.split('\n')[0]}</li>
             </ul>
           </div>
         </div>

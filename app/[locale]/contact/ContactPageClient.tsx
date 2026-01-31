@@ -18,33 +18,30 @@ export default function ContactPageClient() {
             <div className="space-y-6">
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">{t.contact.address}</h3>
-                <p className="text-gray-700">
-                  123 Church Street<br />
-                  Singapore 123456
+                <p className="text-gray-700 whitespace-pre-line">
+                  {t.contact.addressText}
                 </p>
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">{t.contact.phone}</h3>
                 <p className="text-gray-700">
-                  <a href="tel:+6561234567" className="text-primary-600 hover:text-primary-700">
-                    +65 6123 4567
+                  <a href={`tel:${t.contact.phoneText.replace(/\s/g, '')}`} className="text-primary-600 hover:text-primary-700">
+                    {t.contact.phoneText}
                   </a>
                 </p>
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">{t.contact.email}</h3>
                 <p className="text-gray-700">
-                  <a href="mailto:info@bethanypc.org.sg" className="text-primary-600 hover:text-primary-700">
-                    info@bethanypc.org.sg
+                  <a href={`mailto:${t.contact.emailText}`} className="text-primary-600 hover:text-primary-700">
+                    {t.contact.emailText}
                   </a>
                 </p>
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">{t.contact.officeHours}</h3>
-                <p className="text-gray-700">
-                  {locale === 'en' ? 'Monday - Friday: 9:00 AM - 5:00 PM' : '星期一 - 星期五：上午9:00 - 下午5:00'}<br />
-                  {locale === 'en' ? 'Saturday: 9:00 AM - 12:00 PM' : '星期六：上午9:00 - 中午12:00'}<br />
-                  {locale === 'en' ? 'Sunday: Closed' : '星期日：休息'}
+                <p className="text-gray-700 whitespace-pre-line">
+                  {t.contact.officeHoursText}
                 </p>
               </div>
             </div>
@@ -62,7 +59,7 @@ export default function ContactPageClient() {
             <div>
               <h3 className="font-semibold mb-2">{t.contact.pastoralCare}</h3>
               <p className="text-sm text-gray-600 mb-2">
-                {locale === 'en' 
+                {locale === 'en'
                   ? 'For pastoral needs, prayer requests, or spiritual guidance'
                   : '用于牧养需求、祷告请求或属灵指导'}
               </p>

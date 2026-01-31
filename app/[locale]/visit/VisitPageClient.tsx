@@ -52,13 +52,12 @@ export default function VisitPageClient() {
           <h2 className="text-3xl font-semibold mb-6">{t.visit.location}</h2>
           <div className="bg-white border-2 border-primary-200 p-6 rounded-lg mb-6">
             <h3 className="text-xl font-semibold mb-4">{t.common.siteName}</h3>
-            <p className="text-lg text-gray-700 mb-2">378 Paya Lebar Rd</p>
-            <p className="text-lg text-gray-700 mb-2">Singapore 534971</p>
+            <p className="text-lg text-gray-700 mb-2 whitespace-pre-line">{t.contact.addressText}</p>
             <p className="text-gray-600 mb-4">
-              {locale === 'en' ? 'Phone:' : '电话：'} +65 6281 1714
+              {t.contact.phone}: <a href={`tel:${t.contact.phoneText.replace(/\s/g, '')}`} className="text-primary-600 hover:text-primary-700">{t.contact.phoneText}</a>
             </p>
             <p className="text-gray-600">
-              {locale === 'en' ? 'Email:' : '电子邮件：'} admin@bethanypc.org.sg
+              {t.contact.email}: <a href={`mailto:${t.contact.emailText}`} className="text-primary-600 hover:text-primary-700">{t.contact.emailText}</a>
             </p>
           </div>
 
