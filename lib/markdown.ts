@@ -3,7 +3,46 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import remarkHtml from 'remark-html';
+
 import remarkGfm from 'remark-gfm';
+
+function processEmbeds(content: string): string {
+  return content.replace(/{{\s*embed:\s*(.*?)\s*}}/g, (match, url) => {
+    url = url.trim();
+
+    // Instagram
+    if (url.includes('instagram.com')) {
+      return `
+<blockquote class="instagram-media" data-instgrm-permalink="${url}" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+  <div style="padding:16px;">
+    <a href="${url}" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
+      View this post on Instagram
+    </a>
+  </div>
+</blockquote>`;
+    }
+
+    // YouTube
+    if (url.includes('youtube.com') || url.includes('youtu.be')) {
+      let videoId = '';
+      if (url.includes('v=')) {
+        videoId = url.split('v=')[1]?.split('&')[0];
+      } else if (url.includes('youtu.be/')) {
+        videoId = url.split('youtu.be/')[1]?.split('?')[0];
+      }
+
+      if (videoId) {
+        return `
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-bottom: 2rem; border-radius: 0.5rem;">
+  <iframe src="https://www.youtube.com/embed/${videoId}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>`;
+      }
+    }
+
+    // Default: just link to it if unknown
+    return `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+  });
+}
 
 const contentDirectory = path.join(process.cwd(), 'content');
 
@@ -69,10 +108,12 @@ export async function getServiceBySlug(slug: string, locale: string = 'en'): Pro
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
+  const contentWithEmbeds = processEmbeds(content);
+
   const processedContent = await remark()
     .use(remarkGfm)
-    .use(remarkHtml)
-    .process(content);
+    .use(remarkHtml, { sanitize: false })
+    .process(contentWithEmbeds);
   const contentHtml = processedContent.toString();
 
   return {
@@ -119,10 +160,12 @@ export async function getEventBySlug(slug: string, locale: string = 'en'): Promi
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
+  const contentWithEmbeds = processEmbeds(content);
+
   const processedContent = await remark()
     .use(remarkGfm)
-    .use(remarkHtml)
-    .process(content);
+    .use(remarkHtml, { sanitize: false })
+    .process(contentWithEmbeds);
   const contentHtml = processedContent.toString();
 
   return {
@@ -169,10 +212,12 @@ export async function getResourceBySlug(slug: string, locale: string = 'en'): Pr
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
+  const contentWithEmbeds = processEmbeds(content);
+
   const processedContent = await remark()
     .use(remarkGfm)
-    .use(remarkHtml)
-    .process(content);
+    .use(remarkHtml, { sanitize: false })
+    .process(contentWithEmbeds);
   const contentHtml = processedContent.toString();
 
   return {

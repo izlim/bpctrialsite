@@ -25,6 +25,8 @@ export async function generateMetadata({ params }: { params: { slug: string; loc
   };
 }
 
+import InstagramEmbed from '@/components/InstagramEmbed';
+
 export default async function EventPage({ params }: { params: { slug: string; locale: string } }) {
   if (!locales.includes(params.locale as Locale)) {
     notFound();
@@ -38,6 +40,7 @@ export default async function EventPage({ params }: { params: { slug: string; lo
 
   return (
     <div className="container mx-auto px-4 py-16">
+      <InstagramEmbed />
       <div className="max-w-4xl mx-auto">
         <Link href={`/${params.locale}/events`} className="text-primary-600 hover:text-primary-700 mb-4 inline-block">
           ← {params.locale === 'en' ? 'Back to All Events' : '返回活动列表'}

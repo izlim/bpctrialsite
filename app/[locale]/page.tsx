@@ -13,10 +13,18 @@ export default async function HomePage({ params }: { params: { locale: string } 
     notFound();
   }
 
+  const allEvents = await getEvents(params.locale);
+
+  // Filter for future events only (nearest first)
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+
+  const upcomingEvents = allEvents
+    .filter(event => new Date(event.frontmatter.date) >= yesterday)
+    .slice(0, 3);
+
   const services = await getServices(params.locale);
-  const events = await getEvents();
   const featuredService = services[0];
-  const upcomingEvents = events.slice(0, 3);
 
   return (
     <HomePageClient
