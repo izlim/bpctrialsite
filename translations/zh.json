@@ -70,7 +70,12 @@
     "ministries": "事工",
     "ministriesDesc": "找到服务和他人的地方",
     "resources": "资源",
-    "resourcesDesc": "每日灵修、圣经学习等"
+    "resourcesDesc": "每日灵修、圣经学习等",
+    "liveStream": {
+      "title": "即将播出的直播",
+      "subtitle": "通过YouTube加入我们的下一次崇拜。无论您身在何处，都请与我们一同敬拜！",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Cdo7Td--gcM"
+    }
   },
   "about": {
     "title": "关于伯大尼长老会",

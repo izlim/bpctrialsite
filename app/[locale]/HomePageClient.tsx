@@ -14,6 +14,14 @@ interface HomePageClientProps {
 export default function HomePageClient({ featuredService, upcomingEvents }: HomePageClientProps) {
   const { locale, t } = useLocale();
 
+  const getYoutubeId = (url: string) => {
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    const match = url.match(regExp);
+    return (match && match[2].length === 11) ? match[2] : null;
+  };
+
+  const liveStreamYoutubeId = t.home.liveStream?.youtubeUrl ? getYoutubeId(t.home.liveStream.youtubeUrl) : null;
+
   return (
     <div>
       {/* Hero Section */}
@@ -63,6 +71,33 @@ export default function HomePageClient({ featuredService, upcomingEvents }: Home
           </div>
         </div>
       </section>
+
+      {/* Live Stream Section */}
+      {liveStreamYoutubeId && (
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-10">
+                <h2 className="text-3xl font-bold mb-4">{t.home.liveStream.title}</h2>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  {t.home.liveStream.subtitle}
+                </p>
+              </div>
+              <div className="bg-white rounded-xl shadow-xl overflow-hidden ring-1 ring-gray-200">
+                <div className="aspect-video">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${liveStreamYoutubeId}`}
+                    title={t.home.liveStream.title}
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Featured Service */}
       {featuredService && (

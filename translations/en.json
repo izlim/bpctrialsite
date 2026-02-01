@@ -70,7 +70,12 @@
     "ministries": "Ministries",
     "ministriesDesc": "Find a place to serve and connect with others",
     "resources": "Resources",
-    "resourcesDesc": "Daily devotions, Bible studies, and more"
+    "resourcesDesc": "Daily devotions, Bible studies, and more",
+    "liveStream": {
+      "title": "Upcoming Live Stream",
+      "subtitle": "Join us for our next service live on YouTube. Tune in to worship with us from wherever you are!",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Cdo7Td--gcM"
+    }
   },
   "about": {
     "title": "About Bethany Presbyterian Church",
