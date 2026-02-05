@@ -80,9 +80,9 @@
   "about": {
     "title": "About Bethany Presbyterian Church",
     "mission": "Our Mission",
-    "missionText": "To glorify God by making disciples of all nations through the proclamation of the Gospel, the teaching of God's Word, and the building of a loving community that serves one another and reaches out to the world.",
+    "missionText": "Our Mission is to develop servants of Christ and equip leaders in the community.",
     "vision": "Our Vision",
-    "visionText": "To be a vibrant, Christ-centered community where every member is growing in faith, connected in fellowship, and engaged in ministry, impacting Singapore and beyond with the love and truth of Jesus Christ.",
+    "visionText": "Our Vision is to build a church passionate for Christ, filled with blessings abundant, and one that impacts communities to glorify God's name.",
     "history": "Our History",
     "historyText": "Bethany Presbyterian Church was established in [YEAR] with a vision to serve the community and spread the Gospel in Singapore. What began as a small gathering of faithful believers has grown into a vibrant congregation committed to God's work.",
     "leadership": "Our Leadership",
@@ -151,7 +151,11 @@
     "title": "Ministries",
     "description": "At Bethany Presbyterian Church, we believe that every member has a role to play in the body of Christ. Explore our ministries and find a place to serve, grow, and connect with others.",
     "interested": "Interested in Serving?",
-    "interestedText": "We'd love to help you find a place to serve and use your gifts for God's kingdom. Whether you're interested in one of these ministries or have other ideas, we're here to help you get connected."
+    "interestedText": "We'd love to help you find a place to serve and use your gifts for God's kingdom. Whether you're interested in one of these ministries or have other ideas, we're here to help you get connected.",
+    "trainingTitle": "Training Ministries",
+    "servingTitle": "Serving Opportunities",
+    "outreachTitle": "Outreach Ministry",
+    "signUp": "Sign Up"
   },
   "resources": {
     "title": "Resources",

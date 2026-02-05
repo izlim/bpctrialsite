@@ -19,13 +19,13 @@ export default function Navigation() {
     { href: '/', key: 'home' },
     { href: '/about', key: 'about' },
     { href: '/visit', key: 'visit' },
-    { href: '/what-to-expect', key: 'whatToExpect' },
-    { href: '/beliefs', key: 'beliefs' },
+    //{ href: '/what-to-expect', key: 'whatToExpect' },
+    //{ href: '/beliefs', key: 'beliefs' },
     { href: '/services', key: 'services' },
     { href: '/events', key: 'events' },
     { href: '/ministries', key: 'ministries' },
-    { href: '/resources', key: 'resources' },
-    { href: '/give', key: 'give' },
+    //{ href: '/resources', key: 'resources' },
+    //{ href: '/give', key: 'give' },
     { href: '/contact', key: 'contact' },
   ];
 
@@ -48,8 +48,8 @@ export default function Navigation() {
               key={link.href}
               href={localizedHref}
               className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActive(link.href)
-                  ? 'bg-primary-100 text-primary-700'
-                  : 'text-gray-700 hover:bg-gray-100'
+                ? 'bg-primary-100 text-primary-700'
+                : 'text-gray-700 hover:bg-gray-100'
                 }`}
             >
               {t.nav[link.key as keyof typeof t.nav]}
@@ -93,8 +93,8 @@ export default function Navigation() {
                   href={localizedHref}
                   onClick={() => setIsOpen(false)}
                   className={`block px-4 py-2 rounded-md text-base font-medium ${isActive(link.href)
-                      ? 'bg-primary-100 text-primary-700'
-                      : 'text-gray-700 hover:bg-gray-100'
+                    ? 'bg-primary-100 text-primary-700'
+                    : 'text-gray-700 hover:bg-gray-100'
                     }`}
                 >
                   {t.nav[link.key as keyof typeof t.nav]}

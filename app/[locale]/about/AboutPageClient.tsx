@@ -19,13 +19,16 @@ export default function AboutPageClient() {
             {t.about.missionText}
           </p>
           <h2 className="text-3xl font-semibold mb-4">{t.about.vision}</h2>
-          <p className="text-lg text-gray-700">
+          <p className="text-lg text-gray-700 mb-4">
             {t.about.visionText}
+          </p>
+          <p className="text-gray-700 mb-4">
+            {locale == 'en' ? 'Swarms of living creatures will live wherever the river flows. There will be large numbers of fish, because this water flows there and makes the salt water fresh; so where the river flows everything will live.\n (Ezekiel 47:9)' : '这河水所到之处，凡滋生的动物都必生活，并且因这流来的水必有极多的鱼，海水也变甜了。这河水所到之处，百物都必生活\n (以西结书 47:9)'}
           </p>
         </section>
 
         {/* History */}
-        <section className="mb-12">
+        {/*<section className="mb-12">
           <h2 className="text-3xl font-semibold mb-4">{t.about.history}</h2>
           <p className="text-gray-700 mb-4">
             {t.about.historyText}
@@ -40,10 +43,10 @@ export default function AboutPageClient() {
             <li>{locale === 'en' ? 'Service to our community and world' : '服务我们的社区和世界'}</li>
             <li>{locale === 'en' ? 'Discipleship and spiritual growth' : '门徒训练和属灵成长'}</li>
           </ul>
-        </section>
+        </section> */}
 
         {/* Leadership */}
-        <section className="mb-12">
+        {/*<section className="mb-12">
           <h2 className="text-3xl font-semibold mb-6">{t.about.leadership}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-gray-50 p-6 rounded-lg">
@@ -55,7 +58,7 @@ export default function AboutPageClient() {
               </h3>
               <p className="text-gray-600 text-center mb-4">{t.about.seniorPastor}</p>
               <p className="text-gray-700 text-sm">
-                {locale === 'en' 
+                {locale === 'en'
                   ? 'Pastor Name has been serving at Bethany Presbyterian Church since [YEAR]. He is passionate about expository preaching and discipleship, with a heart for seeing people grow in their relationship with Christ.'
                   : '牧师姓名自[年份]起在伯大尼长老会服事。他热衷于释经讲道和门徒训练，渴望看到人们在与基督的关系中成长。'}
               </p>
@@ -75,10 +78,10 @@ export default function AboutPageClient() {
               </p>
             </div>
           </div>
-        </section>
+        </section>*/}
 
         {/* Denomination */}
-        <section className="mb-12">
+        {/*<section className="mb-12">
           <h2 className="text-3xl font-semibold mb-4">{t.about.presbyterian}</h2>
           <p className="text-gray-700 mb-4">
             {locale === 'en'
@@ -92,7 +95,7 @@ export default function AboutPageClient() {
             <li>{locale === 'en' ? 'Elder-led governance and congregational participation' : '长老治理和会众参与'}</li>
             <li>{locale === 'en' ? 'Connectionalism with other Presbyterian churches' : '与其他长老会教会的联系'}</li>
           </ul>
-        </section>
+        </section>*/}
 
         {/* Photo Gallery Placeholder */}
         <section>
