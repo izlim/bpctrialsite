@@ -10,10 +10,14 @@ interface ImagePlaceholderProps {
 
 export default function ImagePlaceholder({ className = '', text, icon, src, alt }: ImagePlaceholderProps) {
     if (src) {
+        // Prepend basePath for absolute paths (needed for GitHub Pages deployment)
+        const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+        const fullSrc = src.startsWith('/') ? `${basePath}${src}` : src;
+
         return (
             <div className={`relative overflow-hidden bg-gray-200 ${className}`}>
                 <img
-                    src={src}
+                    src={fullSrc}
                     alt={alt || text || 'Image'}
                     className="w-full h-full object-cover"
                 />
