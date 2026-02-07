@@ -3,6 +3,7 @@
 import { useLocale } from '@/components/LocaleProvider';
 import { getLocalizedPath } from '@/lib/i18n';
 import Link from 'next/link';
+import ImagePlaceholder from '@/components/ImagePlaceholder';
 
 export default function VisitPageClient() {
   const { locale, t } = useLocale();
@@ -59,6 +60,11 @@ export default function VisitPageClient() {
             <p className="text-gray-600">
               {t.contact.email}: <a href={`mailto:${t.contact.emailText}`} className="text-primary-600 hover:text-primary-700">{t.contact.emailText}</a>
             </p>
+          </div>
+
+          {/* Location Photo */}
+          <div className="w-full max-w-md mx-auto aspect-3/4 rounded-lg overflow-hidden border-2 border-primary-100 mb-6 shadow-lg">
+            <ImagePlaceholder className="w-full h-full" text="Church Building Photo" src="/images/bpc-building-pic-.jpg" />
           </div>
 
           {/* Live Google Map */}

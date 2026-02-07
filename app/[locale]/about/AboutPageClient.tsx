@@ -3,6 +3,7 @@
 import { useLocale } from '@/components/LocaleProvider';
 import { getLocalizedPath } from '@/lib/i18n';
 import Link from 'next/link';
+import ImagePlaceholder from '@/components/ImagePlaceholder';
 
 export default function AboutPageClient() {
   const { locale, t } = useLocale();
@@ -104,11 +105,11 @@ export default function AboutPageClient() {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-              <div key={i} className="aspect-square bg-gray-200 rounded-lg flex items-center justify-center">
-                <span className="text-gray-400">
-                  {locale === 'en' ? `Photo ${i}` : `照片 ${i}`}
-                </span>
-              </div>
+              <ImagePlaceholder
+                key={i}
+                className="aspect-square rounded-lg"
+                text={locale === 'en' ? `Photo ${i}` : `照片 ${i}`}
+              />
             ))}
           </div>
         </section>

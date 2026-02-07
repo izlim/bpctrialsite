@@ -62,6 +62,7 @@ export interface EventFrontmatter {
   time?: string;
   location?: string;
   recurring?: boolean;
+  image?: string;
 }
 
 export interface ResourceFrontmatter {

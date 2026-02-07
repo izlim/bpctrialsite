@@ -4,6 +4,7 @@ date: "2026-04-30"
 time: "30 Apr to 2 May 2026"
 location: "Holiday Inn, Johor Bahru City Centre"
 recurring: false
+image: "/images/ccc.jpeg"
 ---
 
 Join us for our Youth and Young Adults Retreat! For ages 13 - 35!

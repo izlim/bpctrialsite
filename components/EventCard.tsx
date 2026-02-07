@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { formatDate } from '@/lib/utils';
 import { EventFrontmatter } from '@/lib/markdown';
 import { getLocaleFromPath, getLocalizedPath } from '@/lib/i18n';
+import ImagePlaceholder from './ImagePlaceholder';
 
 interface EventCardProps {
   event: {
@@ -20,6 +21,11 @@ export default function EventCard({ event }: EventCardProps) {
 
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+      <ImagePlaceholder
+        className="h-48 w-full"
+        text="Event Image"
+        src={event.frontmatter.image}
+      />
       <div className="p-6">
         <Link href={eventPath}>
           <h3 className="text-xl font-semibold text-gray-900 hover:text-primary-600 transition-colors mb-3">

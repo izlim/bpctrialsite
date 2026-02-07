@@ -1,6 +1,7 @@
 'use client';
 
 import { useLocale } from '@/components/LocaleProvider';
+import ImagePlaceholder from '@/components/ImagePlaceholder';
 
 
 export default function MinistriesPageClient() {
@@ -74,9 +75,12 @@ export default function MinistriesPageClient() {
                 <h2 className="text-3xl font-bold mb-8 text-primary-800">{t.ministries.trainingTitle}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                     {trainingMinistries.map((ministry, index) => (
-                        <div key={index} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                            <h2 className="text-2xl font-semibold mb-3">{ministry.title}</h2>
-                            <p className="text-gray-700 mb-4">{ministry.description}</p>
+                        <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                            <ImagePlaceholder className="h-48 w-full" text={ministry.title} />
+                            <div className="p-6">
+                                <h2 className="text-2xl font-semibold mb-3">{ministry.title}</h2>
+                                <p className="text-gray-700 mb-4">{ministry.description}</p>
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -84,9 +88,12 @@ export default function MinistriesPageClient() {
                 <h2 className="text-3xl font-bold mb-8 text-primary-800">{t.ministries.outreachTitle}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                     {outreachMinistries.map((ministry, index) => (
-                        <div key={index} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                            <h2 className="text-2xl font-semibold mb-3">{ministry.title}</h2>
-                            <p className="text-gray-700 mb-4">{ministry.description}</p>
+                        <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                            <ImagePlaceholder className="h-48 w-full" text={ministry.title} />
+                            <div className="p-6">
+                                <h2 className="text-2xl font-semibold mb-3">{ministry.title}</h2>
+                                <p className="text-gray-700 mb-4">{ministry.description}</p>
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -94,9 +101,12 @@ export default function MinistriesPageClient() {
                 <h2 className="text-3xl font-bold mb-8 text-primary-800">{t.ministries.servingTitle}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {servingOpportunities.map((opportunity, index) => (
-                        <div key={index} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                            <h2 className="text-2xl font-semibold mb-3">{opportunity.title}</h2>
-                            <p className="text-gray-700 mb-4">{opportunity.description}</p>
+                        <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                            <ImagePlaceholder className="h-48 w-full" text={opportunity.title} />
+                            <div className="p-6">
+                                <h2 className="text-2xl font-semibold mb-3">{opportunity.title}</h2>
+                                <p className="text-gray-700 mb-4">{opportunity.description}</p>
+                            </div>
                         </div>
                     ))}
                 </div>

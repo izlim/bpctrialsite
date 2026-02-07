@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { formatDate } from '@/lib/utils';
 import { ServiceFrontmatter } from '@/lib/markdown';
 import { getLocaleFromPath, getLocalizedPath } from '@/lib/i18n';
+import ImagePlaceholder from './ImagePlaceholder';
 
 interface ServiceCardProps {
   service: {
@@ -39,9 +40,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
           ></iframe>
         </div>
       ) : (
-        <div className="aspect-video bg-gray-100 flex items-center justify-center">
-          <span className="text-4xl text-gray-300">📹</span>
-        </div>
+        <ImagePlaceholder className="aspect-video" text="No Video Available" />
       )}
       <div className="p-6">
         <div className="flex items-start justify-between mb-3">
