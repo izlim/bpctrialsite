@@ -63,9 +63,6 @@ export default function ContactPageClient() {
                   ? 'For pastoral needs, prayer requests, or spiritual guidance'
                   : '用于牧养需求、祷告请求或属灵指导'}
               </p>
-              <a href="mailto:pastor@bethanypc.org.sg" className="text-primary-600 hover:text-primary-700 text-sm">
-                pastor@bethanypc.org.sg
-              </a>
             </div>
             <div>
               <h3 className="font-semibold mb-2">{t.contact.general}</h3>
@@ -74,9 +71,6 @@ export default function ContactPageClient() {
                   ? 'Questions about services, events, or church information'
                   : '关于服务、活动或教会信息的问题'}
               </p>
-              <a href="mailto:info@bethanypc.org.sg" className="text-primary-600 hover:text-primary-700 text-sm">
-                info@bethanypc.org.sg
-              </a>
             </div>
             <div>
               <h3 className="font-semibold mb-2">{t.contact.ministry}</h3>
@@ -85,9 +79,6 @@ export default function ContactPageClient() {
                   ? 'Interested in joining a ministry or small group?'
                   : '有兴趣加入事工或小组吗？'}
               </p>
-              <a href="mailto:ministries@bethanypc.org.sg" className="text-primary-600 hover:text-primary-700 text-sm">
-                ministries@bethanypc.org.sg
-              </a>
             </div>
           </div>
         </div>

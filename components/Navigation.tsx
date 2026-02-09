@@ -19,7 +19,7 @@ export default function Navigation() {
     { href: '/', key: 'home' },
     { href: '/about', key: 'about' },
     { href: '/visit', key: 'visit' },
-    //{ href: '/what-to-expect', key: 'whatToExpect' },
+    { href: '/what-to-expect', key: 'whatToExpect' },
     //{ href: '/beliefs', key: 'beliefs' },
     { href: '/services', key: 'services' },
     { href: '/events', key: 'events' },

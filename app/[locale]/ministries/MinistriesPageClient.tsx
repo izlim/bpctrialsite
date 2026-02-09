@@ -12,21 +12,25 @@ export default function MinistriesPageClient() {
             title: locale === 'en' ? 'Children\'s Ministry' : '儿童事工',
             description: locale === 'en' ? 'Partnering with parents to raise a generation that loves, honours, and fears the Lord throughout their lives, so that they will not depart from His ways even when they grow old' : '藉着与父母配搭，教养敬虔热情爱主的下一代成为末日耶和华的精兵，使孩子们一生敬畏神，就是到老也不偏离正道',
             ageRange: locale === 'en' ? 'Ages 0-12' : '0-12岁',
+            image: '/images/children.jpg', // Add image path here, e.g., '/images/childrens-ministry.jpg'
         },
         {
             title: locale === 'en' ? 'Youth Ministry' : '青少年事工',
             description: locale === 'en' ? 'Through weekly worship sessions, messages from the pulpit and cell group meetings, our youth can experience a life-changing relation with Jesus Christ' : '透过每周的敬拜、讲道和生命小组，青少年能体验到与耶稣基督之间生命改变的关系！',
             ageRange: locale === 'en' ? 'Ages 13-25' : '13-25岁',
+            image: '/images/youth.jpg', // Add image path here, e.g., '/images/youth-ministry.jpg'
         },
         {
             title: locale === 'en' ? 'Small Groups' : '祝福小组事工',
             description: locale === 'en' ? 'To help members grow in spiritual maturity through encouraging them to care and meet the spiritual, emotional, and physical needs of fellow brothers and sisters in Christ.' : '透过劝勉门徒迈向成熟和服侍来满足属灵、情感和身体的需要，来提供整个教会家庭的关系。',
             ageRange: locale === 'en' ? 'Catered to various age groups' : '各个年龄层',
+            image: '/images/cell.jpg', // Add image path here, e.g., '/images/small-groups.jpg'
         },
         {
             title: locale === 'en' ? 'Training and Equiping Ministry' : '培训装备事工',
             description: locale === 'en' ? 'To build up the Body of Christ towards maturity by means of instruction, teaching the Word of God, personal encouragement, and training people to walk as His disciples.' : '藉着指导、教导上帝的道、个人劝勉及培育主的门徒来建立基督的身体迈向成熟。',
             ageRange: locale === 'en' ? 'Catered to various age groups' : '各个年龄层',
+            image: '/images/training2.jpg', // Add image path here, e.g., '/images/training-ministry.jpg'
         },
     ];
 
@@ -34,14 +38,17 @@ export default function MinistriesPageClient() {
         {
             title: locale === 'en' ? 'Social Care' : '社会关怀',
             description: locale === 'en' ? 'To lead the congregation in living out the life of Christ and magnifying the love and grace of God through giving to the needy.' : '带领会众接着施予有需要的群体来活出基督的生命与彰显上帝的慈爱与怜悯。',
+            image: '/images/social.jpg', // Add image path here, e.g., '/images/social-care.jpg'
         },
         {
             title: locale === 'en' ? 'Mission & Evangelism' : '宣教布道',
             description: locale === 'en' ? 'To spread the gospel to all people and nations, and equip others to carry out the Great Commission.' : '将领受的福音信息传给万族万民，并且装备信徒履行主的大使命。',
+            image: '/images/missions.jpg', // Add image path here, e.g., '/images/mission-evangelism.jpg'
         },
         {
             title: locale === 'en' ? 'Early Childhood Education' : '学前教育',
             description: locale === 'en' ? 'To provide the community with good quality Childcare Services and Early Childhood Education, so as to develp young minds to their fullest potential.' : '为社区提供优质的幼儿托管服务和幼儿教育，以致发展与发挥他们的潜能。',
+            image: '/images/lotbeth.avif', // Add image path here, e.g., '/images/early-childhood.jpg'
         },
     ];
 
@@ -49,18 +56,22 @@ export default function MinistriesPageClient() {
         {
             title: locale === 'en' ? 'Worship' : '敬拜',
             description: locale === 'en' ? 'Join our worship team to lead the congregation in praise and worship.' : '加入我们的敬拜团队，带领会众进行赞美和敬拜。',
+            image: '/images/worship.jpg', // Add image path here, e.g., '/images/worship.jpg'
         },
         {
             title: locale === 'en' ? 'Befrienders' : '关怀大使',
             description: locale === 'en' ? 'Welcome and connect with visitors and new members, helping them feel at home.' : '欢迎并与访客和新成员建立联系，帮助他们感到宾至如归。',
+            image: '/images/welcome.jpg', // Add image path here, e.g., '/images/befrienders.jpg'
         },
         {
             title: locale === 'en' ? 'Sunday School Teachers' : '主日学老师',
             description: locale === 'en' ? 'Teach and disciple children in their walk with God.' : '教导和管教儿童与神同行。',
+            image: '/images/sundayschool.jpg', // Add image path here, e.g., '/images/sunday-school.jpg'
         },
         {
             title: locale === 'en' ? 'Prayer Warriors' : '代祷勇士',
             description: locale === 'en' ? 'Join our prayer team to pray for the church, community, and world.' : '加入我们的祷告团队，为教会、社区和世界祷告。',
+            image: '/images/prayer2.jpg', // Add image path here, e.g., '/images/prayer.jpg'
         },
     ];
 
@@ -76,7 +87,7 @@ export default function MinistriesPageClient() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                     {trainingMinistries.map((ministry, index) => (
                         <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                            <ImagePlaceholder className="h-48 w-full" text={ministry.title} />
+                            <ImagePlaceholder className="h-48 w-full" text={ministry.title} src={ministry.image} />
                             <div className="p-6">
                                 <h2 className="text-2xl font-semibold mb-3">{ministry.title}</h2>
                                 <p className="text-gray-700 mb-4">{ministry.description}</p>
@@ -89,7 +100,7 @@ export default function MinistriesPageClient() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                     {outreachMinistries.map((ministry, index) => (
                         <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                            <ImagePlaceholder className="h-48 w-full" text={ministry.title} />
+                            <ImagePlaceholder className="h-48 w-full" text={ministry.title} src={ministry.image} />
                             <div className="p-6">
                                 <h2 className="text-2xl font-semibold mb-3">{ministry.title}</h2>
                                 <p className="text-gray-700 mb-4">{ministry.description}</p>
@@ -102,7 +113,7 @@ export default function MinistriesPageClient() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {servingOpportunities.map((opportunity, index) => (
                         <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                            <ImagePlaceholder className="h-48 w-full" text={opportunity.title} />
+                            <ImagePlaceholder className="h-48 w-full" text={opportunity.title} src={opportunity.image} />
                             <div className="p-6">
                                 <h2 className="text-2xl font-semibold mb-3">{opportunity.title}</h2>
                                 <p className="text-gray-700 mb-4">{opportunity.description}</p>

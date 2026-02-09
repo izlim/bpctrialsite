@@ -4,8 +4,8 @@ import WhatToExpectPageClient from './WhatToExpectPageClient';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'What to Expect | Your First Visit | Bethany Presbyterian Church',
-  description: 'Learn what to expect during your first visit to Bethany Presbyterian Church, including service format, dress code, and children\'s programs.',
+  title: 'What to Expect | 新朋友指南 | Bethany Presbyterian Church',
+  description: 'Learn what to expect during your first visit to Bethany Presbyterian Church.',
 };
 
 export async function generateStaticParams() {

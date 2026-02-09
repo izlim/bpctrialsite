@@ -14,8 +14,19 @@ export default function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a future upgrade, this would submit to an API endpoint
-    console.log('Form submitted:', formData);
+
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Contact Form: ${formData.subject}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Phone: ${formData.phone}\n\n` +
+      `Message:\n${formData.message}`
+    );
+
+    // Open user's email client
+    window.location.href = `mailto:hello@bethanypc.org.sg?subject=${subject}&body=${body}`;
+
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);

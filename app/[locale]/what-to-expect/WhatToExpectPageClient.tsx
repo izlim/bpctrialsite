@@ -21,32 +21,35 @@ export default function WhatToExpectPageClient() {
                 {/* Service Format */}
                 <section className="mb-12">
                     <h2 className="text-3xl font-semibold mb-6">{t.whatToExpect.serviceFormat}</h2>
-                    <div className="space-y-6">
-                        <div className="bg-white p-6 rounded-lg shadow-md">
-                            <h3 className="text-xl font-semibold mb-3">{t.visit.sundayMorning} (9:30 AM)</h3>
-                            <ul className="list-disc list-inside text-gray-700 space-y-2">
-                                <li><strong>{locale === 'en' ? 'Welcome & Announcements' : '欢迎与报告'}</strong> {locale === 'en' ? '(5 minutes)' : '(5分钟)'}</li>
-                                <li><strong>{locale === 'en' ? 'Worship Through Music' : '音乐敬拜'}</strong> {locale === 'en' ? '(20 minutes) - Mix of traditional hymns and contemporary songs' : '(20分钟) - 传统赞美诗与现代诗歌'}</li>
-                                <li><strong>{locale === 'en' ? 'Scripture Reading' : '读经'}</strong> {locale === 'en' ? '(3 minutes)' : '(3分钟)'}</li>
-                                <li><strong>{locale === 'en' ? 'Message' : '讲道'}</strong> {locale === 'en' ? '(35-40 minutes) - Expository preaching from the Bible' : '(35-40分钟) - 圣经释经讲道'}</li>
-                                <li><strong>{locale === 'en' ? 'Response & Prayer' : '回应与祷告'}</strong> {locale === 'en' ? '(5 minutes)' : '(5分钟)'}</li>
-                                <li><strong>{locale === 'en' ? 'Benediction' : '祝福'}</strong> {locale === 'en' ? '(2 minutes)' : '(2分钟)'}</li>
-                            </ul>
-                            <p className="text-gray-600 mt-4 text-sm">
-                                {locale === 'en' ? 'Total service time: Approximately 90 minutes' : '总崇拜时间：约90分钟'}
-                            </p>
-                        </div>
-                        <div className="bg-white p-6 rounded-lg shadow-md">
-                            <h3 className="text-xl font-semibold mb-3">{t.visit.sundayEvening} (6:00 PM)</h3>
-                            <ul className="list-disc list-inside text-gray-700 space-y-2">
-                                <li><strong>{locale === 'en' ? 'Contemporary Worship' : '现代敬拜'}</strong> {locale === 'en' ? '(25 minutes) - Modern Christian music' : '(25分钟) - 现代基督教音乐'}</li>
-                                <li><strong>{locale === 'en' ? 'Message' : '讲道'}</strong> {locale === 'en' ? '(35-40 minutes) - Practical, applicable teaching' : '(35-40分钟) - 实用教导'}</li>
-                                <li><strong>{locale === 'en' ? 'Fellowship Time' : '团契时间'}</strong> {locale === 'en' ? '(15 minutes) - Coffee and conversation' : '(15分钟) - 多加咖啡与交流'}</li>
-                            </ul>
-                            <p className="text-gray-600 mt-4 text-sm">
-                                {locale === 'en' ? 'Total service time: Approximately 75 minutes' : '总崇拜时间：约75分钟'}
-                            </p>
-                        </div>
+                    <div className="bg-white p-6 rounded-lg shadow-md">
+                        <ul className="space-y-4 text-gray-700">
+                            <li className="flex items-start">
+                                <span className="font-bold w-24 flex-shrink-0">25 mins</span>
+                                <span>{locale === 'en' ? 'Worship' : '敬拜'}</span>
+                            </li>
+                            <li className="flex items-start">
+                                <span className="font-bold w-24 flex-shrink-0">15 mins</span>
+                                <div>
+                                    <p>{locale === 'en' ? 'Welcome and Announcements' : '欢迎与报告'}</p>
+                                    <p className="text-sm text-gray-500 italic mt-1">
+                                        {locale === 'en'
+                                            ? '(10 mins of Holy Communion on the first Sunday of the month)'
+                                            : '(每月第一个主日：10分钟圣餐礼)'}
+                                    </p>
+                                </div>
+                            </li>
+                            <li className="flex items-start">
+                                <span className="font-bold w-24 flex-shrink-0">45 mins</span>
+                                <span>{locale === 'en' ? 'Sermon' : '讲道'}</span>
+                            </li>
+                            <li className="flex items-start">
+                                <span className="font-bold w-24 flex-shrink-0">10 mins</span>
+                                <span>{locale === 'en' ? 'Closing Song' : '回应诗歌/结束诗歌'}</span>
+                            </li>
+                        </ul>
+                        <p className="text-gray-600 mt-6 text-sm border-t pt-4">
+                            {locale === 'en' ? 'Total service time: Approximately 90-100 minutes' : '总崇拜时间：约90-100分钟'}
+                        </p>
                     </div>
                 </section>
 

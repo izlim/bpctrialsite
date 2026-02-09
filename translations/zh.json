@@ -3,7 +3,7 @@
     "home": "首页",
     "about": "关于我们",
     "visit": "访问我们",
-    "whatToExpect": "期待什么",
+    "whatToExpect": "新朋友指南",
     "beliefs": "信仰",
     "services": "崇拜回顾",
     "events": "活动",
@@ -34,7 +34,7 @@
     "welcome": "欢迎来到伯大尼长老会",
     "subtitle": "一个致力于服务上帝和邻舍的欢迎信徒社区。加入我们，一起在信心、爱心和服务中成长。",
     "planVisit": "计划您的访问",
-    "whatToExpect": "期待什么",
+    "whatToExpect": "新朋友指南",
     "joinUs": "加入我们的敬拜",
     "services": [
       {
@@ -107,7 +107,7 @@
     "planVisitText": "我们很乐意欢迎您！如果您是第一次计划访问，以下是可以期待的："
   },
   "whatToExpect": {
-    "title": "期待什么",
+    "title": "新朋友指南",
     "intro": "我们很高兴您考虑访问伯大尼长老会！无论您是第一次来教会还是寻找新的教会之家，我们都希望您感到受欢迎和舒适。",
     "serviceFormat": "崇拜形式",
     "worshipStyle": "敬拜风格",
@@ -191,7 +191,7 @@
     "officeHours": "办公时间",
     "officeHoursText": "星期一 - 星期五：上午9:00 - 下午5:00\n星期六：上午9:00 - 中午12:00\n星期日：休息",
     "sendMessage": "发送消息",
-    "otherWays": "其他联系方式",
+    "otherWays": "有问题吗？用以上的方式联系我们！",
     "pastoralCare": "牧养关怀",
     "general": "一般咨询",
     "ministry": "事工问题"

@@ -76,49 +76,35 @@ export default function HomePageClient({ featuredService, upcomingEvents }: Home
         </div>
       </section>
 
-      {/* Live Stream Section */}
-      {liveStreamYoutubeId && (
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-10">
-                <h2 className="text-3xl font-bold mb-4">{t.home.liveStream.title}</h2>
-                <p className="text-gray-600 max-w-2xl mx-auto">
-                  {t.home.liveStream.subtitle}
-                </p>
-              </div>
-              <div className="bg-white rounded-xl shadow-xl overflow-hidden ring-1 ring-gray-200">
-                <div className="aspect-video">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${liveStreamYoutubeId}`}
-                    title={t.home.liveStream.title}
-                    className="w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
+      {/* Live Stream / Latest Video Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-bold mb-4">
+                {locale === 'en' ? 'Latest Service' : '最新崇拜'}
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                {locale === 'en'
+                  ? 'Watch our latest service or join us live when we\'re streaming!'
+                  : '观看我们最新的崇拜或在我们直播时加入我们！'}
+              </p>
+            </div>
+            <div className="bg-white rounded-xl shadow-xl overflow-hidden ring-1 ring-gray-200">
+              <div className="aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/videoseries?list=UU4VQHI9TGLIEBYNfmSTuVZA"
+                  title={locale === 'en' ? 'Latest Service' : '最新崇拜'}
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
-      {/* Featured Service */}
-      {featuredService && (
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl font-bold">{t.home.latestService}</h2>
-              <Link href={getLocalizedPath('/services', locale)} className="text-primary-600 hover:text-primary-700 font-medium">
-                {t.common.viewAll} →
-              </Link>
-            </div>
-            <div className="max-w-4xl">
-              <ServiceCard service={featuredService} />
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Upcoming Events */}
       {upcomingEvents.length > 0 && (
