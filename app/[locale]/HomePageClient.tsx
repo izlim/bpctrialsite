@@ -5,6 +5,7 @@ import { useLocale } from '@/components/LocaleProvider';
 import { getLocalizedPath } from '@/lib/i18n';
 import ServiceCard from '@/components/ServiceCard';
 import EventCard from '@/components/EventCard';
+import ImageCarousel from '@/components/ImageCarousel';
 import ImagePlaceholder from '@/components/ImagePlaceholder';
 
 interface HomePageClientProps {
@@ -14,6 +15,13 @@ interface HomePageClientProps {
 
 export default function HomePageClient({ featuredService, upcomingEvents }: HomePageClientProps) {
   const { locale, t } = useLocale();
+
+  const heroImages = [
+    '/images/frontpage.jpg',
+    '/images/welcome.jpg',
+    '/images/lotbeth.avif',
+    '/images/worship.jpg',
+  ];
 
   const getYoutubeId = (url: string) => {
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
@@ -49,7 +57,10 @@ export default function HomePageClient({ featuredService, upcomingEvents }: Home
             </div>
           </div>
           <div className="flex-1 w-full max-w-md md:max-w-none">
-            <ImagePlaceholder className="aspect-video w-full rounded-lg shadow-xl" text="Church" src="/images/frontpage.jpg" />
+            <ImageCarousel
+              images={heroImages}
+              className="aspect-video w-full rounded-lg shadow-xl overflow-hidden"
+            />
           </div>
         </div>
       </section>

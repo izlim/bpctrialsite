@@ -29,6 +29,15 @@ module.exports = {
           500: '#d97706',
         }
       },
+      keyframes: {
+        'subtle-zoom': {
+          '0%': { transform: 'scale(1.05)' },
+          '100%': { transform: 'scale(1.15)' },
+        },
+      },
+      animation: {
+        'subtle-zoom': 'subtle-zoom 20s ease-in-out infinite alternate',
+      },
     },
   },
   plugins: [],

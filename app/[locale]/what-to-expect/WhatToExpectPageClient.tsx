@@ -105,12 +105,12 @@ export default function WhatToExpectPageClient() {
                     <h2 className="text-3xl font-semibold mb-6">{t.whatToExpect.children}</h2>
                     <div className="space-y-6">
                         <div className="bg-white p-6 rounded-lg shadow-md">
-                            <h3 className="text-xl font-semibold mb-3">{locale === 'en' ? 'Nursery (Ages 0-2)' : '育儿室 (0-2岁)'}</h3>
+                            <h3 className="text-xl font-semibold mb-3">{locale === 'en' ? 'Nursery (Ages 1.5-6)' : '育儿室 (1.5-6岁)'}</h3>
                             <p className="text-gray-700 mb-2">
                                 {locale === 'en' ? 'Safe, loving care for infants and toddlers during both services. Our trained volunteers provide age-appropriate activities and care.' : '在两场崇拜期间为婴幼儿提供安全、充满爱心的照顾。我们要训练有素的志愿者提供适合年龄的活动和照顾。'}
                             </p>
                             <p className="text-sm text-gray-600">
-                                <strong>{t.common.location}:</strong> {locale === 'en' ? 'First floor, Room 101' : '一楼，101室'}
+                                <strong>{t.common.location}:</strong> {locale === 'en' ? 'Second floor, Room 2/3' : '二楼，2/3 课室'}
                             </p>
                         </div>
                         <div className="bg-white p-6 rounded-lg shadow-md">
@@ -119,7 +119,7 @@ export default function WhatToExpectPageClient() {
                                 {locale === 'en' ? 'Engaging Bible lessons, songs, and activities designed for children. Classes are divided by age groups to ensure age-appropriate teaching.' : '为儿童设计的有趣圣经课程、歌曲和活动。班级按年龄分组，以确保适合年龄的教学。'}
                             </p>
                             <p className="text-sm text-gray-600">
-                                <strong>{t.common.time}:</strong> {locale === 'en' ? 'During Sunday morning service (9:30 AM)' : '主日早堂期间 (上午9:30)'}
+                                <strong>{t.common.time}:</strong> {locale === 'en' ? 'During Sunday main service (11:30 AM)' : '主日早堂期间 (上午11:30)'}
                             </p>
                         </div>
                         <div className="bg-white p-6 rounded-lg shadow-md">
@@ -128,7 +128,7 @@ export default function WhatToExpectPageClient() {
                                 {locale === 'en' ? 'Dynamic programs designed to help teenagers grow in their faith, build friendships, and serve others.' : '充满活力的活动，旨在帮助青少年在信仰中成长，建立友谊并服务他人。'}
                             </p>
                             <p className="text-sm text-gray-600">
-                                <strong>{t.common.date}:</strong> {locale === 'en' ? 'Sunday: Evening service and youth group; Saturday: Youth fellowship at 3:00 PM' : '周日：晚堂崇拜和青年团契；周六：下午3:00青年团契'}
+                                <strong>{t.common.date}:</strong> {locale === 'en' ? 'Sunday: service and youth group; Sunday: Youth fellowship at 11:30 AM, Grace Auditorium' : '周日：崇拜和青年团契；周日：下午11:30青年团契，主恩楼'}
                             </p>
                         </div>
                     </div>
