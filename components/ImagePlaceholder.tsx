@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import NextImage from 'next/image';
 
 interface ImagePlaceholderProps {
     className?: string;
@@ -16,10 +16,12 @@ export default function ImagePlaceholder({ className = '', text, icon, src, alt 
 
         return (
             <div className={`relative overflow-hidden bg-gray-200 ${className}`}>
-                <img
+                <NextImage
                     src={fullSrc}
                     alt={alt || text || 'Image'}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
             </div>
         );

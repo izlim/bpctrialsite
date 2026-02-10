@@ -17,10 +17,10 @@ export default function HomePageClient({ featuredService, upcomingEvents }: Home
   const { locale, t } = useLocale();
 
   const heroImages = [
-    '/images/frontpage.jpg',
-    '/images/welcome.jpg',
-    '/images/lotbeth.avif',
-    '/images/worship.jpg',
+    '/images/hero-1.jpg',
+    '/images/hero-2.jpg',
+    '/images/hero-3.jpg',
+    '/images/hero-4.jpg',
   ];
 
   const getYoutubeId = (url: string) => {

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import NextImage from 'next/image';
 
 interface ImageCarouselProps {
     images: string[];
@@ -34,10 +35,12 @@ export default function ImageCarousel({ images, interval = 5000, className = '' 
                     className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
                         }`}
                 >
-                    <img
+                    <NextImage
                         src={getFullSrc(src)}
                         alt={`Slide ${index + 1}`}
-                        className="w-full h-full object-cover transform scale-105 animate-subtle-zoom"
+                        fill
+                        className="object-cover transform scale-105 animate-subtle-zoom"
+                        priority={index === 0}
                     />
                 </div>
             ))}
