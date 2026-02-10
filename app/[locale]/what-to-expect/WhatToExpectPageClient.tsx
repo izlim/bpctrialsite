@@ -109,7 +109,7 @@ export default function WhatToExpectPageClient() {
                                 </div>
                             </div>
                             <p className="text-primary-700 mt-8 font-semibold text-lg italic">
-                                "{locale === 'en' ? 'The most important thing is that you\'re here!' : '最重要的是你来了！'}"
+                                {locale === 'en' ? 'The most important thing is that you\'re here!' : '最重要的是你来了！'}
                             </p>
                         </section>
                     </div>
