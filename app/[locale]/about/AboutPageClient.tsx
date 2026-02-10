@@ -41,7 +41,7 @@ export default function AboutPageClient() {
           {/* Featured Verse */}
           <section className="mb-20">
             <div className="bg-primary-50 rounded-3xl p-10 md:p-16 text-center relative overflow-hidden border border-primary-100">
-              <div className="absolute top-0 left-0 text-primary-200 text-9xl font-serif opacity-20 transform -translate-x-4 -translate-y-8">"</div>
+              <div className="absolute top-0 left-0 text-primary-200 text-9xl font-serif opacity-20 transform -translate-x-4 -translate-y-8"></div>
               <blockquote className="relative z-10 max-w-4xl mx-auto">
                 <p className="text-2xl md:text-3xl font-serif text-primary-900 leading-relaxed italic mb-6">
                   {locale == 'en'
