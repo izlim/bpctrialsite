@@ -5,7 +5,28 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { LocaleProvider } from '@/components/LocaleProvider';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+});
+
+import localFont from 'next/font/local';
+
+const gensen = localFont({
+  src: [
+    {
+      path: '../public/fonts/GenSenRounded2TW-M-01.ttf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/GenSenRounded2TC-M-02.ttf',
+      weight: '600',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-gensen',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -56,7 +77,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${gensen.variable} font-sans`}>
         <LocaleProvider>
           <Header />
           <main className="min-h-screen">

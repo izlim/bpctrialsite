@@ -19,6 +19,7 @@ module.exports = {
           700: '#26153b',
           800: '#1e1130',
           900: '#130a1f',
+          950: '#0a0510',
         },
         accent: {
           50: '#fef3c7',
@@ -27,7 +28,11 @@ module.exports = {
           300: '#fbbf24',
           400: '#f59e0b',
           500: '#d97706',
-        }
+        },
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-gensen)', 'var(--font-inter)', 'serif'],
       },
       keyframes: {
         'subtle-zoom': {

@@ -76,67 +76,106 @@ export default function MinistriesPageClient() {
     ];
 
     return (
-        <div className="container mx-auto px-4 py-16">
-            <div className="max-w-6xl mx-auto">
-                <h1 className="text-4xl font-bold mb-4">{t.ministries.title}</h1>
-                <p className="text-lg text-gray-600 mb-12">
-                    {t.ministries.description}
-                </p>
-
-                <h2 className="text-3xl font-bold mb-8 text-primary-800">{t.ministries.trainingTitle}</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                    {trainingMinistries.map((ministry, index) => (
-                        <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                            <ImagePlaceholder className="h-48 w-full" text={ministry.title} src={ministry.image} />
-                            <div className="p-6">
-                                <h2 className="text-2xl font-semibold mb-3">{ministry.title}</h2>
-                                <p className="text-gray-700 mb-4">{ministry.description}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                <h2 className="text-3xl font-bold mb-8 text-primary-800">{t.ministries.outreachTitle}</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                    {outreachMinistries.map((ministry, index) => (
-                        <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                            <ImagePlaceholder className="h-48 w-full" text={ministry.title} src={ministry.image} />
-                            <div className="p-6">
-                                <h2 className="text-2xl font-semibold mb-3">{ministry.title}</h2>
-                                <p className="text-gray-700 mb-4">{ministry.description}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                <h2 className="text-3xl font-bold mb-8 text-primary-800">{t.ministries.servingTitle}</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {servingOpportunities.map((opportunity, index) => (
-                        <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                            <ImagePlaceholder className="h-48 w-full" text={opportunity.title} src={opportunity.image} />
-                            <div className="p-6">
-                                <h2 className="text-2xl font-semibold mb-3">{opportunity.title}</h2>
-                                <p className="text-gray-700 mb-4">{opportunity.description}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                <div className="mt-12 bg-primary-50 p-8 rounded-lg text-center">
-                    <h2 className="text-2xl font-semibold mb-4">{t.ministries.interested}</h2>
-                    <p className="text-gray-700 mb-6">
-                        {t.ministries.interestedText}
+        <div className="bg-transparent">
+            {/* Header Section */}
+            <section className="bg-primary-gradient text-white py-20 relative overflow-hidden">
+                <div className="absolute inset-0 bg-dot-pattern opacity-10" />
+                <div className="container mx-auto px-4 text-center relative z-10">
+                    <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">{t.ministries.title}</h1>
+                    <p className="text-xl text-primary-100 max-w-3xl mx-auto leading-relaxed">
+                        {t.ministries.description}
                     </p>
-                    <a
-                        href="https://forms.office.com/pages/responsepage.aspx?id=i2Cs4k-AkEez-LeS7IEA4YCoNIiTSVlEuS7MWyqTJmZURFBWMDdBTDQxMzQwTTZJVTJDS0VPMkJHRS4u&route=shorturl"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block bg-primary-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-primary-700 transition-colors"
-                    >
-                        {t.ministries.signUp}
-                    </a>
+                    <div className="w-24 h-1.5 bg-accent-400 mx-auto rounded-full mt-8" />
                 </div>
-            </div>
+            </section>
+
+            {/* Training Ministries */}
+            <section className="py-24 bg-soft-gradient relative overflow-hidden">
+                <div className="absolute inset-0 bg-dot-pattern opacity-30" />
+                <div className="container mx-auto px-4 relative z-10">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-bold mb-4 text-primary-900">{t.ministries.trainingTitle}</h2>
+                        <div className="w-20 h-1.5 bg-accent-400 mx-auto rounded-full" />
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+                        {trainingMinistries.map((ministry, index) => (
+                            <div key={index} className="bg-white rounded-3xl shadow-xl overflow-hidden hover-lift border border-gray-100 card-accent-primary">
+                                <ImagePlaceholder className="h-64 w-full group-hover:scale-105 transition-transform duration-500" text={ministry.title} src={ministry.image} />
+                                <div className="p-10">
+                                    <h2 className="text-2xl font-bold mb-4 text-primary-900">{ministry.title}</h2>
+                                    <p className="text-gray-800 leading-relaxed text-lg">{ministry.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Outreach Ministries */}
+            <section className="py-24 bg-transparent">
+                <div className="container mx-auto px-4">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-bold mb-4 text-primary-900">{t.ministries.outreachTitle}</h2>
+                        <div className="w-20 h-1.5 bg-accent-400 mx-auto rounded-full" />
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+                        {outreachMinistries.map((ministry, index) => (
+                            <div key={index} className="bg-white rounded-3xl shadow-xl overflow-hidden hover-lift border border-gray-100 card-accent-accent">
+                                <ImagePlaceholder className="h-64 w-full" text={ministry.title} src={ministry.image} />
+                                <div className="p-10">
+                                    <h2 className="text-2xl font-bold mb-4 text-primary-900">{ministry.title}</h2>
+                                    <p className="text-gray-800 leading-relaxed text-lg">{ministry.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Serving Opportunities */}
+            <section className="py-24 bg-primary-50 relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-64 h-64 bg-accent-100 rounded-full blur-3xl opacity-20 -ml-32 -mt-32" />
+                <div className="container mx-auto px-4 relative z-10">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-bold mb-4 text-primary-900">{t.ministries.servingTitle}</h2>
+                        <div className="w-20 h-1.5 bg-accent-400 mx-auto rounded-full" />
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+                        {servingOpportunities.map((opportunity, index) => (
+                            <div key={index} className="bg-white rounded-2xl shadow-xl overflow-hidden hover-lift border border-gray-100 card-accent-primary">
+                                <ImagePlaceholder className="h-56 w-full" text={opportunity.title} src={opportunity.image} />
+                                <div className="p-8">
+                                    <h2 className="text-2xl font-bold mb-4 text-primary-800">{opportunity.title}</h2>
+                                    <p className="text-gray-700 leading-relaxed">{opportunity.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Interest Section */}
+            <section className="py-20 bg-transparent">
+                <div className="container mx-auto px-4">
+                    <div className="max-w-4xl mx-auto bg-primary-gradient p-12 rounded-3xl text-center shadow-2xl relative overflow-hidden">
+                        <div className="absolute inset-0 bg-dot-pattern opacity-10" />
+                        <div className="relative z-10 text-white">
+                            <h2 className="text-4xl font-bold mb-6">{t.ministries.interested}</h2>
+                            <p className="text-xl mb-10 text-primary-100 leading-relaxed">
+                                {t.ministries.interestedText}
+                            </p>
+                            <a
+                                href="https://forms.office.com/pages/responsepage.aspx?id=i2Cs4k-AkEez-LeS7IEA4YCoNIiTSVlEuS7MWyqTJmZURFBWMDdBTDQxMzQwTTZJVTJDS0VPMkJHRS4u&route=shorturl"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-block bg-white text-primary-600 px-10 py-4 rounded-xl font-bold text-lg hover:bg-primary-50 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                            >
+                                {t.ministries.signUp}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     );
 }
