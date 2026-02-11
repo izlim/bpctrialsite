@@ -52,7 +52,7 @@
       {
         "title": "Youth Bilingual Service",
         "time": "11:30 AM",
-        "location": "Upper Room (Level 3)",
+        "location": "Grace Auditorium (Level 1)",
         "description": "Contemporary worship with modern music"
       },
       {
@@ -71,6 +71,7 @@
     "ministriesDesc": "Find a place to serve and connect with others",
     "resources": "Resources",
     "resourcesDesc": "Daily devotions, Bible studies, and more",
+    "whatToExpectDesc": "Want to know more before visiting?",
     "liveStream": {
       "title": "Upcoming Live Stream",
       "subtitle": "Join us for our next service live on YouTube. Tune in to worship with us from wherever you are!",

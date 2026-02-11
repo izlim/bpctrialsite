@@ -149,7 +149,7 @@ export default function WhatToExpectPageClient() {
                     <section className="bg-primary-900 text-white rounded-[3rem] p-12 md:p-20 shadow-2xl relative overflow-hidden">
                         <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary-700 rounded-full blur-3xl opacity-20 -mb-48 -mr-48" />
                         <div className="relative z-10">
-                            <h2 className="text-4xl font-bold mb-12 text-center">{t.whatToExpect.firstTime}</h2>
+                            <h2 className="text-4xl font-bold mb-12 text-center text-white">{t.whatToExpect.firstTime}</h2>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                                 {[
                                     {
@@ -167,8 +167,8 @@ export default function WhatToExpectPageClient() {
                                     {
                                         title: locale === 'en' ? 'After Service' : '崇拜后',
                                         items: locale === 'en'
-                                            ? ['Join us for refreshments', 'Meet our pastor & members', 'Learn more about Bethany']
-                                            : ['享用咖啡和精美茶点', '见牧师和其他成员', '更深了解伯大尼']
+                                            ? ['Meet our pastor & members', 'Learn more about Bethany']
+                                            : ['见牧师和其他成员', '更深了解伯大尼']
                                     }
                                 ].map((step, i) => (
                                     <div key={i}>
@@ -198,8 +198,7 @@ export default function WhatToExpectPageClient() {
                             {[
                                 locale === 'en' ? 'Wheelchair Accessible' : '轮椅通道',
                                 locale === 'en' ? 'Elevator to all floors' : '各层电梯',
-                                locale === 'en' ? 'Hearing Assistance' : '听力辅助',
-                                locale === 'en' ? 'Large Print Bibles' : '大字圣经'
+                                locale === 'en' ? 'English Translation Available' : '英语翻译',
                             ].map((item, i) => (
                                 <span key={i} className="bg-gray-100 text-gray-700 px-6 py-3 rounded-2xl font-semibold shadow-sm border border-gray-200">
                                     {item}
@@ -215,7 +214,7 @@ export default function WhatToExpectPageClient() {
                     <section className="bg-primary-gradient text-white p-12 md:p-20 rounded-[3rem] text-center shadow-2xl relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-accent-400 rounded-full blur-3xl opacity-10 -mr-32 -mt-32" />
                         <div className="relative z-10">
-                            <h2 className="text-4xl md:text-5xl font-bold mb-6 italic tracking-tight">{t.whatToExpect.readyToVisit}</h2>
+                            <h2 className="text-4xl md:text-5xl font-bold mb-6 italic tracking-tight text-white">{t.whatToExpect.readyToVisit}</h2>
                             <p className="text-xl mb-12 text-primary-100 max-w-2xl mx-auto leading-relaxed">
                                 {t.whatToExpect.readyText}
                             </p>

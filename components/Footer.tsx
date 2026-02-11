@@ -49,7 +49,6 @@ export default function Footer() {
               <li><Link href={getLocalizedPath('/about', locale)} className="hover:text-white transition-colors">{t.nav.about}</Link></li>
               <li><Link href={getLocalizedPath('/visit', locale)} className="hover:text-white transition-colors">{t.visit.serviceTimes}</Link></li>
               <li><Link href={getLocalizedPath('/what-to-expect', locale)} className="hover:text-white transition-colors">{t.nav.whatToExpect}</Link></li>
-              <li><Link href={getLocalizedPath('/beliefs', locale)} className="hover:text-white transition-colors">{t.nav.beliefs}</Link></li>
             </ul>
           </div>
           <div>
@@ -58,7 +57,6 @@ export default function Footer() {
               <li><Link href={getLocalizedPath('/services', locale)} className="hover:text-white transition-colors">{t.nav.services}</Link></li>
               <li><Link href={getLocalizedPath('/events', locale)} className="hover:text-white transition-colors">{t.nav.events}</Link></li>
               <li><Link href={getLocalizedPath('/ministries', locale)} className="hover:text-white transition-colors">{t.nav.ministries}</Link></li>
-              <li><Link href={getLocalizedPath('/resources', locale)} className="hover:text-white transition-colors">{t.nav.resources}</Link></li>
             </ul>
           </div>
           <div>

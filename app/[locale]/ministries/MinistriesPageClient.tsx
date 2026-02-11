@@ -160,7 +160,7 @@ export default function MinistriesPageClient() {
                     <div className="max-w-4xl mx-auto bg-primary-gradient p-12 rounded-3xl text-center shadow-2xl relative overflow-hidden">
                         <div className="absolute inset-0 bg-dot-pattern opacity-10" />
                         <div className="relative z-10 text-white">
-                            <h2 className="text-4xl font-bold mb-6">{t.ministries.interested}</h2>
+                            <h2 className="text-4xl font-bold mb-6 text-white">{t.ministries.interested}</h2>
                             <p className="text-xl mb-10 text-primary-100 leading-relaxed">
                                 {t.ministries.interestedText}
                             </p>

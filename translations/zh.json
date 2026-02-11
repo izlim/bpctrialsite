@@ -52,7 +52,7 @@
       {
         "title": "青年双语崇拜",
         "time": "上午 11:30",
-        "location": "Upper Room（3楼）",
+        "location": "主恩楼（1楼）",
         "description": "现代敬拜，使用现代音乐"
       },
       {
@@ -71,6 +71,7 @@
     "ministriesDesc": "找到服务和他人的地方",
     "resources": "资源",
     "resourcesDesc": "每日灵修、圣经学习等",
+    "whatToExpectDesc": "过来之前想了解更多吗？",
     "liveStream": {
       "title": "即将播出的直播",
       "subtitle": "通过YouTube加入我们的下一次崇拜。无论您身在何处，都请与我们一同敬拜！",

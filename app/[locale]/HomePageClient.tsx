@@ -174,11 +174,11 @@ export default function HomePageClient({ featuredService, upcomingEvents }: Home
                 <p className="text-gray-600 leading-relaxed">{t.home.ministriesDesc}</p>
               </div>
             </Link>
-            <Link href={getLocalizedPath('/resources', locale)} className="bg-white rounded-2xl shadow-lg hover-lift overflow-hidden group border border-gray-100 card-accent-primary">
-              <ImagePlaceholder className="h-56 w-full group-hover:scale-110 transition-transform duration-700" text="Resources" icon={<span className="text-5xl">📚</span>} />
+            <Link href={getLocalizedPath('/what-to-expect', locale)} className="bg-white rounded-2xl shadow-lg hover-lift overflow-hidden group border border-gray-100 card-accent-primary">
+              <ImagePlaceholder className="h-56 w-full group-hover:scale-110 transition-transform duration-700" text="What to Expect" icon={<span className="text-5xl">📚</span>} />
               <div className="p-8 text-center bg-white relative z-10">
-                <h3 className="text-2xl font-bold mb-3 text-primary-800">{t.home.resources}</h3>
-                <p className="text-gray-600 leading-relaxed">{t.home.resourcesDesc}</p>
+                <h3 className="text-2xl font-bold mb-3 text-primary-800">{t.home.whatToExpect}</h3>
+                <p className="text-gray-600 leading-relaxed">{t.home.whatToExpectDesc}</p>
               </div>
             </Link>
           </div>
