@@ -7,8 +7,14 @@ export default function RootPage() {
   const router = useRouter();
 
   useEffect(() => {
-    // Default to Chinese as per user request
-    router.replace(`/zh`);
+    // Detect browser language preference
+    const browserLanguage = navigator.language || navigator.languages?.[0] || 'en';
+
+    // Check if the browser language is Chinese (zh, zh-CN, zh-TW, zh-HK, etc.)
+    const isChinese = browserLanguage.toLowerCase().startsWith('zh');
+
+    // Redirect to appropriate locale
+    router.replace(isChinese ? '/zh' : '/en');
   }, [router]);
 
   return (
