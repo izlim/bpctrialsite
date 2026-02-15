@@ -1,16 +1,18 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { LocaleProvider } from '@/components/LocaleProvider';
 
-const inter = Inter({
-  subsets: ['latin'],
+// Inter font is now loaded locally to prevent build issues with blocked Google network
+const inter = localFont({
+  src: '../public/fonts/Inter-VariableFont.woff2',
   variable: '--font-inter',
+  display: 'swap',
 });
 
-import localFont from 'next/font/local';
+
 
 const gensen = localFont({
   src: [
