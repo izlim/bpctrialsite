@@ -1,12 +1,11 @@
 'use client';
 
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { getLocaleFromPath, getLocalizedPath, getPathWithoutLocale, type Locale, locales, localeNames } from '@/lib/i18n';
 import { useState } from 'react';
 
 export default function LanguageSwitcher() {
   const pathname = usePathname();
-  const router = useRouter();
   const currentLocale = getLocaleFromPath(pathname);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -14,7 +13,8 @@ export default function LanguageSwitcher() {
     const pathWithoutLocale = getPathWithoutLocale(pathname);
     const newPath = getLocalizedPath(pathWithoutLocale, locale);
     setIsOpen(false);
-    router.push(newPath);
+    // Use full-page navigation for static export compatibility
+    window.location.href = newPath;
   };
 
   return (
@@ -47,11 +47,10 @@ export default function LanguageSwitcher() {
                 <button
                   key={locale}
                   onClick={() => handleLanguageChange(locale)}
-                  className={`w-full text-left px-4 py-2 text-sm transition-colors ${
-                    currentLocale === locale
+                  className={`w-full text-left px-4 py-2 text-sm transition-colors ${currentLocale === locale
                       ? 'bg-primary-50 text-primary-700 font-medium'
                       : 'text-gray-700 hover:bg-gray-50'
-                  }`}
+                    }`}
                 >
                   {localeNames[locale]}
                 </button>

@@ -11,6 +11,15 @@ DirectoryIndex index.html
 RewriteEngine On
 RewriteBase /
 
+# Redirect root to English locale
+# This fixes the "Redirecting..." hang by using server-side redirect
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^$ /en/ [R=302,L]
+
+# Redirect index.html to English locale
+RewriteCond %{REQUEST_URI} ^/index\.html$
+RewriteRule ^index\.html$ /en/ [R=302,L]
+
 # Don't rewrite files that exist
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
