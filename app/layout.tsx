@@ -12,8 +12,6 @@ const inter = localFont({
   display: 'swap',
 });
 
-
-
 const gensen = localFont({
   src: [
     {
@@ -31,43 +29,70 @@ const gensen = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://bethanypc.org.sg'),
+
   title: {
-    default: 'Bethany Presbyterian Church | Singapore',
-    template: '%s | Bethany Presbyterian Church',
+    default: 'Bethany Presbyterian Church Singapore',
+    template: '%s | Bethany Presbyterian Church Singapore',
   },
-  description: 'A welcoming community of believers committed to serving God and our neighbors. Join us for worship, fellowship, and growth.',
-  keywords: ['church', 'Presbyterian', 'Singapore', 'worship', 'community', 'faith', 'Christian', 'Bible', 'sermons', 'ministry'],
+
+  description:
+    'Bethany Presbyterian Church is a Bible-centred Presbyterian church in Singapore offering Chinese and English worship services, discipleship, youth ministry and community outreach.',
+
+  keywords: [
+    'Presbyterian church Singapore',
+    'Chinese church Singapore',
+    'Christian church Singapore',
+    'worship service Singapore',
+    'Chinese church',
+    'Bilingual church',
+    'Elderly church',
+    'Senior church',
+    'Hokkien service',
+    'Upper Paya Lebar',
+  ],
+
   authors: [{ name: 'Bethany Presbyterian Church' }],
   creator: 'Bethany Presbyterian Church',
   publisher: 'Bethany Presbyterian Church',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL('https://bethanypc.org.sg'),
+
   openGraph: {
     type: 'website',
     locale: 'en_SG',
+    alternateLocale: ['zh_SG'],
     url: 'https://bethanypc.org.sg',
     siteName: 'Bethany Presbyterian Church',
-    title: 'Bethany Presbyterian Church | Singapore',
-    description: 'A welcoming community of believers committed to serving God and our neighbors.',
+    title: 'Bethany Presbyterian Church Singapore',
+    description:
+      'Join us for worship, fellowship and discipleship at Bethany Presbyterian Church in Singapore.',
+    images: [
+      {
+        url: '/og.jpg',
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
+
   twitter: {
     card: 'summary_large_image',
-    title: 'Bethany Presbyterian Church',
-    description: 'A welcoming community of believers committed to serving God and our neighbors.',
+    title: 'Bethany Presbyterian Church Singapore',
+    description:
+      'A Bible-centred Presbyterian church in Singapore with Chinese and English services.',
+    images: ['/og.jpg'],
   },
+
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+  },
+
+  alternates: {
+    canonical: 'https://bethanypc.org.sg',
+    languages: {
+      en: 'https://bethanypc.org.sg/en/',
+      zh: 'https://bethanypc.org.sg/zh/',
+      'x-default': 'https://bethanypc.org.sg/',
     },
   },
 };
@@ -79,14 +104,38 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${gensen.variable} font-sans`}>
+      <body className={`${inter.variable} ${gensen.variable}`}>
         <LocaleProvider>
           <Header />
-          <main className="min-h-screen">
-            {children}
-          </main>
+          {children}
           <Footer />
         </LocaleProvider>
+
+        {/* Church structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Church',
+              name: 'Bethany Presbyterian Church',
+              url: 'https://bethanypc.org.sg',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: '364A Paya Lebar Road',
+                addressLocality: 'Singapore',
+                postalCode: '409123',
+                addressCountry: 'SG',
+              },
+              telephone: '+65 6280 0011',
+              availableLanguage: ['English', 'Mandarin', 'Hokkien'],
+              audience: {
+                '@type': 'Audience',
+                audienceType: 'Seniors',
+              },
+            }),
+          }}
+        />
       </body>
     </html>
   );

@@ -11,20 +11,21 @@ DirectoryIndex index.html
 RewriteEngine On
 RewriteBase /
 
-# Redirect root to English locale
-# This fixes the "Redirecting..." hang by using server-side redirect
+# Redirect based on browser language (Accept-Language header)
+# Redirect to Chinese if 'zh' is the preferred language
+RewriteCond %{HTTP:Accept-Language} ^zh [NC]
+RewriteRule ^$ /zh/ [R=302,L]
+
+# Default to English for everyone else
 RewriteCond %{REQUEST_URI} ^/$
 RewriteRule ^$ /en/ [R=302,L]
-
-# Redirect index.html to English locale
-RewriteCond %{REQUEST_URI} ^/index\.html$
-RewriteRule ^index\.html$ /en/ [R=302,L]
 
 # Don't rewrite files that exist
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
 # Rewrite everything else to index.html for client-side routing
+# This handles the case where a user refreshes on a sub-page
 RewriteRule . /index.html [L]
 
 # Enable compression

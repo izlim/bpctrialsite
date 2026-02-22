@@ -9,7 +9,7 @@ export default function LanguageSwitcher() {
   const currentLocale = getLocaleFromPath(pathname);
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleLanguageChange = (locale: Locale) => {
+  const handleLanguageChange = (e: React.MouseEvent, locale: Locale) => {
     const pathWithoutLocale = getPathWithoutLocale(pathname);
     const newPath = getLocalizedPath(pathWithoutLocale, locale);
     setIsOpen(false);
@@ -17,12 +17,19 @@ export default function LanguageSwitcher() {
     window.location.href = newPath;
   };
 
+  const toggleDropdown = (e: React.MouseEvent) => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className="relative">
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors"
+        type="button"
+        onClick={toggleDropdown}
+        className={`relative z-50 flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 ${isOpen ? 'bg-gray-100' : 'text-gray-700 hover:bg-gray-100'
+          }`}
         aria-label="Change language"
+        aria-expanded={isOpen}
       >
         <span>{localeNames[currentLocale]}</span>
         <svg
@@ -37,19 +44,22 @@ export default function LanguageSwitcher() {
 
       {isOpen && (
         <>
+          {/* Backdrop for closing dropdown when clicking outside */}
           <div
-            className="fixed inset-0 z-10"
+            className="fixed inset-0 z-40 bg-transparent"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg z-20 border border-gray-200">
+          {/* Dropdown Menu */}
+          <div className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg z-50 border border-gray-200 overflow-hidden">
             <div className="py-1">
               {locales.map((locale) => (
                 <button
                   key={locale}
-                  onClick={() => handleLanguageChange(locale)}
+                  type="button"
+                  onClick={(e) => handleLanguageChange(e, locale)}
                   className={`w-full text-left px-4 py-2 text-sm transition-colors ${currentLocale === locale
-                      ? 'bg-primary-50 text-primary-700 font-medium'
-                      : 'text-gray-700 hover:bg-gray-50'
+                    ? 'bg-primary-50 text-primary-700 font-medium'
+                    : 'text-gray-700 hover:bg-gray-50'
                     }`}
                 >
                   {localeNames[locale]}
