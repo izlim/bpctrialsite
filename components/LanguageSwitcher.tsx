@@ -11,7 +11,8 @@ export default function LanguageSwitcher() {
 
   const handleLanguageChange = (e: React.MouseEvent, locale: Locale) => {
     const pathWithoutLocale = getPathWithoutLocale(pathname);
-    const newPath = getLocalizedPath(pathWithoutLocale, locale);
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+    const newPath = basePath + getLocalizedPath(pathWithoutLocale, locale);
     setIsOpen(false);
     // Use full-page navigation for static export compatibility
     window.location.href = newPath;
