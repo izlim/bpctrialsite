@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /en/services/placeholder-do-not-index
+Disallow: /zh/services/placeholder-do-not-index
 
 Sitemap: https://bethanypc.org.sg/sitemap.xml

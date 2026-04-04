@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect } from 'react';
-import { inter, gensen } from '@/lib/fonts';
 
 export default function RootPage() {
   useEffect(() => {
@@ -29,23 +28,19 @@ export default function RootPage() {
   }, []);
 
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${gensen.variable} font-sans`}>
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
-          <div className="max-w-md w-full p-8 bg-white shadow-lg rounded-lg text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
-            <h1 className="text-xl font-semibold text-gray-900 mb-2">Redirecting...</h1>
-            <p className="text-gray-600 mb-6">Preparing the site for you.</p>
-            <p className="text-sm text-gray-500">
-              If you are not redirected automatically,{' '}
-              <a href="/en/" className="text-primary-600 hover:text-primary-700 font-medium underline">
-                click here
-              </a>
-              .
-            </p>
-          </div>
-        </div>
-      </body>
-    </html>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
+      <div className="max-w-md w-full p-8 bg-white shadow-lg rounded-lg text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
+        <h1 className="text-xl font-semibold text-gray-900 mb-2">Redirecting...</h1>
+        <p className="text-gray-600 mb-6">Preparing the site for you.</p>
+        <p className="text-sm text-gray-500">
+          If you are not redirected automatically,{' '}
+          <a href="/en/" className="text-primary-600 hover:text-primary-700 font-medium underline">
+            click here
+          </a>
+          .
+        </p>
+      </div>
+    </div>
   );
 }

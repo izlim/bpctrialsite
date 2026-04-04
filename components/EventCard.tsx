@@ -6,6 +6,10 @@ import { formatDate } from '@/lib/utils';
 import { EventFrontmatter } from '@/lib/markdown';
 import { getLocaleFromPath, getLocalizedPath } from '@/lib/i18n';
 import ImagePlaceholder from './ImagePlaceholder';
+import { useContext } from 'react';
+import { LocaleContext } from './LocaleProvider';
+import enTranslations from '@/translations/en.json';
+import zhTranslations from '@/translations/zh.json';
 
 interface EventCardProps {
   event: {
@@ -17,6 +21,8 @@ interface EventCardProps {
 export default function EventCard({ event }: EventCardProps) {
   const pathname = usePathname();
   const locale = getLocaleFromPath(pathname);
+  const context = useContext(LocaleContext);
+  const t = context?.t || (locale === 'zh' ? zhTranslations : enTranslations);
   const eventPath = getLocalizedPath(`/events/${event.slug}`, locale);
 
   return (
@@ -51,7 +57,7 @@ export default function EventCard({ event }: EventCardProps) {
           )}
           {event.frontmatter.recurring && (
             <span className="inline-block bg-accent-100 text-accent-700 text-xs font-medium px-2 py-1 rounded">
-              Recurring Event
+              {locale === 'zh' ? '定期活动' : 'Recurring Event'}
             </span>
           )}
         </div>

@@ -21,7 +21,7 @@ export default function Header() {
           <Link href={homePath} className="flex items-center space-x-3">
             <Logo size={48} />
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">{t.common.siteName}</h1>
+              <span className="block text-2xl font-bold text-gray-900">{t.common.siteName}</span>
               <p className="text-sm text-gray-600">{t.common.siteLocation}</p>
             </div>
           </Link>

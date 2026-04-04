@@ -5,11 +5,12 @@ import NextImage from 'next/image';
 
 interface ImageCarouselProps {
     images: string[];
+    alts?: string[];
     interval?: number;
     className?: string;
 }
 
-export default function ImageCarousel({ images, interval = 5000, className = '' }: ImageCarouselProps) {
+export default function ImageCarousel({ images, alts, interval = 5000, className = '' }: ImageCarouselProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
@@ -37,7 +38,7 @@ export default function ImageCarousel({ images, interval = 5000, className = '' 
                 >
                     <NextImage
                         src={getFullSrc(src)}
-                        alt={`Slide ${index + 1}`}
+                        alt={alts?.[index] ?? `Bethany Presbyterian Church — congregation worship photo ${index + 1}`}
                         fill
                         className="object-cover transform scale-105 animate-subtle-zoom"
                         priority={index === 0}

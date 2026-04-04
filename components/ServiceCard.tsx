@@ -6,6 +6,10 @@ import { formatDate } from '@/lib/utils';
 import { ServiceFrontmatter } from '@/lib/markdown';
 import { getLocaleFromPath, getLocalizedPath } from '@/lib/i18n';
 import ImagePlaceholder from './ImagePlaceholder';
+import { useContext } from 'react';
+import { LocaleContext } from './LocaleProvider';
+import enTranslations from '@/translations/en.json';
+import zhTranslations from '@/translations/zh.json';
 
 interface ServiceCardProps {
   service: {
@@ -17,6 +21,8 @@ interface ServiceCardProps {
 export default function ServiceCard({ service }: ServiceCardProps) {
   const pathname = usePathname();
   const locale = getLocaleFromPath(pathname);
+  const context = useContext(LocaleContext);
+  const t = context?.t || (locale === 'zh' ? zhTranslations : enTranslations);
   const servicePath = getLocalizedPath(`/services/${service.slug}`, locale);
 
   const getYoutubeId = (url: string) => {
@@ -56,12 +62,12 @@ export default function ServiceCard({ service }: ServiceCardProps) {
           </div>
         </div>
         <div className="text-sm text-gray-600 space-y-1">
-          {service.frontmatter.speaker && <p><span className="font-medium">Speaker:</span> {service.frontmatter.speaker}</p>}
-          <p><span className="font-medium">Date:</span> {formatDate(service.frontmatter.date)}</p>
+          {service.frontmatter.speaker && <p><span className="font-medium">{t.common.speaker}:</span> {service.frontmatter.speaker}</p>}
+          <p><span className="font-medium">{t.common.date}:</span> {formatDate(service.frontmatter.date)}</p>
         </div>
         <div className="mt-4 flex space-x-3">
           <Link href={servicePath} className="text-primary-600 hover:text-primary-700 text-sm font-medium">
-            Watch →
+            {t.common.watchVideo} →
           </Link>
         </div>
       </div>

@@ -5,6 +5,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { locales, type Locale } from '@/lib/i18n';
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const events = await getEvents('en'); // Generate params based on English events (assuming identical slugs)
   return events.map((event) => ({

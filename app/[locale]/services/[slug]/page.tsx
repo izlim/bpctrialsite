@@ -5,6 +5,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { locales, type Locale, getLocalizedPath } from '@/lib/i18n';
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const params: Array<{ locale: string; slug: string }> = [];
 
@@ -16,6 +18,10 @@ export async function generateStaticParams() {
         slug: service.slug,
       });
     });
+  }
+
+  if (params.length === 0) {
+    return [{ locale: 'en', slug: 'placeholder-do-not-index' }];
   }
 
   return params;
