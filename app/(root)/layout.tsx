@@ -15,22 +15,22 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
   return (
     <html lang="en">
       <head>
-        <meta httpEquiv="refresh" content="2;url=/en/" />
+        <meta httpEquiv="refresh" content={`2;url=${basePath}/en/`} />
         <script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                var path = window.location.pathname;
-                if (path === '/' || path === '/index.html') {
-                  var browserLanguage = typeof navigator !== 'undefined'
-                    ? (navigator.language || (navigator.languages && navigator.languages[0]) || 'en')
-                    : 'en';
-                  var isChinese = browserLanguage.toLowerCase().startsWith('zh');
-                  window.location.replace(isChinese ? '/zh/' : '/en/');
-                }
+                var basePath = '${basePath}';
+                var browserLanguage = typeof navigator !== 'undefined'
+                  ? (navigator.language || (navigator.languages && navigator.languages[0]) || 'en')
+                  : 'en';
+                var isChinese = browserLanguage.toLowerCase().startsWith('zh');
+                window.location.replace(basePath + (isChinese ? '/zh/' : '/en/'));
               })();
             `,
           }}

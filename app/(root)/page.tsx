@@ -4,12 +4,7 @@ import { useEffect } from 'react';
 
 export default function RootPage() {
   useEffect(() => {
-    // Only redirect if we are actually at the root path
-    // This prevents redirecting when index.html is served as a fallback for other routes
-    const path = window.location.pathname;
-    if (path !== '/' && path !== '/index.html') {
-      return;
-    }
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
     // Detect browser language preference
     const browserLanguage = typeof navigator !== 'undefined'
@@ -18,11 +13,11 @@ export default function RootPage() {
 
     // Check if the browser language is Chinese (zh, zh-CN, zh-TW, zh-HK, etc.)
     const isChinese = browserLanguage.toLowerCase().startsWith('zh');
-    const targetPath = isChinese ? '/zh/' : '/en/';
+    const targetPath = basePath + (isChinese ? '/zh/' : '/en/');
 
     // Redirect to appropriate locale if we are still at the root
-    // This acts as a secondary fallback if .htaccess or other server-side redirects don't occur.
-    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+    // This acts as a secondary fallback if the layout script doesn't execute
+    if (window.location.pathname === basePath || window.location.pathname === `${basePath}/` || window.location.pathname === `${basePath}/index.html`) {
       window.location.replace(targetPath);
     }
   }, []);
@@ -35,10 +30,9 @@ export default function RootPage() {
         <p className="text-gray-600 mb-6">Preparing the site for you.</p>
         <p className="text-sm text-gray-500">
           If you are not redirected automatically,{' '}
-          <a href="/en/" className="text-primary-600 hover:text-primary-700 font-medium underline">
+          <a href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/en/`} className="text-primary-600 hover:text-primary-700 font-medium underline">
             click here
           </a>
-          .
         </p>
       </div>
     </div>
