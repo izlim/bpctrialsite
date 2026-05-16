@@ -20,12 +20,9 @@ export default function Navigation() {
     { href: '/about', key: 'about' },
     { href: '/visit', key: 'visit' },
     { href: '/what-to-expect', key: 'whatToExpect' },
-    //{ href: '/beliefs', key: 'beliefs' },
     { href: '/services', key: 'services' },
     { href: '/events', key: 'events' },
     { href: '/ministries', key: 'ministries' },
-    //{ href: '/resources', key: 'resources' },
-    //{ href: '/give', key: 'give' },
     { href: '/contact', key: 'contact' },
   ];
 
@@ -37,20 +34,22 @@ export default function Navigation() {
     return pathname?.startsWith(localizedHref);
   };
 
+  const linkBase =
+    'px-3 py-2 rounded-md text-sm font-medium transition-colors';
+  const linkInactive =
+    'text-[rgba(255,255,255,0.65)] hover:text-white hover:bg-primary-700/80';
+  const linkActive = 'bg-primary-700 text-white';
+
   return (
     <>
-      {/* Desktop Navigation */}
-      <nav className="hidden md:flex space-x-1">
+      <nav className="hidden lg:flex flex-wrap items-center justify-end gap-0.5 max-w-4xl">
         {navLinks.map((link) => {
           const localizedHref = getLocalizedPath(link.href, locale);
           return (
             <Link
               key={link.href}
               href={localizedHref}
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActive(link.href)
-                ? 'bg-primary-100 text-primary-700'
-                : 'text-gray-700 hover:bg-gray-100'
-                }`}
+              className={`${linkBase} ${isActive(link.href) ? linkActive : linkInactive}`}
             >
               {t.nav[link.key as keyof typeof t.nav]}
             </Link>
@@ -58,11 +57,12 @@ export default function Navigation() {
         })}
       </nav>
 
-      {/* Mobile Menu Button */}
       <button
-        className="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"
+        type="button"
+        className="lg:hidden p-2 rounded-md text-white hover:bg-primary-700/80"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle menu"
+        aria-expanded={isOpen}
       >
         <svg
           className="w-6 h-6"
@@ -81,9 +81,11 @@ export default function Navigation() {
         </svg>
       </button>
 
-      {/* Mobile Navigation */}
       {isOpen && (
-        <nav className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t">
+        <nav
+          className="lg:hidden absolute top-full left-0 right-0 bg-primary-800 border-t border-primary-700 shadow-lg"
+          aria-label="Mobile"
+        >
           <div className="container mx-auto px-4 py-4 space-y-1">
             {navLinks.map((link) => {
               const localizedHref = getLocalizedPath(link.href, locale);
@@ -92,10 +94,11 @@ export default function Navigation() {
                   key={link.href}
                   href={localizedHref}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-4 py-2 rounded-md text-base font-medium ${isActive(link.href)
-                    ? 'bg-primary-100 text-primary-700'
-                    : 'text-gray-700 hover:bg-gray-100'
-                    }`}
+                  className={`block px-4 py-3 rounded-md text-base font-medium ${
+                    isActive(link.href)
+                      ? 'bg-primary-700 text-white'
+                      : 'text-[rgba(255,255,255,0.85)] hover:bg-primary-700/60 hover:text-white'
+                  }`}
                 >
                   {t.nav[link.key as keyof typeof t.nav]}
                 </Link>

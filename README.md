@@ -10,6 +10,19 @@ A modern, maintainable church website built with Next.js, TypeScript, and Tailwi
 - ✅ **Responsive Design**: Works perfectly on all devices
 - ✅ **Modern UI**: Clean, professional design with Tailwind CSS
 
+## Brand colors (Tailwind)
+
+Design tokens follow [.cursorrules](.cursorrules) (Deep Violet, Aqua Teal, Warm Orange):
+
+| Token | Role |
+|--------|------|
+| `primary-*` | Violet scale — navigation, heroes, footers, dark UI (`primary-600` = `#2E1A46`) |
+| `teal-*` | Primary CTAs on light backgrounds, inline links on white (`teal-400` / `teal-500`), icons on violet bars |
+| `orange-*` | Accents only — dividers, tags, warm highlights (`orange-400` = `#FF6C0E`) |
+| `text-ink` / `#1a1040` | Text on teal buttons and light teal surfaces (contrast) |
+
+Utilities in [`app/globals.css`](app/globals.css): `btn-teal-primary`, `link-on-light`, `card-accent-primary` (violet top border), `card-accent-orange` (orange top border).
+
 ## Getting Started
 
 First, install the dependencies:

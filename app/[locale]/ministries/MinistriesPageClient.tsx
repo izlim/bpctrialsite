@@ -82,10 +82,10 @@ export default function MinistriesPageClient() {
                 <div className="absolute inset-0 bg-dot-pattern opacity-10" />
                 <div className="container mx-auto px-4 text-center relative z-10">
                     <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">{t.ministries.title}</h1>
-                    <p className="text-xl text-primary-100 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-xl text-[rgba(255,255,255,0.65)] max-w-3xl mx-auto leading-relaxed">
                         {t.ministries.description}
                     </p>
-                    <div className="w-24 h-1.5 bg-accent-400 mx-auto rounded-full mt-8" />
+                    <div className="w-24 h-1.5 bg-orange-400 mx-auto rounded-full mt-8" />
                 </div>
             </section>
 
@@ -95,7 +95,7 @@ export default function MinistriesPageClient() {
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold mb-4 text-primary-900">{t.ministries.trainingTitle}</h2>
-                        <div className="w-20 h-1.5 bg-accent-400 mx-auto rounded-full" />
+                        <div className="w-20 h-1.5 bg-orange-400 mx-auto rounded-full" />
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
                         {trainingMinistries.map((ministry, index) => (
@@ -116,11 +116,11 @@ export default function MinistriesPageClient() {
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold mb-4 text-primary-900">{t.ministries.outreachTitle}</h2>
-                        <div className="w-20 h-1.5 bg-accent-400 mx-auto rounded-full" />
+                        <div className="w-20 h-1.5 bg-orange-400 mx-auto rounded-full" />
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
                         {outreachMinistries.map((ministry, index) => (
-                            <div key={index} className="bg-white rounded-3xl shadow-xl overflow-hidden hover-lift border border-gray-100 card-accent-accent">
+                            <div key={index} className="bg-white rounded-3xl shadow-xl overflow-hidden hover-lift border border-gray-100 card-accent-orange">
                                 <ImagePlaceholder className="h-64 w-full" text={ministry.title} src={ministry.image} />
                                 <div className="p-10">
                                     <h2 className="text-2xl font-bold mb-4 text-primary-900">{ministry.title}</h2>
@@ -134,11 +134,11 @@ export default function MinistriesPageClient() {
 
             {/* Serving Opportunities */}
             <section className="py-24 bg-primary-50 relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-64 h-64 bg-accent-100 rounded-full blur-3xl opacity-20 -ml-32 -mt-32" />
+                <div className="absolute top-0 left-0 w-64 h-64 bg-orange-100 rounded-full blur-3xl opacity-20 -ml-32 -mt-32" />
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold mb-4 text-primary-900">{t.ministries.servingTitle}</h2>
-                        <div className="w-20 h-1.5 bg-accent-400 mx-auto rounded-full" />
+                        <div className="w-20 h-1.5 bg-orange-400 mx-auto rounded-full" />
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
                         {servingOpportunities.map((opportunity, index) => (

@@ -30,7 +30,7 @@ export default function RootPage() {
         <p className="text-gray-600 mb-6">Preparing the site for you.</p>
         <p className="text-sm text-gray-500">
           If you are not redirected automatically,{' '}
-          <a href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/en/`} className="text-primary-600 hover:text-primary-700 font-medium underline">
+          <a href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/en/`} className="text-teal-500 hover:text-teal-600 font-medium underline">
             click here
           </a>
         </p>

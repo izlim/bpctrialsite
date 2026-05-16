@@ -25,7 +25,7 @@ export default function ContactPageClient() {
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">{t.contact.phone}</h3>
                 <p className="text-gray-700">
-                  <a href={`tel:${t.contact.phoneText.replace(/\s/g, '')}`} className="text-primary-600 hover:text-primary-700">
+                  <a href={`tel:${t.contact.phoneText.replace(/\s/g, '')}`} className="text-teal-500 hover:text-teal-600">
                     {t.contact.phoneText}
                   </a>
                 </p>
@@ -33,7 +33,7 @@ export default function ContactPageClient() {
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">{t.contact.email}</h3>
                 <p className="text-gray-700">
-                  <a href={`mailto:${t.contact.emailText}`} className="text-primary-600 hover:text-primary-700">
+                  <a href={`mailto:${t.contact.emailText}`} className="text-teal-500 hover:text-teal-600">
                     {t.contact.emailText}
                   </a>
                 </p>

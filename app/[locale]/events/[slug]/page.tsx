@@ -44,7 +44,7 @@ export default async function EventPage({ params }: { params: { slug: string; lo
     <div className="container mx-auto px-4 py-16">
       <InstagramEmbed />
       <div className="max-w-4xl mx-auto">
-        <Link href={`/${params.locale}/events`} className="text-primary-600 hover:text-primary-700 mb-4 inline-block">
+        <Link href={`/${params.locale}/events`} className="text-teal-500 hover:text-teal-600 mb-4 inline-block">
           ← {params.locale === 'en' ? 'Back to All Events' : '返回活动列表'}
         </Link>
 
@@ -69,7 +69,7 @@ export default async function EventPage({ params }: { params: { slug: string; lo
               {event.frontmatter.recurring && (
                 <div>
                   <h3 className="font-semibold text-gray-700 mb-2">{params.locale === 'en' ? 'Type' : '类型'}</h3>
-                  <span className="inline-block bg-accent-100 text-accent-700 text-sm font-medium px-3 py-1 rounded">
+                  <span className="inline-block bg-orange-100 text-orange-900 text-sm font-medium px-3 py-1 rounded">
                     {params.locale === 'en' ? 'Recurring Event' : '定期活动'}
                   </span>
                 </div>

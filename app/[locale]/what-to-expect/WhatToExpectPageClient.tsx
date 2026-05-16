@@ -16,7 +16,7 @@ export default function WhatToExpectPageClient() {
                     <h1 className="text-5xl md:text-6xl font-extrabold mb-8 tracking-tight italic text-white">
                         {t.whatToExpect.title}
                     </h1>
-                    <p className="text-xl md:text-2xl text-primary-100 max-w-3xl mx-auto leading-relaxed font-light">
+                    <p className="text-xl md:text-2xl text-[rgba(255,255,255,0.65)] max-w-3xl mx-auto leading-relaxed font-light">
                         {t.whatToExpect.intro}
                     </p>
                 </div>
@@ -28,7 +28,7 @@ export default function WhatToExpectPageClient() {
                     <section>
                         <div className="text-center mb-16">
                             <h2 className="text-4xl font-bold text-gray-900 mb-4">{t.whatToExpect.serviceFormat}</h2>
-                            <div className="w-24 h-1.5 bg-accent-400 mx-auto rounded-full" />
+                            <div className="w-24 h-1.5 bg-orange-400 mx-auto rounded-full" />
                         </div>
                         <div className="relative max-w-3xl mx-auto">
                             {/* Vertical Line */}
@@ -41,7 +41,7 @@ export default function WhatToExpectPageClient() {
                                         time: '15 mins',
                                         label: locale === 'en' ? 'Welcome & Announcements' : '欢迎与报告',
                                         sub: locale === 'en' ? '(Holy Communion on 1st Sundays)' : '(每月首个主日：圣餐礼)',
-                                        color: 'bg-accent-400'
+                                        color: 'bg-orange-400'
                                     },
                                     { time: '45 mins', label: locale === 'en' ? 'Sermon' : '讲道', color: 'bg-primary-600' },
                                     { time: '10 mins', label: locale === 'en' ? 'Closing Song' : '回应诗歌/结束诗歌', color: 'bg-primary-400' }
@@ -83,7 +83,7 @@ export default function WhatToExpectPageClient() {
                                     { title: locale === 'en' ? 'Musical Diversity' : '音乐多样性', desc: locale === 'en' ? 'From classic hymns to modern songs' : '从经典赞美诗到现代敬拜歌曲' }
                                 ].map((item, i) => (
                                     <li key={i} className="flex items-start bg-white p-4 rounded-xl shadow-sm">
-                                        <span className="text-accent-500 mr-3 text-xl">✓</span>
+                                        <span className="text-orange-500 mr-3 text-xl">✓</span>
                                         <div>
                                             <span className="font-bold text-primary-800 block">{item.title}</span>
                                             <span className="text-gray-600 text-sm">{item.desc}</span>
@@ -93,7 +93,7 @@ export default function WhatToExpectPageClient() {
                             </ul>
                         </section>
 
-                        <section className="bg-amber-50 p-10 rounded-3xl border border-amber-100 shadow-sm text-center md:text-left">
+                        <section className="bg-orange-50 p-10 rounded-3xl border border-orange-100 shadow-sm text-center md:text-left">
                             <h2 className="text-3xl font-bold mb-6 text-primary-900">{t.whatToExpect.dressCode}</h2>
                             <p className="text-gray-700 mb-8 leading-relaxed">
                                 {locale === 'en' ? 'There\'s no dress code at Bethany Presbyterian Church. Come as you are! You\'ll see people in a variety of styles:' : '伯大尼长老会没有着装要求。随意穿着！你会看到各种风格：'}
@@ -103,7 +103,7 @@ export default function WhatToExpectPageClient() {
                                     <h4 className="font-bold text-primary-800 mb-2">{locale === 'en' ? 'Business Casual' : '商务休闲'}</h4>
                                     <p className="text-sm text-gray-500">{locale === 'en' ? 'Dress shirts, slacks, dresses' : '衬衫、西裤、连衣裙'}</p>
                                 </div>
-                                <div className="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-accent-400">
+                                <div className="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-orange-400">
                                     <h4 className="font-bold text-primary-800 mb-2">{locale === 'en' ? 'Casual Attire' : '休闲装'}</h4>
                                     <p className="text-sm text-gray-500">{locale === 'en' ? 'Jeans, t-shirts, comfort' : '牛仔裤、T恤、舒适'}</p>
                                 </div>
@@ -118,7 +118,7 @@ export default function WhatToExpectPageClient() {
                     <section className="bg-dot-pattern py-10">
                         <div className="text-center mb-12">
                             <h2 className="text-4xl font-bold text-gray-900 mb-4">{t.whatToExpect.children}</h2>
-                            <div className="w-24 h-1.5 bg-accent-400 mx-auto rounded-full" />
+                            <div className="w-24 h-1.5 bg-orange-400 mx-auto rounded-full" />
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                             {[
@@ -136,7 +136,7 @@ export default function WhatToExpectPageClient() {
                                 <div key={i} className="bg-white p-8 rounded-3xl shadow-xl hover-lift border-b-8 border-primary-600">
                                     <div className="flex justify-between items-start mb-4">
                                         <h3 className="text-2xl font-bold text-primary-800">{prog.title}</h3>
-                                        <span className="bg-accent-100 text-accent-700 px-3 py-1 rounded-full text-sm font-bold">{prog.time}</span>
+                                        <span className="bg-orange-100 text-orange-900 px-3 py-1 rounded-full text-sm font-bold">{prog.time}</span>
                                     </div>
                                     <p className="text-gray-700 leading-relaxed mb-4">{prog.desc}</p>
                                     <div className="w-12 h-1 bg-primary-100 rounded-full" />
@@ -172,14 +172,14 @@ export default function WhatToExpectPageClient() {
                                     }
                                 ].map((step, i) => (
                                     <div key={i}>
-                                        <h4 className="text-accent-400 font-bold text-xl mb-6 flex items-center">
-                                            <span className="mr-3 w-8 h-8 rounded-full border border-accent-400 flex items-center justify-center text-sm">{i + 1}</span>
+                                        <h4 className="text-teal-400 font-bold text-xl mb-6 flex items-center">
+                                            <span className="mr-3 w-8 h-8 rounded-full border border-teal-400 flex items-center justify-center text-sm">{i + 1}</span>
                                             {step.title}
                                         </h4>
                                         <ul className="space-y-4 text-primary-100">
                                             {step.items.map((item, j) => (
                                                 <li key={j} className="flex items-start">
-                                                    <span className="mr-2 text-accent-400">•</span>
+                                                    <span className="mr-2 text-teal-400">•</span>
                                                     <span>{item}</span>
                                                 </li>
                                             ))}
@@ -193,7 +193,7 @@ export default function WhatToExpectPageClient() {
                     {/* Accessibility */}
                     <section className="text-center py-10">
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">{t.whatToExpect.accessibility}</h2>
-                        <div className="w-24 h-1.5 bg-accent-400 mx-auto rounded-full mb-12" />
+                        <div className="w-24 h-1.5 bg-orange-400 mx-auto rounded-full mb-12" />
                         <div className="flex flex-wrap justify-center gap-4 mb-10">
                             {[
                                 locale === 'en' ? 'Wheelchair Accessible' : '轮椅通道',
@@ -212,22 +212,22 @@ export default function WhatToExpectPageClient() {
 
                     {/* Call to Action */}
                     <section className="bg-primary-gradient text-white p-12 md:p-20 rounded-[3rem] text-center shadow-2xl relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-accent-400 rounded-full blur-3xl opacity-10 -mr-32 -mt-32" />
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-orange-400 rounded-full blur-3xl opacity-10 -mr-32 -mt-32" />
                         <div className="relative z-10">
                             <h2 className="text-4xl md:text-5xl font-bold mb-6 italic tracking-tight text-white">{t.whatToExpect.readyToVisit}</h2>
-                            <p className="text-xl mb-12 text-primary-100 max-w-2xl mx-auto leading-relaxed">
+                            <p className="text-xl mb-12 text-[rgba(255,255,255,0.65)] max-w-2xl mx-auto leading-relaxed">
                                 {t.whatToExpect.readyText}
                             </p>
                             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                                 <Link
                                     href={getLocalizedPath('/visit', locale)}
-                                    className="bg-white text-primary-600 px-10 py-4 rounded-xl font-bold text-lg hover:bg-primary-50 transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1 w-full sm:w-auto"
+                                    className="btn-teal-primary px-10 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 w-full sm:w-auto"
                                 >
                                     {locale === 'en' ? 'Get Directions' : '获取路线'}
                                 </Link>
                                 <Link
                                     href={getLocalizedPath('/contact', locale)}
-                                    className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-primary-600 transition-all w-full sm:w-auto"
+                                    className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all w-full sm:w-auto"
                                 >
                                     {t.nav.contact}
                                 </Link>

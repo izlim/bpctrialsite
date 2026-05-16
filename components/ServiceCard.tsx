@@ -55,7 +55,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
               {service.frontmatter.title}
             </h3>
             {service.frontmatter.series && (
-              <span className="inline-block bg-primary-100 text-primary-700 text-xs font-medium px-2 py-1 rounded mb-2">
+              <span className="inline-block bg-orange-100 text-orange-900 text-xs font-medium px-2 py-1 rounded mb-2">
                 {service.frontmatter.series}
               </span>
             )}
@@ -66,7 +66,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
           <p><span className="font-medium">{t.common.date}:</span> {formatDate(service.frontmatter.date)}</p>
         </div>
         <div className="mt-4 flex space-x-3">
-          <Link href={servicePath} className="text-primary-600 hover:text-primary-700 text-sm font-medium">
+          <Link href={servicePath} className="text-teal-500 hover:text-teal-600 text-sm font-medium">
             {t.common.watchVideo} →
           </Link>
         </div>

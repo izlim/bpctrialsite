@@ -33,10 +33,10 @@ export default function EventsPageClient({ events }: EventsPageClientProps) {
                 <div className="absolute inset-0 bg-dot-pattern opacity-10" />
                 <div className="container mx-auto px-4 relative z-10 text-center">
                     <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">{t.events.title}</h1>
-                    <p className="text-xl text-primary-100 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-xl text-[rgba(255,255,255,0.65)] max-w-3xl mx-auto leading-relaxed">
                         {t.events.description}
                     </p>
-                    <div className="w-24 h-1.5 bg-accent-400 mx-auto rounded-full mt-8" />
+                    <div className="w-24 h-1.5 bg-orange-400 mx-auto rounded-full mt-8" />
                 </div>
             </section>
 
@@ -44,7 +44,7 @@ export default function EventsPageClient({ events }: EventsPageClientProps) {
                 <div className="max-w-6xl mx-auto">
                     {upcomingEvents.length > 0 && (
                         <section className="mb-20">
-                            <h2 className="text-4xl font-bold mb-10 text-primary-900 border-l-8 border-accent-400 pl-6">{t.events.upcoming}</h2>
+                            <h2 className="text-4xl font-bold mb-10 text-primary-900 border-l-8 border-orange-400 pl-6">{t.events.upcoming}</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                                 {upcomingEvents.map((event) => (
                                     <div key={event.slug} className="hover-lift">
@@ -57,7 +57,7 @@ export default function EventsPageClient({ events }: EventsPageClientProps) {
 
                     {pastEvents.length > 0 && (
                         <section className="mb-20">
-                            <h2 className="text-4xl font-bold mb-10 text-primary-900 border-l-8 border-accent-400 pl-6">{t.events.past}</h2>
+                            <h2 className="text-4xl font-bold mb-10 text-primary-900 border-l-8 border-orange-400 pl-6">{t.events.past}</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 opacity-80">
                                 {pastEvents.map((event) => (
                                     <div key={event.slug} className="hover-lift grayscale hover:grayscale-0 transition-all duration-500">

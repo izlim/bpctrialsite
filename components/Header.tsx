@@ -15,17 +15,17 @@ export default function Header() {
   const homePath = getLocalizedPath('/', locale);
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
+    <header className="bg-primary-600 border-b border-primary-700 shadow-md sticky top-0 z-50 relative">
       <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          <Link href={homePath} className="flex items-center space-x-3">
-            <Logo size={48} />
-            <div>
-              <span className="block text-2xl font-bold text-gray-900">{t.common.siteName}</span>
-              <p className="text-sm text-gray-600">{t.common.siteLocation}</p>
+        <div className="flex items-center justify-between gap-4">
+          <Link href={homePath} className="flex items-center space-x-3 min-w-0">
+            <Logo size={48} className="text-teal-400 shrink-0" />
+            <div className="min-w-0">
+              <span className="block text-xl sm:text-2xl font-bold text-white truncate">{t.common.siteName}</span>
+              <p className="text-sm text-[rgba(255,255,255,0.65)]">{t.common.siteLocation}</p>
             </div>
           </Link>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4 shrink-0">
             <Navigation />
             <LanguageSwitcher />
           </div>

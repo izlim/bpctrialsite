@@ -38,19 +38,19 @@ export default function HomePageClient({ featuredService, upcomingEvents }: Home
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
           <div className="max-w-3xl flex-1">
             <h1 className="text-5xl font-bold mb-6 text-white">{t.home.welcome}</h1>
-            <p className="text-xl mb-8 text-primary-100">
+            <p className="text-xl mb-8 text-[rgba(255,255,255,0.65)]">
               {t.home.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href={getLocalizedPath('/visit', locale)}
-                className="bg-white text-primary-600 px-8 py-3 rounded-md font-semibold hover:bg-primary-50 transition-colors text-center"
+                className="btn-teal-primary px-8 py-3 rounded-md text-center"
               >
                 {t.home.planVisit}
               </Link>
               <Link
                 href={getLocalizedPath('/what-to-expect', locale)}
-                className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-primary-600 transition-colors text-center"
+                className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white/10 transition-colors text-center"
               >
                 {t.home.whatToExpect}
               </Link>
@@ -76,10 +76,10 @@ export default function HomePageClient({ featuredService, upcomingEvents }: Home
                 <h3 className="text-2xl font-semibold mb-4 text-primary-700">{service.title}</h3>
                 <div className="space-y-3">
                   <p className="text-gray-700">
-                    <strong className="text-primary-600">{t.common.time}:</strong> {service.time}
+                    <strong className="text-primary-800">{t.common.time}:</strong> {service.time}
                   </p>
                   <p className="text-gray-700">
-                    <strong className="text-primary-600">{t.common.location}:</strong> {service.location}
+                    <strong className="text-primary-800">{t.common.location}:</strong> {service.location}
                   </p>
                   <p className="text-gray-600 leading-relaxed">{service.description}</p>
                 </div>
@@ -87,7 +87,7 @@ export default function HomePageClient({ featuredService, upcomingEvents }: Home
             ))}
           </div>
           <div className="text-center mt-12">
-            <Link href={getLocalizedPath('/visit', locale)} className="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold text-lg transition-colors group">
+            <Link href={getLocalizedPath('/visit', locale)} className="inline-flex items-center text-teal-500 hover:text-teal-600 font-semibold text-lg transition-colors group">
               {locale === 'en' ? 'View Full Schedule & Directions' : '查看完整时间表与路线'}
               <span className="ml-2 transform group-hover:translate-x-1 transition-transform">→</span>
             </Link>
@@ -103,7 +103,7 @@ export default function HomePageClient({ featuredService, upcomingEvents }: Home
               <h2 className="text-4xl font-bold mb-4 text-gray-900">
                 {locale === 'en' ? 'Latest Service' : '最新崇拜'}
               </h2>
-              <div className="w-20 h-1.5 bg-accent-400 mx-auto mb-6 rounded-full" />
+              <div className="w-20 h-1.5 bg-orange-400 mx-auto mb-6 rounded-full" />
               <p className="text-gray-600 max-w-2xl mx-auto text-lg">
                 {locale === 'en'
                   ? 'Watch our latest service or join us live when we\'re streaming!'
@@ -129,14 +129,14 @@ export default function HomePageClient({ featuredService, upcomingEvents }: Home
       {/* Upcoming Events */}
       {upcomingEvents.length > 0 && (
         <section className="py-20 bg-primary-50 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-accent-100 rounded-full blur-3xl opacity-20 -mr-32 -mt-32" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-orange-100 rounded-full blur-3xl opacity-20 -mr-32 -mt-32" />
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex flex-col md:flex-row items-center justify-between mb-12 text-center md:text-left">
               <div>
                 <h2 className="text-4xl font-bold text-primary-900 mb-2">{t.home.upcomingEvents}</h2>
-                <div className="w-20 h-1.5 bg-accent-400 rounded-full mx-auto md:mx-0" />
+                <div className="w-20 h-1.5 bg-orange-400 rounded-full mx-auto md:mx-0" />
               </div>
-              <Link href={getLocalizedPath('/events', locale)} className="mt-4 md:mt-0 text-primary-600 hover:text-primary-700 font-semibold text-lg flex items-center group transition-colors">
+              <Link href={getLocalizedPath('/events', locale)} className="mt-4 md:mt-0 text-teal-500 hover:text-teal-600 font-semibold text-lg flex items-center group transition-colors">
                 {t.common.viewAll}
                 <span className="ml-2 transform group-hover:translate-x-1 transition-transform">→</span>
               </Link>
@@ -157,7 +157,7 @@ export default function HomePageClient({ featuredService, upcomingEvents }: Home
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-gray-900">{t.home.getConnected}</h2>
-            <div className="w-20 h-1.5 bg-accent-400 mx-auto rounded-full" />
+            <div className="w-20 h-1.5 bg-orange-400 mx-auto rounded-full" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
             <Link href={getLocalizedPath('/about', locale)} className="bg-white rounded-2xl shadow-lg hover-lift overflow-hidden group border border-gray-100 card-accent-primary">
@@ -167,7 +167,7 @@ export default function HomePageClient({ featuredService, upcomingEvents }: Home
                 <p className="text-gray-600 leading-relaxed">{t.home.aboutDesc}</p>
               </div>
             </Link>
-            <Link href={getLocalizedPath('/ministries', locale)} className="bg-white rounded-2xl shadow-lg hover-lift overflow-hidden group border border-gray-100 card-accent-accent">
+            <Link href={getLocalizedPath('/ministries', locale)} className="bg-white rounded-2xl shadow-lg hover-lift overflow-hidden group border border-gray-100 card-accent-orange">
               <ImagePlaceholder className="h-56 w-full group-hover:scale-110 transition-transform duration-700" text="Ministries" icon={<span className="text-5xl">👥</span>} />
               <div className="p-8 text-center bg-white relative z-10">
                 <h3 className="text-2xl font-bold mb-3 text-primary-800">{t.home.ministries}</h3>

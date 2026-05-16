@@ -15,7 +15,7 @@ export default function AboutPageClient() {
         <div className="absolute inset-0 bg-dot-pattern opacity-10" />
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">{t.about.title}</h1>
-          <div className="w-24 h-1.5 bg-accent-400 mx-auto rounded-full mb-8" />
+          <div className="w-24 h-1.5 bg-orange-400 mx-auto rounded-full mb-8" />
         </div>
       </section>
 
@@ -29,7 +29,7 @@ export default function AboutPageClient() {
                 {t.about.missionText}
               </p>
             </div>
-            <div className="bg-white p-10 rounded-3xl shadow-xl card-accent-accent hover-lift border border-gray-100">
+            <div className="bg-white p-10 rounded-3xl shadow-xl card-accent-orange hover-lift border border-gray-100">
               <h2 className="text-3xl font-bold mb-6 text-primary-900">{t.about.vision}</h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 {t.about.visionText}

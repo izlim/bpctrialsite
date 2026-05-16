@@ -6,6 +6,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  /* Dark text on teal buttons and light teal backgrounds (.cursorrules) */
+  --text-on-teal: #1a1040;
 }
 
 body {
@@ -51,8 +53,16 @@ body {
     @apply border-t-4 border-primary-600;
   }
 
-  .card-accent-accent {
-    @apply border-t-4 border-accent-400;
+  .card-accent-orange {
+    @apply border-t-4 border-orange-400;
+  }
+
+  .btn-teal-primary {
+    @apply bg-teal-400 text-ink font-semibold shadow-sm hover:bg-teal-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2;
+  }
+
+  .link-on-light {
+    @apply text-teal-500 hover:text-teal-600 underline-offset-2 hover:underline;
   }
 
   .hover-lift {
@@ -110,11 +120,11 @@ body {
 }
 
 .prose a {
-  @apply text-primary-600 hover:text-primary-700 underline;
+  @apply text-teal-500 hover:text-teal-600 underline;
 }
 
 .prose blockquote {
-  @apply border-l-4 border-primary-300 pl-4 italic my-4;
+  @apply border-l-4 border-teal-300 pl-4 italic my-4;
 }
 
 .prose code {

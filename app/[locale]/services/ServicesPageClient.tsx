@@ -18,10 +18,10 @@ export default function ServicesPageClient({ services }: ServicesPageClientProps
         <div className="absolute inset-0 bg-dot-pattern opacity-10" />
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">{t.services.title}</h1>
-          <p className="text-xl text-primary-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-[rgba(255,255,255,0.65)] max-w-3xl mx-auto leading-relaxed">
             {t.services.description}
           </p>
-          <div className="w-24 h-1.5 bg-accent-400 mx-auto rounded-full mt-8" />
+          <div className="w-24 h-1.5 bg-orange-400 mx-auto rounded-full mt-8" />
         </div>
       </section>
 

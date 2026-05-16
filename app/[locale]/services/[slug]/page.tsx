@@ -58,7 +58,7 @@ export default async function ServicePage({ params }: { params: { locale: string
   return (
     <div className="container mx-auto px-4 py-16">
       <div className="max-w-4xl mx-auto">
-        <Link href={getLocalizedPath('/services', params.locale as Locale)} className="text-primary-600 hover:text-primary-700 mb-4 inline-block">
+        <Link href={getLocalizedPath('/services', params.locale as Locale)} className="text-teal-500 hover:text-teal-600 mb-4 inline-block">
           ← Back to All Services
         </Link>
 

@@ -15,7 +15,7 @@ export default function VisitPageClient() {
         <div className="absolute inset-0 bg-dot-pattern opacity-10" />
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">{t.visit.title}</h1>
-          <div className="w-24 h-1.5 bg-accent-400 mx-auto rounded-full" />
+          <div className="w-24 h-1.5 bg-orange-400 mx-auto rounded-full" />
         </div>
       </section>
 
@@ -23,7 +23,7 @@ export default function VisitPageClient() {
         <div className="max-w-4xl mx-auto">
           {/* Service Times */}
           <section className="mb-20">
-            <h2 className="text-4xl font-bold mb-10 text-primary-900 border-l-8 border-accent-400 pl-6">{t.visit.serviceTimes}</h2>
+            <h2 className="text-4xl font-bold mb-10 text-primary-900 border-l-8 border-orange-400 pl-6">{t.visit.serviceTimes}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {t.home.services.map((service: any, index: number) => (
                 <div key={index} className="bg-white p-8 rounded-3xl shadow-xl hover-lift border border-gray-100 card-accent-primary">
@@ -40,16 +40,16 @@ export default function VisitPageClient() {
 
           {/* Location */}
           <section className="mb-20">
-            <h2 className="text-4xl font-bold mb-10 text-primary-900 border-l-8 border-accent-400 pl-6">{t.visit.location}</h2>
-            <div className="bg-white p-10 rounded-3xl shadow-xl mb-12 border border-gray-100 card-accent-accent">
+            <h2 className="text-4xl font-bold mb-10 text-primary-900 border-l-8 border-orange-400 pl-6">{t.visit.location}</h2>
+            <div className="bg-white p-10 rounded-3xl shadow-xl mb-12 border border-gray-100 card-accent-orange">
               <h3 className="text-2xl font-bold mb-6 text-primary-800">{t.common.siteName}</h3>
               <p className="text-lg text-gray-700 mb-6 whitespace-pre-line leading-relaxed">{t.contact.addressText}</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <p className="text-gray-700 font-medium">
-                  <span className="text-primary-600 mr-2">📞</span> {t.contact.phone}: <a href={`tel:${t.contact.phoneText.replace(/\s/g, '')}`} className="text-primary-600 hover:underline">{t.contact.phoneText}</a>
+                  <span className="text-teal-500 mr-2">📞</span> {t.contact.phone}: <a href={`tel:${t.contact.phoneText.replace(/\s/g, '')}`} className="text-teal-500 hover:text-teal-600 hover:underline">{t.contact.phoneText}</a>
                 </p>
                 <p className="text-gray-700 font-medium">
-                  <span className="text-primary-600 mr-2">✉️</span> {t.contact.email}: <a href={`mailto:${t.contact.emailText}`} className="text-primary-600 hover:underline">{t.contact.emailText}</a>
+                  <span className="text-teal-500 mr-2">✉️</span> {t.contact.email}: <a href={`mailto:${t.contact.emailText}`} className="text-teal-500 hover:text-teal-600 hover:underline">{t.contact.emailText}</a>
                 </p>
               </div>
             </div>
@@ -77,7 +77,7 @@ export default function VisitPageClient() {
 
           {/* Directions */}
           <section className="mb-20">
-            <h2 className="text-4xl font-bold mb-10 text-primary-900 border-l-8 border-accent-400 pl-6">{t.visit.gettingHere}</h2>
+            <h2 className="text-4xl font-bold mb-10 text-primary-900 border-l-8 border-orange-400 pl-6">{t.visit.gettingHere}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white p-8 rounded-3xl shadow-xl hover-lift border border-gray-100 card-accent-primary">
                 <div className="text-4xl mb-6 bg-primary-50 w-16 h-16 flex items-center justify-center rounded-2xl">🚇</div>
@@ -109,7 +109,7 @@ export default function VisitPageClient() {
 
           {/* Plan Your Visit */}
           <section className="bg-primary-900 p-12 rounded-[40px] text-white relative overflow-hidden shadow-2xl mb-20">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-accent-400 rounded-full blur-3xl opacity-20 -mr-32 -mt-32" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-orange-400 rounded-full blur-3xl opacity-20 -mr-32 -mt-32" />
             <div className="relative z-10">
               <h2 className="text-4xl font-bold mb-8">{t.visit.planVisit}</h2>
               <p className="text-xl mb-10 text-primary-100 leading-relaxed max-w-2xl">
@@ -123,14 +123,14 @@ export default function VisitPageClient() {
                   locale === 'en' ? 'Friendly greeters at the door' : '友好的迎宾员'
                 ].map((item, i) => (
                   <div key={i} className="flex items-center space-x-4 bg-white/10 p-4 rounded-2xl backdrop-blur-sm border border-white/10 text-lg">
-                    <span className="text-accent-400">✦</span>
+                    <span className="text-teal-400">✦</span>
                     <span>{item}</span>
                   </div>
                 ))}
               </div>
               <Link
                 href={getLocalizedPath('/what-to-expect', locale)}
-                className="inline-block bg-accent-400 text-primary-950 px-10 py-4 rounded-2xl font-bold text-lg hover:bg-accent-300 transition-all shadow-lg transform hover:-translate-y-1"
+                className="inline-block bg-orange-400 text-white px-10 py-4 rounded-2xl font-bold text-lg hover:bg-orange-500 transition-all shadow-lg transform hover:-translate-y-1"
               >
                 {locale === 'en' ? 'Learn More About What to Expect' : '了解更多期待什么'}
               </Link>
