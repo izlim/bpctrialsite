@@ -138,7 +138,10 @@
     "title": "Services",
     "description": "Watch our past Sunday service live streams. All messages are grounded in Scripture and designed to help you grow in your relationship with God.",
     "noServices": "No services available yet.",
-    "noServicesDesc": "Services will appear here once they are added to the content folder."
+    "noServicesDesc": "Services will appear here once they are added to the content folder.",
+    "moreStreams": "Looking for more past live streams?",
+    "moreStreamsDesc": "Browse our full library of past services and live streams on YouTube.",
+    "viewOnYouTube": "View More on YouTube"
   },
   "events": {
     "title": "Events",

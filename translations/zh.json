@@ -138,7 +138,10 @@
     "title": "崇拜回顾",
     "description": "回顾我们主日崇拜的YouTube直播。所有信息均基于圣经，旨在帮助您与上帝的关系不断成长。",
     "noServices": "目前没有崇拜录像。",
-    "noServicesDesc": "一旦将崇拜录像添加到内容文件夹，它们将显示在这里。"
+    "noServicesDesc": "一旦将崇拜录像添加到内容文件夹，它们将显示在这里。",
+    "moreStreams": "想观看更多过去的直播？",
+    "moreStreamsDesc": "在YouTube上浏览我们完整的崇拜录像与直播库。",
+    "viewOnYouTube": "在YouTube上查看更多"
   },
   "events": {
     "title": "活动",
