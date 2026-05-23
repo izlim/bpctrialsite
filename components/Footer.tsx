@@ -16,7 +16,7 @@ export default function Footer() {
   return (
     <footer className="bg-primary-900 text-[rgba(255,255,255,0.75)]">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-8 md:gap-x-12 items-start">
           <div>
             <h3 className="text-white text-lg font-semibold mb-4">{t.footer.churchName}</h3>
             <p className="text-sm mb-4">
@@ -43,7 +43,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          <div>
+          <div className="md:justify-self-center">
             <h4 className="text-white font-semibold mb-4">{t.footer.quickLinks}</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href={getLocalizedPath('/about', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.footer.aboutLink}</Link></li>
@@ -54,7 +54,7 @@ export default function Footer() {
               <li><Link href={getLocalizedPath('/ministries', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.footer.ministriesLink}</Link></li>
             </ul>
           </div>
-          <div>
+          <div className="md:justify-self-end">
             <h4 className="text-white font-semibold mb-4">{t.footer.contact}</h4>
             <ul className="space-y-2 text-sm">
               <li className="whitespace-pre-line">{t.footer.addressText}</li>
