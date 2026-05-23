@@ -16,7 +16,7 @@ export default function Footer() {
   return (
     <footer className="bg-primary-900 text-[rgba(255,255,255,0.75)]">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-white text-lg font-semibold mb-4">{t.footer.churchName}</h3>
             <p className="text-sm mb-4">
@@ -46,31 +46,26 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">{t.footer.quickLinks}</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href={getLocalizedPath('/about', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.nav.about}</Link></li>
-              <li><Link href={getLocalizedPath('/visit', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.visit.serviceTimes}</Link></li>
-              <li><Link href={getLocalizedPath('/what-to-expect', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.nav.whatToExpect}</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-white font-semibold mb-4">{t.footer.connect}</h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link href={getLocalizedPath('/services', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.nav.services}</Link></li>
-              <li><Link href={getLocalizedPath('/events', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.nav.events}</Link></li>
-              <li><Link href={getLocalizedPath('/ministries', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.nav.ministries}</Link></li>
+              <li><Link href={getLocalizedPath('/about', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.footer.aboutLink}</Link></li>
+              <li><Link href={getLocalizedPath('/visit', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.footer.visitLink}</Link></li>
+              <li><Link href={getLocalizedPath('/what-to-expect', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.footer.whatToExpectLink}</Link></li>
+              <li><Link href={getLocalizedPath('/services', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.footer.servicesLink}</Link></li>
+              <li><Link href={getLocalizedPath('/events', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.footer.eventsLink}</Link></li>
+              <li><Link href={getLocalizedPath('/ministries', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.footer.ministriesLink}</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="text-white font-semibold mb-4">{t.footer.contact}</h4>
             <ul className="space-y-2 text-sm">
-              <li className="whitespace-pre-line">{t.contact.addressText}</li>
-              <li>{t.contact.phone}: {t.contact.phoneText}</li>
-              <li>{t.contact.email}: {t.contact.emailText}</li>
-              <li>{t.contact.officeHours}: {t.contact.officeHoursText.split('\n')[0]}</li>
+              <li className="whitespace-pre-line">{t.footer.addressText}</li>
+              <li>{t.footer.phoneLabel}{t.footer.phoneText}</li>
+              <li>{t.footer.emailLabel}{t.footer.emailText}</li>
+              <li>{t.footer.officeHoursLabel}{t.footer.officeHoursText}</li>
             </ul>
           </div>
         </div>
         <div className="border-t border-primary-800 mt-8 pt-8 text-center text-sm text-[rgba(255,255,255,0.6)]">
-          <p>&copy; {new Date().getFullYear()} Bethany Presbyterian Church. {t.footer.rights}</p>
+          <p>&copy; {new Date().getFullYear()} {t.footer.churchName}. {t.footer.rights}</p>
         </div>
       </div>
     </footer>

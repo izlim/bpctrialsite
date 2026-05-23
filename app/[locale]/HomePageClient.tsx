@@ -88,7 +88,7 @@ export default function HomePageClient({ featuredService, upcomingEvents }: Home
           </div>
           <div className="text-center mt-12">
             <Link href={getLocalizedPath('/visit', locale)} className="inline-flex items-center text-teal-500 hover:text-teal-600 font-semibold text-lg transition-colors group">
-              {locale === 'en' ? 'View Full Schedule & Directions' : '查看完整时间表与路线'}
+              {locale === 'en' ? 'View Full Schedule & Directions' : t.home.viewSchedule}
               <span className="ml-2 transform group-hover:translate-x-1 transition-transform">→</span>
             </Link>
           </div>
@@ -101,20 +101,20 @@ export default function HomePageClient({ featuredService, upcomingEvents }: Home
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold mb-4 text-gray-900">
-                {locale === 'en' ? 'Latest Service' : '最新崇拜'}
+                {locale === 'en' ? 'Latest Service' : t.home.latestService}
               </h2>
               <div className="w-20 h-1.5 bg-orange-400 mx-auto mb-6 rounded-full" />
               <p className="text-gray-600 max-w-2xl mx-auto text-lg">
                 {locale === 'en'
                   ? 'Watch our latest service or join us live when we\'re streaming!'
-                  : '观看我们最新的崇拜或在我们直播时加入我们！'}
+                  : t.home.latestServiceDesc}
               </p>
             </div>
             <div className="bg-white rounded-2xl shadow-2xl overflow-hidden ring-1 ring-gray-100 transform hover:scale-[1.01] transition-transform duration-500">
               <div className="aspect-video">
                 <iframe
                   src="https://www.youtube.com/embed/videoseries?list=UU4VQHI9TGLIEBYNfmSTuVZA"
-                  title={locale === 'en' ? 'Latest Service' : '最新崇拜'}
+                  title={locale === 'en' ? 'Latest Service' : t.home.latestService}
                   className="w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen

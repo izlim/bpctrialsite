@@ -63,6 +63,8 @@
       }
     ],
     "latestService": "Latest Service",
+    "latestServiceDesc": "Watch our latest service or join us live when we're streaming!",
+    "viewSchedule": "View Full Schedule & Directions",
     "upcomingEvents": "Upcoming Events",
     "getConnected": "Get Connected",
     "aboutUs": "About Us",
@@ -203,10 +205,23 @@
   "footer": {
     "quickLinks": "Quick Links",
     "connect": "Connect",
-    "contact": "Contact",
+    "contact": "Contact Us",
     "rights": "All rights reserved.",
     "churchName": "Bethany Presbyterian Church",
-    "churchDesc": "A welcoming community of believers committed to serving God and our neighbors."
+    "churchDesc": "A welcoming community of believers committed to serving God and our neighbors.",
+    "addressText": "364A Paya Lebar Rd, Singapore 534965",
+    "phoneLabel": "Phone: ",
+    "emailLabel": "Email: ",
+    "officeHoursLabel": "Office Hours: ",
+    "phoneText": "+65 6280 0011",
+    "emailText": "hello@bethanypc.org.sg",
+    "officeHoursText": "Monday - Friday: 9:00 AM - 5:00 PM",
+    "aboutLink": "About Us",
+    "visitLink": "Visit Us",
+    "whatToExpectLink": "What to Expect",
+    "servicesLink": "Service Recordings",
+    "eventsLink": "Events",
+    "ministriesLink": "Ministries"
   },
   "social": {
     "facebook": "https://www.facebook.com/bethanypcsg/",
