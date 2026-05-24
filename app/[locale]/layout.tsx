@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { locales, type Locale } from '@/lib/i18n';
-import { inter, gensen } from '@/lib/fonts';
+import { inter } from '@/lib/fonts';
 import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -114,9 +114,14 @@ export default function LocaleLayout({
     notFound();
   }
 
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
   return (
     <html lang={params.locale}>
-      <body className={`${inter.variable} ${gensen.variable} font-sans`}>
+      <head>
+        <link rel="stylesheet" href={`${basePath}/fonts/gensen.css`} />
+      </head>
+      <body className={`${inter.variable} font-sans`}>
         <LocaleProvider>
           <Header />
           <main className="min-h-screen">

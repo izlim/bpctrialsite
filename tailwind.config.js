@@ -52,8 +52,8 @@ module.exports = {
         ink: '#1a1040',
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        heading: ['var(--font-gensen)', 'var(--font-inter)', 'serif'],
+        sans: ['var(--font-inter)', '"GenSen Rounded 2"', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-inter)', '"GenSen Rounded 2"', 'system-ui', 'sans-serif'],
       },
       keyframes: {
         'subtle-zoom': {

@@ -1,4 +1,4 @@
-import { inter, gensen } from '@/lib/fonts';
+import { inter } from '@/lib/fonts';
 import '../globals.css';
 import type { Metadata } from 'next';
 
@@ -20,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="stylesheet" href={`${basePath}/fonts/gensen.css`} />
         <meta httpEquiv="refresh" content={`2;url=${basePath}/en/`} />
         <script
           dangerouslySetInnerHTML={{
@@ -36,7 +37,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${gensen.variable} font-sans`}>
+      <body className={`${inter.variable} font-sans`}>
         {children}
       </body>
     </html>

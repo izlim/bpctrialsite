@@ -1,0 +1,72 @@
+/*
+ * GenSen CJK fonts — static assets only (not processed by next/font).
+ * TW/TC: official OTF from https://github.com/ButTaiwan/gensen-font/releases (v2.100).
+ * JP/PJP: TTF from the same release family (browser-validated).
+ * Relative URLs keep this file working with Next.js basePath deployments.
+ */
+
+/* Traditional Chinese (Taiwan) — medium */
+@font-face {
+  font-family: 'GenSen Rounded 2';
+  src: url('./GenSenRounded2TW-M.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+3400-4DBF,
+    U+4E00-9FFF,
+    U+F900-FAFF,
+    U+20000-2A6DF,
+    U+2A700-2B73F,
+    U+2B740-2B81F,
+    U+2B820-2CEAF,
+    U+2CEB0-2EBEF,
+    U+30000-3134F;
+}
+
+/* Traditional Chinese — medium (TC variant, semibold slot) */
+@font-face {
+  font-family: 'GenSen Rounded 2';
+  src: url('./GenSenRounded2TC-M.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+3400-4DBF,
+    U+4E00-9FFF,
+    U+F900-FAFF,
+    U+20000-2A6DF,
+    U+2A700-2B73F,
+    U+2B740-2B81F,
+    U+2B820-2CEAF,
+    U+2CEB0-2EBEF,
+    U+30000-3134F;
+}
+
+/* Japanese — medium */
+@font-face {
+  font-family: 'GenSen Rounded 2';
+  src: url('./GenSenRounded2JP-M-03.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+3040-309F,
+    U+30A0-30FF,
+    U+31F0-31FF,
+    U+FF00-FFEF;
+}
+
+/* Japanese proportional — semibold */
+@font-face {
+  font-family: 'GenSen Rounded 2';
+  src: url('./GenSenRounded2PJP-M-04.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+3040-309F,
+    U+30A0-30FF,
+    U+31F0-31FF,
+    U+FF00-FFEF;
+}
