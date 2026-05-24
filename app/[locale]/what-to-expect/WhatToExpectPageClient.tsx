@@ -12,13 +12,12 @@ export default function WhatToExpectPageClient() {
             {/* Header Section */}
             <section className="bg-primary-gradient text-white py-24 relative overflow-hidden">
                 <div className="absolute inset-0 bg-dot-pattern opacity-10" />
-                <div className="container mx-auto px-4 text-center relative z-10">
-                    <h1 className="text-5xl md:text-6xl font-extrabold mb-8 tracking-tight italic text-white">
-                        {t.whatToExpect.title}
-                    </h1>
-                    <p className="text-xl md:text-2xl text-[rgba(255,255,255,0.65)] max-w-3xl mx-auto leading-relaxed font-light">
+                <div className="container mx-auto px-4 relative z-10 text-center">
+                    <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">{t.whatToExpect.title}</h1>
+                    <p className="text-xl text-[rgba(255,255,255,0.65)] max-w-3xl mx-auto leading-relaxed">
                         {t.whatToExpect.intro}
                     </p>
+                    <div className="w-24 h-1.5 bg-orange-400 mx-auto rounded-full mt-8" />
                 </div>
             </section>
 
@@ -214,7 +213,7 @@ export default function WhatToExpectPageClient() {
                     <section className="bg-primary-gradient text-white p-12 md:p-20 rounded-[3rem] text-center shadow-2xl relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-orange-400 rounded-full blur-3xl opacity-10 -mr-32 -mt-32" />
                         <div className="relative z-10">
-                            <h2 className="text-4xl md:text-5xl font-bold mb-6 italic tracking-tight text-white">{t.whatToExpect.readyToVisit}</h2>
+                            <h2 className="text-4xl font-bold mb-6 text-white">{t.whatToExpect.readyToVisit}</h2>
                             <p className="text-xl mb-12 text-[rgba(255,255,255,0.65)] max-w-2xl mx-auto leading-relaxed">
                                 {t.whatToExpect.readyText}
                             </p>
