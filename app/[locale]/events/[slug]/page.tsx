@@ -4,14 +4,24 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { locales, type Locale } from '@/lib/i18n';
+import InstagramEmbed from '@/components/InstagramEmbed';
 
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  const events = await getEvents('en'); // Generate params based on English events (assuming identical slugs)
-  return events.map((event) => ({
-    slug: event.slug,
-  }));
+  const params: Array<{ locale: string; slug: string }> = [];
+
+  for (const locale of locales) {
+    const events = await getEvents(locale);
+    events.forEach((event) => {
+      params.push({
+        locale,
+        slug: event.slug,
+      });
+    });
+  }
+
+  return params;
 }
 
 export async function generateMetadata({ params }: { params: { slug: string; locale: string } }) {
@@ -23,11 +33,12 @@ export async function generateMetadata({ params }: { params: { slug: string; loc
   }
   return {
     title: `${event.frontmatter.title} | Events | Bethany Presbyterian Church`,
-    description: `Join us for ${event.frontmatter.title} on ${formatDate(event.frontmatter.date)}`,
+    description:
+      params.locale === 'zh'
+        ? `${event.frontmatter.title} — ${formatDate(event.frontmatter.date, 'zh')}`
+        : `Join us for ${event.frontmatter.title} on ${formatDate(event.frontmatter.date, 'en')}`,
   };
 }
-
-import InstagramEmbed from '@/components/InstagramEmbed';
 
 export default async function EventPage({ params }: { params: { slug: string; locale: string } }) {
   if (!locales.includes(params.locale as Locale)) {
@@ -56,7 +67,7 @@ export default async function EventPage({ params }: { params: { slug: string; lo
               <div>
                 <h3 className="font-semibold text-gray-700 mb-2">{params.locale === 'en' ? 'Date & Time' : '日期与时间'}</h3>
                 <p className="text-gray-900">
-                  {formatDate(event.frontmatter.date)}
+                  {formatDate(event.frontmatter.date, params.locale as Locale)}
                   {event.frontmatter.time && ` • ${event.frontmatter.time}`}
                 </p>
               </div>

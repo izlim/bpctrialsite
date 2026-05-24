@@ -63,7 +63,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
         </div>
         <div className="text-sm text-gray-600 space-y-1">
           {service.frontmatter.speaker && <p><span className="font-medium">{t.common.speaker}:</span> {service.frontmatter.speaker}</p>}
-          <p><span className="font-medium">{t.common.date}:</span> {formatDate(service.frontmatter.date)}</p>
+          <p><span className="font-medium">{t.common.date}:</span> {formatDate(service.frontmatter.date, locale)}</p>
         </div>
         <div className="mt-4 flex space-x-3">
           <Link href={servicePath} className="text-teal-500 hover:text-teal-600 text-sm font-medium">

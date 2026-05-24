@@ -36,7 +36,10 @@ export async function generateMetadata({ params }: { params: { locale: string; s
   }
   return {
     title: `${service.frontmatter.title} | Services | Bethany Presbyterian Church`,
-    description: `Service by ${service.frontmatter.speaker} on ${formatDate(service.frontmatter.date)}`,
+    description:
+      params.locale === 'zh'
+        ? `${service.frontmatter.speaker} — ${formatDate(service.frontmatter.date, 'zh')}`
+        : `Service by ${service.frontmatter.speaker} on ${formatDate(service.frontmatter.date, 'en')}`,
   };
 }
 
@@ -72,7 +75,10 @@ export default async function ServicePage({ params }: { params: { locale: string
             <h1 className="text-4xl font-bold mb-4">{service.frontmatter.title}</h1>
             <div className="flex flex-wrap gap-4 text-gray-600">
               {service.frontmatter.speaker && <p><strong>Speaker:</strong> {service.frontmatter.speaker}</p>}
-              <p><strong>Date:</strong> {formatDate(service.frontmatter.date)}</p>
+              <p>
+                <strong>{params.locale === 'zh' ? '日期' : 'Date'}:</strong>{' '}
+                {formatDate(service.frontmatter.date, params.locale as Locale)}
+              </p>
             </div>
           </div>
 
