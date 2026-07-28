@@ -7,6 +7,7 @@ import ImagePlaceholder from '@/components/ImagePlaceholder';
 
 export default function VisitPageClient() {
   const { locale, t } = useLocale();
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
   return (
     <div className="bg-transparent">
@@ -81,7 +82,7 @@ export default function VisitPageClient() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white p-8 rounded-3xl shadow-xl hover-lift border border-gray-100 card-accent-primary">
                 <div className="mb-6 flex items-center justify-center overflow-hidden">
-                  <img src="/images/train.png" alt="Train" className="w-20 h-20 object-contain" />
+                  <img src={`${basePath}/images/train.png`} alt="Train" className="w-20 h-20 object-contain" />
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-primary-800">{t.visit.byMrt}</h3>
                 <p className="text-gray-700 leading-relaxed text-sm">
@@ -92,7 +93,7 @@ export default function VisitPageClient() {
               </div>
               <div className="bg-white p-8 rounded-3xl shadow-xl hover-lift border border-gray-100 card-accent-primary">
                 <div className="mb-6 flex items-center justify-center overflow-hidden">
-                  <img src="/images/bus.png" alt="Bus" className="w-20 h-20 object-contain" />
+                  <img src={`${basePath}/images/bus.png`} alt="Bus" className="w-20 h-20 object-contain" />
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-primary-800">{t.visit.byBus}</h3>
                 <p className="text-gray-700 leading-relaxed text-sm">
@@ -103,7 +104,7 @@ export default function VisitPageClient() {
               </div>
               <div className="bg-white p-8 rounded-3xl shadow-xl hover-lift border border-gray-100 card-accent-primary">
                 <div className="mb-6 flex items-center justify-center overflow-hidden">
-                  <img src="/images/car.png" alt="Car" className="w-20 h-20 object-contain" />
+                  <img src={`${basePath}/images/car.png`} alt="Car" className="w-20 h-20 object-contain" />
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-primary-800">{t.visit.byCar}</h3>
                 <p className="text-gray-700 leading-relaxed text-sm mb-2">
