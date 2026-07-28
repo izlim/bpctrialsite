@@ -49,12 +49,9 @@ export default function Footer() {
               <li><Link href={getLocalizedPath('/about', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.footer.aboutLink}</Link></li>
               <li><Link href={getLocalizedPath('/visit', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.footer.visitLink}</Link></li>
               <li><Link href={getLocalizedPath('/what-to-expect', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.footer.whatToExpectLink}</Link></li>
-              <li><Link href={getLocalizedPath('/beliefs', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.footer.beliefsLink}</Link></li>
               <li><Link href={getLocalizedPath('/services', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.footer.servicesLink}</Link></li>
               <li><Link href={getLocalizedPath('/events', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.footer.eventsLink}</Link></li>
               <li><Link href={getLocalizedPath('/ministries', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.footer.ministriesLink}</Link></li>
-              <li><Link href={getLocalizedPath('/resources', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.footer.resourcesLink}</Link></li>
-              <li><Link href={getLocalizedPath('/give', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.footer.giveLink}</Link></li>
             </ul>
           </div>
           <div className="md:justify-self-end">
