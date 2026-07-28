@@ -16,6 +16,9 @@ export default function AboutPageClient() {
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">{t.about.title}</h1>
           <div className="w-24 h-1.5 bg-orange-400 mx-auto rounded-full mb-8" />
+          <p className="text-sm md:text-base text-white/80 max-w-2xl mx-auto">
+            {t.about.officialWebsiteIntro}
+          </p>
         </div>
       </section>
 

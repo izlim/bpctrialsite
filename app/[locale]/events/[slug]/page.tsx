@@ -1,4 +1,6 @@
-import { getEvents, getEventBySlug } from '@/lib/markdown';
+import fs from 'fs';
+import path from 'path';
+import { getEventBySlug } from '@/lib/markdown';
 import { formatDate } from '@/lib/utils';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
@@ -6,19 +8,32 @@ import type { Metadata } from 'next';
 import { locales, type Locale } from '@/lib/i18n';
 import InstagramEmbed from '@/components/InstagramEmbed';
 
+export const dynamic = 'force-static';
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const params: Array<{ locale: string; slug: string }> = [];
+  const contentDirectory = path.join(process.cwd(), 'content', 'events');
 
   for (const locale of locales) {
-    const events = await getEvents(locale);
-    events.forEach((event) => {
+    const eventsDirectory = path.join(contentDirectory, locale);
+
+    if (!fs.existsSync(eventsDirectory)) {
+      continue;
+    }
+
+    const fileNames = fs.readdirSync(eventsDirectory).filter((name) => name.endsWith('.md'));
+
+    fileNames.forEach((fileName) => {
       params.push({
         locale,
-        slug: event.slug,
+        slug: fileName.replace(/\.md$/, ''),
       });
     });
+  }
+
+  if (params.length === 0) {
+    return [{ locale: 'en', slug: 'placeholder-do-not-index' }];
   }
 
   return params;

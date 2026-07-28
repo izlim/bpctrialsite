@@ -32,6 +32,7 @@
   },
   "home": {
     "welcome": "Welcome to Bethany Presbyterian Church",
+    "officialWebsite": "The official website of Bethany Presbyterian Church, Singapore.",
     "subtitle": "A welcoming community of believers committed to serving God and our neighbors. Join us as we grow in faith, love, and service together.",
     "planVisit": "Plan Your Visit",
     "whatToExpect": "What to Expect",
@@ -82,6 +83,7 @@
   },
   "about": {
     "title": "About Bethany Presbyterian Church",
+    "officialWebsiteIntro": "This is the official website of Bethany Presbyterian Church, serving the community in Singapore.",
     "mission": "Our Mission",
     "missionText": "Our Mission is to develop servants of Christ and equip leaders in the community.",
     "vision": "Our Vision",
@@ -187,6 +189,7 @@
   },
   "contact": {
     "title": "Contact Us",
+    "officialWebsiteIntro": "Contact Bethany Presbyterian Church using the information below.",
     "getInTouch": "Get in Touch",
     "address": "Address",
     "addressText": "364A Paya Lebar Rd, Singapore 534965",
@@ -206,6 +209,8 @@
     "quickLinks": "Quick Links",
     "connect": "Connect",
     "contact": "Contact Us",
+    "copyrightLine": "© 2026 Bethany Presbyterian Church. All rights reserved.",
+    "officialWebsiteLine": "Official website of Bethany Presbyterian Church, Singapore.",
     "rights": "All rights reserved.",
     "churchName": "Bethany Presbyterian Church",
     "churchDesc": "A welcoming community of believers committed to serving God and our neighbors.",

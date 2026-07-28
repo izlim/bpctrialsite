@@ -15,6 +15,7 @@ interface HomePageClientProps {
 
 export default function HomePageClient({ featuredService, upcomingEvents }: HomePageClientProps) {
   const { locale, t } = useLocale();
+  const whatsappChannelUrl = 'https://whatsapp.com/channel/0029Va1Yt31I7BeLahOS6c2m';
 
   const heroImages = [
     '/images/hero-1.jpg',
@@ -37,7 +38,10 @@ export default function HomePageClient({ featuredService, upcomingEvents }: Home
       <section className="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-20">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
           <div className="max-w-3xl flex-1">
-            <h1 className="text-5xl font-bold mb-6 text-white">{t.home.welcome}</h1>
+            <h1 className="text-5xl font-bold mb-4 text-white">{t.home.welcome}</h1>
+            <p className="text-sm md:text-base font-medium text-[rgba(255,255,255,0.8)] mb-6">
+              {t.home.officialWebsite}
+            </p>
             <p className="text-xl mb-8 text-[rgba(255,255,255,0.65)]">
               {t.home.subtitle}
             </p>
@@ -161,26 +165,62 @@ export default function HomePageClient({ featuredService, upcomingEvents }: Home
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
             <Link href={getLocalizedPath('/about', locale)} className="bg-white rounded-2xl shadow-lg hover-lift overflow-hidden group border border-gray-100 card-accent-primary">
-              <ImagePlaceholder className="h-56 w-full group-hover:scale-110 transition-transform duration-700" text="About Us" src="/images/about_us.png" alt="About Church" />
+              <ImagePlaceholder className="h-72 w-full group-hover:scale-[1.25] transition-transform duration-700" text="About Us" src="/images/about_us.png" alt="About Church" objectFit="cover" />
               <div className="p-8 text-center bg-white relative z-10">
                 <h3 className="text-2xl font-bold mb-3 text-primary-800">{t.home.aboutUs}</h3>
                 <p className="text-gray-600 leading-relaxed">{t.home.aboutDesc}</p>
               </div>
             </Link>
             <Link href={getLocalizedPath('/ministries', locale)} className="bg-white rounded-2xl shadow-lg hover-lift overflow-hidden group border border-gray-100 card-accent-orange">
-              <ImagePlaceholder className="h-56 w-full group-hover:scale-110 transition-transform duration-700" text="Ministries" src="/images/ministries.png" alt="Our Ministries" />
+              <ImagePlaceholder className="h-72 w-full group-hover:scale-[1.25] transition-transform duration-700" text="Ministries" src="/images/ministries.png" alt="Our Ministries" objectFit="cover" />
               <div className="p-8 text-center bg-white relative z-10">
                 <h3 className="text-2xl font-bold mb-3 text-primary-800">{t.home.ministries}</h3>
                 <p className="text-gray-600 leading-relaxed">{t.home.ministriesDesc}</p>
               </div>
             </Link>
             <Link href={getLocalizedPath('/what-to-expect', locale)} className="bg-white rounded-2xl shadow-lg hover-lift overflow-hidden group border border-gray-100 card-accent-primary">
-              <ImagePlaceholder className="h-56 w-full group-hover:scale-110 transition-transform duration-700" text="What to Expect" src="/images/what_to_expect.png" alt="Expections" />
+              <ImagePlaceholder className="h-72 w-full group-hover:scale-[1.25] transition-transform duration-700" text="What to Expect" src="/images/what_to_expect.png" alt="Expections" objectFit="cover" />
               <div className="p-8 text-center bg-white relative z-10">
                 <h3 className="text-2xl font-bold mb-3 text-primary-800">{t.home.whatToExpect}</h3>
                 <p className="text-gray-600 leading-relaxed">{t.home.whatToExpectDesc}</p>
               </div>
             </Link>
+          </div>
+
+          <div className="mx-auto mt-10 max-w-4xl rounded-3xl border border-teal-100 bg-teal-50 p-8 shadow-sm">
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-2xl">
+                <h3 className="text-2xl font-bold text-primary-800 mb-3">
+                  {locale === 'en' ? 'Stay connected with our WhatsApp Channel' : '通过 WhatsApp 频道保持联系'}
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  {locale === 'en'
+                    ? 'Join the church channel for updates, announcements, and community news.'
+                    : '加入教会频道，获取最新消息、公告和社区动态。'}
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                <a
+                  href={whatsappChannelUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-full bg-green-600 px-5 py-3 font-semibold text-white transition hover:bg-green-700"
+                >
+                  <span className="mr-2 text-lg">💬</span>
+                  {locale === 'en' ? 'Open WhatsApp Channel' : '打开 WhatsApp 频道'}
+                </a>
+                <div className="flex flex-col items-start gap-2">
+                  <p className="text-sm font-medium text-gray-700">
+                    {locale === 'en' ? 'Or scan the QR code' : '或扫描二维码'}
+                  </p>
+                  <img
+                    src={`https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=${encodeURIComponent(whatsappChannelUrl)}`}
+                    alt={locale === 'en' ? 'WhatsApp channel QR code' : 'WhatsApp 频道二维码'}
+                    className="h-40 w-40 shrink-0 rounded-2xl border border-gray-200 bg-white p-3 shadow-sm object-contain"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

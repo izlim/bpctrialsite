@@ -53,6 +53,7 @@ export default function VisitPageClient() {
                   <span className="text-teal-500 mr-2">✉️</span> {t.contact.email}: <a href={`mailto:${t.contact.emailText}`} className="text-teal-500 hover:text-teal-600 hover:underline">{t.contact.emailText}</a>
                 </p>
               </div>
+
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">

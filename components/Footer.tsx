@@ -64,8 +64,9 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-primary-800 mt-8 pt-8 text-center text-sm text-[rgba(255,255,255,0.6)]">
-          <p>&copy; {new Date().getFullYear()} {t.footer.churchName}. {t.footer.rights}</p>
+        <div className="border-t border-primary-800 mt-8 pt-8 text-center text-sm text-[rgba(255,255,255,0.6)] space-y-2">
+          <p>{t.footer.copyrightLine}</p>
+          <p>{t.footer.officialWebsiteLine}</p>
         </div>
       </div>
     </footer>

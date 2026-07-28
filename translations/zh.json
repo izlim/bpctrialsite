@@ -32,6 +32,7 @@
   },
   "home": {
     "welcome": "欢迎您来到伯大尼长老会",
+    "officialWebsite": "伯大尼长老会新加坡官方网站。",
     "subtitle": "我们是一个以服事上帝、关怀邻舍为使命的教会大家庭，诚邀您与我们一同在信心、爱心与服事中成长。",
     "planVisit": "计划来访",
     "whatToExpect": "新朋友指南",
@@ -82,6 +83,7 @@
   },
   "about": {
     "title": "关于伯大尼长老会",
+    "officialWebsiteIntro": "这是伯大尼长老会在新加坡服务社区的官方网站。",
     "mission": "我们的使命",
     "missionText": "通过传扬福音、教导上帝的话语，以及建立一个彼此相爱、服务并向外传播的社区，使万民作门徒，从而荣耀上帝。",
     "vision": "我们的异象",
@@ -187,6 +189,7 @@
   },
   "contact": {
     "title": "联系我们",
+    "officialWebsiteIntro": "请使用下列信息联系伯大尼长老会。",
     "getInTouch": "取得联系",
     "address": "地址",
     "addressText": "364A Paya Lebar Rd, Singapore 534965",
@@ -206,6 +209,8 @@
     "quickLinks": "快速链接",
     "connect": "建立联系",
     "contact": "联系我们",
+    "copyrightLine": "© 2026 伯大尼长老会。保留所有权利。",
+    "officialWebsiteLine": "伯大尼长老会新加坡官方网站。",
     "rights": "版权所有。",
     "churchName": "伯大尼长老会",
     "churchDesc": "一个以服事上帝与邻舍为使命的教会群体。加入我们，在信心、爱心与服事中一同成长。",

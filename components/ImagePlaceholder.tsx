@@ -6,9 +6,10 @@ interface ImagePlaceholderProps {
     icon?: React.ReactNode;
     src?: string;
     alt?: string;
+    objectFit?: 'cover' | 'contain';
 }
 
-export default function ImagePlaceholder({ className = '', text, icon, src, alt }: ImagePlaceholderProps) {
+export default function ImagePlaceholder({ className = '', text, icon, src, alt, objectFit = 'cover' }: ImagePlaceholderProps) {
     if (src) {
         // Prepend basePath for absolute paths (needed for GitHub Pages deployment)
         const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -20,7 +21,7 @@ export default function ImagePlaceholder({ className = '', text, icon, src, alt 
                     src={fullSrc}
                     alt={alt || text || 'Image'}
                     fill
-                    className="object-cover"
+                    className={objectFit === 'contain' ? 'object-contain' : 'object-cover'}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
             </div>

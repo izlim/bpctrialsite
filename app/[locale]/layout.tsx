@@ -139,7 +139,7 @@ export default function LocaleLayout({
               '@type': 'Church',
               name: 'Bethany Presbyterian Church',
               url: 'https://bethanypc.org.sg',
-              logo: 'https://bethanypc.org.sg/icon.png',
+              logo: 'https://bethanypc.org.sg/images/logo/logo-horizontal.png',
               sameAs: [
                 'https://www.facebook.com/bethanypcsg/',
                 'https://www.instagram.com/bethanypc.sg/',
@@ -152,44 +152,8 @@ export default function LocaleLayout({
                 postalCode: '534965',
                 addressCountry: 'SG',
               },
-              geo: {
-                '@type': 'GeoCoordinates',
-                latitude: 1.3265,
-                longitude: 103.8907,
-              },
               telephone: '+65 6280 0011',
               email: 'hello@bethanypc.org.sg',
-              availableLanguage: ['English', 'Mandarin', 'Hokkien'],
-              openingHoursSpecification: [
-                {
-                  '@type': 'OpeningHoursSpecification',
-                  dayOfWeek: 'Sunday',
-                  opens: '09:30',
-                  closes: '11:00',
-                  name: 'Sunday Morning Hokkien Service',
-                },
-                {
-                  '@type': 'OpeningHoursSpecification',
-                  dayOfWeek: 'Sunday',
-                  opens: '11:30',
-                  closes: '13:00',
-                  name: 'Sunday Morning Chinese Service',
-                },
-                {
-                  '@type': 'OpeningHoursSpecification',
-                  dayOfWeek: 'Sunday',
-                  opens: '11:30',
-                  closes: '13:00',
-                  name: 'Youth Bilingual Service',
-                },
-                {
-                  '@type': 'OpeningHoursSpecification',
-                  dayOfWeek: 'Sunday',
-                  opens: '11:30',
-                  closes: '13:00',
-                  name: "Children's Sunday School",
-                },
-              ],
             }),
           }}
         />
