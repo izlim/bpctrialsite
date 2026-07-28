@@ -80,7 +80,9 @@ export default function VisitPageClient() {
             <h2 className="text-4xl font-bold mb-10 text-primary-900 border-l-8 border-orange-400 pl-6">{t.visit.gettingHere}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white p-8 rounded-3xl shadow-xl hover-lift border border-gray-100 card-accent-primary">
-                <div className="text-4xl mb-6 bg-primary-50 w-16 h-16 flex items-center justify-center rounded-2xl">🚇</div>
+                <div className="mb-6 flex items-center justify-center overflow-hidden">
+                  <img src="/images/train.png" alt="Train" className="w-20 h-20 object-contain" />
+                </div>
                 <h3 className="text-xl font-bold mb-4 text-primary-800">{t.visit.byMrt}</h3>
                 <p className="text-gray-700 leading-relaxed text-sm">
                   {locale === 'en'
@@ -89,7 +91,9 @@ export default function VisitPageClient() {
                 </p>
               </div>
               <div className="bg-white p-8 rounded-3xl shadow-xl hover-lift border border-gray-100 card-accent-primary">
-                <div className="text-4xl mb-6 bg-primary-50 w-16 h-16 flex items-center justify-center rounded-2xl">🚌</div>
+                <div className="mb-6 flex items-center justify-center overflow-hidden">
+                  <img src="/images/bus.png" alt="Bus" className="w-20 h-20 object-contain" />
+                </div>
                 <h3 className="text-xl font-bold mb-4 text-primary-800">{t.visit.byBus}</h3>
                 <p className="text-gray-700 leading-relaxed text-sm">
                   {locale === 'en'
@@ -98,7 +102,9 @@ export default function VisitPageClient() {
                 </p>
               </div>
               <div className="bg-white p-8 rounded-3xl shadow-xl hover-lift border border-gray-100 card-accent-primary">
-                <div className="text-4xl mb-6 bg-primary-50 w-16 h-16 flex items-center justify-center rounded-2xl">🚗</div>
+                <div className="mb-6 flex items-center justify-center overflow-hidden">
+                  <img src="/images/car.png" alt="Car" className="w-20 h-20 object-contain" />
+                </div>
                 <h3 className="text-xl font-bold mb-4 text-primary-800">{t.visit.byCar}</h3>
                 <p className="text-gray-700 leading-relaxed text-sm mb-2">
                   {locale === 'en' ? 'Limited on-site parking. Extra parking: Da Jin Factory Building, S534963.' : '现场停车位有限。额外停车：Da Jin Factory Building, S534963。'}
