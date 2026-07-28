@@ -87,7 +87,7 @@
     "vision": "我们的异象",
     "visionText": "成为一个充满活力的、以基督为中心的社区，每个成员都在信心上成长，在团契中联系，在事工中参与，用耶稣基督的爱和真理影响新加坡及更远的地方。",
     "history": "我们的历史",
-    "historyText": "伯大尼长老会成立于[年份]，旨在服务社区并在新加坡传播福音。从一个忠实信徒的小聚会开始，已经发展成为一个致力于上帝工作的充满活力的会众。",
+    "historyText": "伯大尼长老会成立于1905年，旨在服务社区并在新加坡传播福音。从一个忠实信徒的小聚会开始，已经发展成为一个致力于上帝工作的充满活力的会众。",
     "leadership": "我们的领导",
     "seniorPastor": "主任牧师",
     "associatePastor": "副牧师",
@@ -221,7 +221,10 @@
     "whatToExpectLink": "新朋友指南",
     "servicesLink": "崇拜录像",
     "eventsLink": "活动",
-    "ministriesLink": "事工"
+    "ministriesLink": "事工",
+    "beliefsLink": "信仰",
+    "resourcesLink": "资源",
+    "giveLink": "奉献"
   },
   "social": {
     "facebook": "https://www.facebook.com/bethanypcsg/",

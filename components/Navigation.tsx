@@ -18,11 +18,14 @@ export default function Navigation() {
   const navLinks = [
     { href: '/', key: 'home' },
     { href: '/about', key: 'about' },
+    { href: '/beliefs', key: 'beliefs' },
     { href: '/visit', key: 'visit' },
     { href: '/what-to-expect', key: 'whatToExpect' },
     { href: '/services', key: 'services' },
+    { href: '/resources', key: 'resources' },
     { href: '/events', key: 'events' },
     { href: '/ministries', key: 'ministries' },
+    { href: '/give', key: 'give' },
     { href: '/contact', key: 'contact' },
   ];
 
@@ -39,17 +42,28 @@ export default function Navigation() {
   const linkInactive =
     'text-[rgba(255,255,255,0.65)] hover:text-white hover:bg-primary-700/80';
   const linkActive = 'bg-primary-700 text-white';
+  const linkGiveInactive = 'bg-orange-400 text-white hover:bg-orange-500 hover:text-white';
+  const linkGiveActive = 'bg-orange-500 text-white';
 
   return (
     <>
       <nav className="hidden lg:flex flex-wrap items-center justify-end gap-0.5 max-w-4xl">
         {navLinks.map((link) => {
           const localizedHref = getLocalizedPath(link.href, locale);
+          const isGive = link.key === 'give';
           return (
             <Link
               key={link.href}
               href={localizedHref}
-              className={`${linkBase} ${isActive(link.href) ? linkActive : linkInactive}`}
+              className={`${linkBase} ${
+                isActive(link.href)
+                  ? isGive
+                    ? linkGiveActive
+                    : linkActive
+                  : isGive
+                    ? linkGiveInactive
+                    : linkInactive
+              }`}
             >
               {t.nav[link.key as keyof typeof t.nav]}
             </Link>
@@ -89,6 +103,7 @@ export default function Navigation() {
           <div className="container mx-auto px-4 py-4 space-y-1">
             {navLinks.map((link) => {
               const localizedHref = getLocalizedPath(link.href, locale);
+              const isGive = link.key === 'give';
               return (
                 <Link
                   key={link.href}
@@ -96,8 +111,12 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                   className={`block px-4 py-3 rounded-md text-base font-medium ${
                     isActive(link.href)
-                      ? 'bg-primary-700 text-white'
-                      : 'text-[rgba(255,255,255,0.85)] hover:bg-primary-700/60 hover:text-white'
+                      ? isGive
+                        ? 'bg-orange-500 text-white'
+                        : 'bg-primary-700 text-white'
+                      : isGive
+                        ? 'bg-orange-400 text-white hover:bg-orange-500 hover:text-white'
+                        : 'text-[rgba(255,255,255,0.85)] hover:bg-primary-700/60 hover:text-white'
                   }`}
                 >
                   {t.nav[link.key as keyof typeof t.nav]}

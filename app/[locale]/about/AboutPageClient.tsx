@@ -38,6 +38,65 @@ export default function AboutPageClient() {
             </div>
           </section>
 
+          {/* Our History */}
+          <section className="mb-20">
+            <div className="bg-primary-50 rounded-3xl p-10 md:p-16 text-center relative overflow-hidden border border-primary-100">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-orange-100 rounded-full blur-2xl opacity-30 -mr-10 -mt-10" />
+              <div className="relative z-10">
+                <h2 className="text-4xl font-bold mb-6 text-primary-900">{t.about.history}</h2>
+                <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                  {t.about.historyText}
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Our Leadership */}
+          <section className="mb-20">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold mb-4 text-primary-900">{t.about.leadership}</h2>
+              <div className="w-20 h-1.5 bg-orange-400 mx-auto rounded-full" />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              <div className="bg-white p-10 rounded-3xl shadow-xl hover-lift border border-gray-100 card-accent-primary">
+                <h3 className="text-2xl font-bold mb-4 text-primary-900">{t.about.seniorPastor}</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  {locale === 'en'
+                    ? 'Serving the church through preaching, pastoral care, and spiritual leadership.'
+                    : '透过讲道、牧养关怀与属灵带领，服事教会。'}
+                </p>
+              </div>
+
+              <div className="bg-white p-10 rounded-3xl shadow-xl hover-lift border border-gray-100 card-accent-orange">
+                <h3 className="text-2xl font-bold mb-4 text-primary-900">{t.about.associatePastor}</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  {locale === 'en'
+                    ? 'Supporting the congregation through discipleship, counselling, and ministry oversight.'
+                    : '藉着门徒训练、辅导关怀与事工统筹来支持会众。'}
+                </p>
+              </div>
+
+              <div className="bg-white p-10 rounded-3xl shadow-xl hover-lift border border-gray-100 card-accent-primary">
+                <h3 className="text-2xl font-bold mb-4 text-primary-900">{t.about.youthFamily}</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  {locale === 'en'
+                    ? 'Equipping young people and families through discipleship, community, and growth in Christ.'
+                    : '透过门徒训练、团契与在基督里的成长，装备青年与家庭。'}
+                </p>
+              </div>
+
+              <div className="bg-white p-10 rounded-3xl shadow-xl hover-lift border border-gray-100 card-accent-orange">
+                <h3 className="text-2xl font-bold mb-4 text-primary-900">{t.about.presbyterian}</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  {locale === 'en'
+                    ? 'We practice Presbyterian church government and uphold the historic Christian faith as expressed in the Reformed tradition.'
+                    : '我们实践长老会治理，并持守改革宗传统所表达的历史性基督教信仰。'}
+                </p>
+              </div>
+            </div>
+          </section>
+
           {/* Featured Verse */}
           <section className="mb-20">
             <div className="bg-primary-50 rounded-3xl p-10 md:p-16 text-center relative overflow-hidden border border-primary-100">
@@ -80,8 +139,8 @@ export default function AboutPageClient() {
               <ImagePlaceholder
                 key={i}
                 className="aspect-square rounded-lg"
-                text={locale === 'en' ? `Photo ${i + 1}` : `照片 ${i + 1}`}
                 src={img.src}
+                alt={locale === 'en' ? 'Church life photo' : '教会生活照片'}
               />
             ))}
           </div>

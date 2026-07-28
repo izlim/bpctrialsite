@@ -87,7 +87,7 @@
     "vision": "Our Vision",
     "visionText": "Our Vision is to build a church passionate for Christ, filled with blessings abundant, and one that impacts communities to glorify God's name.",
     "history": "Our History",
-    "historyText": "Bethany Presbyterian Church was established in [YEAR] with a vision to serve the community and spread the Gospel in Singapore. What began as a small gathering of faithful believers has grown into a vibrant congregation committed to God's work.",
+    "historyText": "Bethany Presbyterian Church was established in 1905 with a vision to serve the community and spread the Gospel in Singapore. What began as a small gathering of faithful believers has grown into a vibrant congregation committed to God's work.",
     "leadership": "Our Leadership",
     "seniorPastor": "Senior Pastor",
     "associatePastor": "Associate Pastor",
@@ -221,7 +221,10 @@
     "whatToExpectLink": "What to Expect",
     "servicesLink": "Service Recordings",
     "eventsLink": "Events",
-    "ministriesLink": "Ministries"
+    "ministriesLink": "Ministries",
+    "beliefsLink": "Beliefs",
+    "resourcesLink": "Resources",
+    "giveLink": "Give"
   },
   "social": {
     "facebook": "https://www.facebook.com/bethanypcsg/",
