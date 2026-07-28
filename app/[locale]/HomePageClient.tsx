@@ -161,21 +161,21 @@ export default function HomePageClient({ featuredService, upcomingEvents }: Home
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
             <Link href={getLocalizedPath('/about', locale)} className="bg-white rounded-2xl shadow-lg hover-lift overflow-hidden group border border-gray-100 card-accent-primary">
-              <ImagePlaceholder className="h-56 w-full group-hover:scale-110 transition-transform duration-700" text="About Us" icon={<span className="text-5xl">🏛️</span>} />
+              <ImagePlaceholder className="h-56 w-full group-hover:scale-110 transition-transform duration-700" text="About Us" src="/images/about_us.png" alt="About Church" />
               <div className="p-8 text-center bg-white relative z-10">
                 <h3 className="text-2xl font-bold mb-3 text-primary-800">{t.home.aboutUs}</h3>
                 <p className="text-gray-600 leading-relaxed">{t.home.aboutDesc}</p>
               </div>
             </Link>
             <Link href={getLocalizedPath('/ministries', locale)} className="bg-white rounded-2xl shadow-lg hover-lift overflow-hidden group border border-gray-100 card-accent-orange">
-              <ImagePlaceholder className="h-56 w-full group-hover:scale-110 transition-transform duration-700" text="Ministries" icon={<span className="text-5xl">👥</span>} />
+              <ImagePlaceholder className="h-56 w-full group-hover:scale-110 transition-transform duration-700" text="Ministries" src="/images/ministries.png" alt="Our Ministries" />
               <div className="p-8 text-center bg-white relative z-10">
                 <h3 className="text-2xl font-bold mb-3 text-primary-800">{t.home.ministries}</h3>
                 <p className="text-gray-600 leading-relaxed">{t.home.ministriesDesc}</p>
               </div>
             </Link>
             <Link href={getLocalizedPath('/what-to-expect', locale)} className="bg-white rounded-2xl shadow-lg hover-lift overflow-hidden group border border-gray-100 card-accent-primary">
-              <ImagePlaceholder className="h-56 w-full group-hover:scale-110 transition-transform duration-700" text="What to Expect" icon={<span className="text-5xl">🤝</span>} />
+              <ImagePlaceholder className="h-56 w-full group-hover:scale-110 transition-transform duration-700" text="What to Expect" src="/images/what_to_expect.png" alt="Expections" />
               <div className="p-8 text-center bg-white relative z-10">
                 <h3 className="text-2xl font-bold mb-3 text-primary-800">{t.home.whatToExpect}</h3>
                 <p className="text-gray-600 leading-relaxed">{t.home.whatToExpectDesc}</p>
