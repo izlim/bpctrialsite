@@ -47,6 +47,7 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">{t.footer.quickLinks}</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href={getLocalizedPath('/about', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.footer.aboutLink}</Link></li>
+              <li><Link href={getLocalizedPath('/history', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.footer.historyLink}</Link></li>
               <li><Link href={getLocalizedPath('/visit', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.footer.visitLink}</Link></li>
               <li><Link href={getLocalizedPath('/what-to-expect', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.footer.whatToExpectLink}</Link></li>
               <li><Link href={getLocalizedPath('/services', locale)} className="text-[rgba(255,255,255,0.75)] hover:text-teal-400 transition-colors">{t.footer.servicesLink}</Link></li>

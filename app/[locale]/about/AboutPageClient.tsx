@@ -4,6 +4,7 @@ import { useLocale } from '@/components/LocaleProvider';
 import { getLocalizedPath } from '@/lib/i18n';
 import Link from 'next/link';
 import ImagePlaceholder from '@/components/ImagePlaceholder';
+import ChurchHistory from '@/components/ChurchHistory';
 
 export default function AboutPageClient() {
   const { locale, t } = useLocale();
@@ -23,7 +24,7 @@ export default function AboutPageClient() {
       </section>
 
       <div className="container mx-auto px-4 py-20">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {/* Mission & Vision */}
           <section className="mb-20 grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="bg-white p-10 rounded-3xl shadow-xl card-accent-primary hover-lift border border-gray-100">
@@ -43,15 +44,32 @@ export default function AboutPageClient() {
 
           {/* Our History */}
           <section className="mb-20">
-            <div className="bg-primary-50 rounded-3xl p-10 md:p-16 text-center relative overflow-hidden border border-primary-100">
+            <div className="bg-primary-50 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden border border-primary-100 mb-8">
               <div className="absolute top-0 right-0 w-40 h-40 bg-orange-100 rounded-full blur-2xl opacity-30 -mr-10 -mt-10" />
               <div className="relative z-10">
-                <h2 className="text-4xl font-bold mb-6 text-primary-900">{t.about.history}</h2>
-                <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                <span className="inline-block px-3 py-1 rounded-full bg-orange-100 text-orange-900 text-xs font-bold uppercase tracking-wider mb-3">
+                  1902 – Present · 120+ Years
+                </span>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary-900">{t.about.history}</h2>
+                <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-6">
                   {t.about.historyText}
                 </p>
+                <div>
+                  <Link
+                    href={getLocalizedPath('/history', locale)}
+                    className="btn-teal-primary inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold hover-lift"
+                  >
+                    <span>{locale === 'zh' ? '全屏查看 120 年历史' : 'View Full Dedicated History'}</span>
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
+
+            {/* Interactive Timeline & Milestones Component */}
+            <ChurchHistory showHeroHeader={false} />
           </section>
 
           {/* Our Leadership */}

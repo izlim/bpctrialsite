@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "title": "The Centennial Journey of Bethany Presbyterian Church",
+    "chineseTitle": "长老会伯大尼堂",
+    "subtitle": "Over 120 Years of Faith, Resilience, and Mission in Singapore",
+    "location": "364A Paya Lebar Rd, Singapore 534965"
+  },
+  "heroAtAGlance": [
+    {
+      "year": "1903",
+      "title": "Humble Beginnings",
+      "desc": "Small Hock Chew dialect fellowship builds a simple thatched hut sanctuary in Cha Swa."
+    },
+    {
+      "year": "1951",
+      "title": "Displacement & Faith",
+      "desc": "Land requisitioned for Paya Lebar Airport; preserved on leased land at Kim Chuan Road."
+    },
+    {
+      "year": "1975",
+      "title": "A Permanent Home",
+      "desc": "Elder Ng Swee Koon sacrificially donates 20,000 sq ft at Upper Paya Lebar Road."
+    },
+    {
+      "year": "Today",
+      "title": "Multi-Lingual & Digital",
+      "desc": "Vibrant Hokkien, Mandarin, English, and Youth services reaching diverse generations."
+    }
+  ],
+  "statCallouts": [
+    {
+      "value": "1902",
+      "label": "Founded in Cha Swa",
+      "subtext": "Pioneer Hock Chew believers"
+    },
+    {
+      "value": "$23 / mo",
+      "label": "Kim Chuan Lease",
+      "subtext": "Negotiated by Rev. John Henderson in 1954"
+    },
+    {
+      "value": "20,000 sq ft",
+      "label": "Land Donation",
+      "subtext": "Donated by Elder Ng Swee Koon in 1975"
+    },
+    {
+      "value": "4+",
+      "label": "Language Ministries",
+      "subtext": "Hokkien, Mandarin, English, Youth"
+    }
+  ],
+  "eras": [
+    {
+      "id": "era-1",
+      "period": "1902–1950",
+      "title": "Humble Seeds in Cha Swa (柴山的开端与命名)",
+      "summary": "Small Hock Chew dialect mission blossoms in rural Cha Swa, adopting the name Bethany Presbyterian Church in 1950.",
+      "details": "In 1902, pioneers purchased the Cha Swa site and built a thatched hut sanctuary in 1903. Expansion continued with Tanjong Pagar migrants in 1905. In 1950, the church officially registered with the Presbyterian Synod.",
+      "keyFigures": [
+        {
+          "name": "Rev. Zheng Pin Ting (郑聘廷牧师)",
+          "role": "Led Cha Swa site acquisition"
+        },
+        {
+          "name": "Wu Zhe Mu (吴鐸姆)",
+          "role": "Appointed first female preacher in 1903"
+        },
+        {
+          "name": "Li Yuan Jun & Huang Guo Xia",
+          "role": "Founding pioneer team members"
+        }
+      ],
+      "milestones": [
+        {
+          "year": "1902",
+          "event": "Pioneers purchase Cha Swa site."
+        },
+        {
+          "year": "1903",
+          "event": "First thatched hut sanctuary built; Wu Zhe Mu appointed first female preacher."
+        },
+        {
+          "year": "1905",
+          "event": "Tanjong Pagar branch members migrate to Cha Swa."
+        },
+        {
+          "year": "1950",
+          "event": "Formally named Bethany Presbyterian Church under Presbyterian Synod."
+        }
+      ]
+    },
+    {
+      "id": "era-2",
+      "period": "1951–1954",
+      "title": "Tested in the Wilderness: Airport Relocation (搬迁与流离的季节)",
+      "summary": "Displaced by colonial land acquisition for Paya Lebar Airport, preserved through Rev. John Henderson negotiation.",
+      "details": "In 1951, Cha Swa land was requisitioned for Paya Lebar Airport. Received $1,500 compensation in 1952 but no replacement land. In 1954, Rev. John Henderson secured Kim Chuan Road lease at $23/month.",
+      "keyFigures": [
+        {
+          "name": "Rev. John Henderson (亨约翰牧师)",
+          "role": "Negotiated Kim Chuan Road lease"
+        }
+      ],
+      "milestones": [
+        {
+          "year": "1951",
+          "event": "Land requisitioned for Paya Lebar Airport."
+        },
+        {
+          "year": "1952",
+          "event": "$1,500 compensation received without replacement land."
+        },
+        {
+          "year": "1954",
+          "event": "Leased Kim Chuan Road site at $23/month."
+        }
+      ]
+    },
+    {
+      "id": "era-3",
+      "period": "1955–1974",
+      "title": "Establishing Roots & Spiritual Growth (金泉路堂会的建立)",
+      "summary": "Dedicated new sanctuary in 1955, expanding from 50 to 220 congregants under Rev. Tan Choo-Ai.",
+      "details": "Sanctuary dedicated May 29, 1955. Attendance grew from 30 adults/20 kids in 1948 to 70 adults/150 kids by 1959. Participated in Five Times Multiplier Movement (1960–1970) and formed Youth and Women fellowships in 1967.",
+      "keyFigures": [
+        {
+          "name": "Rev. Tan Choo-Ai (陈慈爱牧师)",
+          "role": "Remembered as Good Shepherd and Diligent Evangelist"
+        },
+        {
+          "name": "Elder Lin Sai Feng",
+          "role": "Youth Fellowship leader (1967)"
+        }
+      ],
+      "milestones": [
+        {
+          "year": "1955",
+          "event": "Kim Chuan Road Sanctuary dedicated May 29."
+        },
+        {
+          "year": "1960-1970",
+          "event": "Five Times Multiplier Movement."
+        },
+        {
+          "year": "1967",
+          "event": "Youth and Women fellowships established."
+        }
+      ]
+    },
+    {
+      "id": "era-4",
+      "period": "1975–1983",
+      "title": "Miracle of Upper Paya Lebar Road (巴耶利峇上段的奇迹)",
+      "summary": "Elder Ng Swee Koon donated 20,000 sq ft land in 1975; new sanctuary dedicated on 70th Anniversary in 1983.",
+      "details": "In 1975, Elder Ng Swee Koon donated 20,000 sq ft land. English Service launched in 1978 led by Rev. Dunstan & Elder Ng Poh Ching. Foundation stone laid March 1, 1981. First service held Jan 2, 1983, dedicated March 12, 1983.",
+      "keyFigures": [
+        {
+          "name": "Elder Ng Swee Koon (黄瑞坤长老)",
+          "role": "Donated 20,000 sq ft land"
+        },
+        {
+          "name": "Rev. Dunstan & Elder Ng Poh Ching",
+          "role": "Pioneered English Service (1978)"
+        }
+      ],
+      "milestones": [
+        {
+          "year": "1975",
+          "event": "Land donated at Upper Paya Lebar Road."
+        },
+        {
+          "year": "1978",
+          "event": "Groundbreaking and English Service launch."
+        },
+        {
+          "year": "1981",
+          "event": "Foundation stone laid March 1."
+        },
+        {
+          "year": "1983",
+          "event": "First service Jan 2; 70th Anniversary & Dedication March 12."
+        }
+      ]
+    },
+    {
+      "id": "era-5",
+      "period": "1984–Present",
+      "title": "Diversification, Modernization & Digital Pivot (现代化、多元化与数字化转型)",
+      "summary": "Multi-lingual growth, 2020 pandemic digital pivot, and current leadership under Senior Pastor Rev. Sim Ang Lee.",
+      "details": "Mandarin Service founded 1996; Youth Service founded 2011 by Rev. Timothy Hoon. Good Friday 2020 digital broadcast pivot. Rev. Sim Ang Lee became Senior Pastor in August 2022 following Rev. Serene Ang retirement.",
+      "keyFigures": [
+        {
+          "name": "Rev. Timothy Hoon (洪茂祥牧师)",
+          "role": "Launched YPM (2010) and Youth Service (2011)"
+        },
+        {
+          "name": "Rev. Serene Ang (洪秋娥牧师)",
+          "role": "Senior Pastor retired 2022"
+        },
+        {
+          "name": "Rev. Sim Ang Lee (沈洪利牧师)",
+          "role": "Senior Pastor from August 2022"
+        }
+      ],
+      "milestones": [
+        {
+          "year": "1996",
+          "event": "Mandarin Service established."
+        },
+        {
+          "year": "2010-2011",
+          "event": "YPM and Saturday Youth Service launched."
+        },
+        {
+          "year": "2020",
+          "event": "Digital broadcast pivot on Good Friday (April 10)."
+        },
+        {
+          "year": "2022",
+          "event": "Rev. Sim Ang Lee becomes Senior Pastor."
+        }
+      ]
+    }
+  ]
+}
