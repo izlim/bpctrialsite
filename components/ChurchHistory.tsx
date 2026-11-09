@@ -1,10 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import historyDataRaw from '@/church-history-v4.json';
+import historyDataEnRaw from '@/church-history-v4.json';
+import historyDataZhRaw from '@/church-history-v4.zh.json';
 import { useLocale } from './LocaleProvider';
 
-// Type definitions matching church-history-v4.json
+// Type definitions matching church-history-v4.json and church-history-v4.zh.json
 export interface HeroGlanceItem {
   year: string;
   title: string;
@@ -49,7 +50,8 @@ export interface ChurchHistoryData {
   eras: EraItem[];
 }
 
-const historyData = historyDataRaw as ChurchHistoryData;
+const historyDataEn = historyDataEnRaw as ChurchHistoryData;
+const historyDataZh = historyDataZhRaw as ChurchHistoryData;
 
 interface ChurchHistoryProps {
   className?: string;
@@ -71,6 +73,7 @@ export default function ChurchHistory({
     currentLocale = 'en';
   }
   const isZh = currentLocale === 'zh';
+  const historyData = isZh ? historyDataZh : historyDataEn;
 
   // View mode: 'glance' (summaries only by default) vs 'narrative' (all expanded)
   const [viewMode, setViewMode] = useState<'glance' | 'narrative'>('glance');
@@ -364,7 +367,7 @@ export default function ChurchHistory({
                     type="button"
                     onClick={() => jumpToEra(targetEraId)}
                     className="inline-flex items-center text-xs font-semibold text-teal-700 hover:text-teal-900 pt-2 border-t border-gray-100 group-hover:underline focus:outline-none focus:ring-2 focus:ring-teal-500 rounded"
-                    aria-label={`Jump to ${item.title} details`}
+                    aria-label={isZh ? `查看「${item.title}」详细篇章` : `Jump to ${item.title} details`}
                   >
                     <span>{isZh ? '查看详细篇章' : 'Read Chapter'}</span>
                     <svg
