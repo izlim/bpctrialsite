@@ -96,7 +96,7 @@ See [CONTENT_GUIDE.md](CONTENT_GUIDE.md) for full details.
   - `[locale]/` - Language-specific pages (en, zh)
 - `components/` - Reusable React components
 - `content/` - Markdown sermons and events
-- `church-history-v4.json` - Data for the History page timeline
+- `church-history-v4.json`, `church-history-v4.zh.json` - English and Chinese data for the History page timeline
 - `lib/` - Utility functions (i18n, markdown, fonts, formatting)
 - `translations/` - UI text (`en.json`, `zh.json`)
 - `public/` - Images and fonts

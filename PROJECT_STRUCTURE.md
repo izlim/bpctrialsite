@@ -20,7 +20,7 @@ This guide is designed to help you understand "what lives where" in this website
 | File | Description |
 | :--- | :--- |
 | `tailwind.config.js` | **Design Settings**. Where you define your color palette, fonts, and other design tokens. |
-| `church-history-v4.json` | **History Page Data**. The timeline and text shown on the History page. |
+| `church-history-v4.json`, `church-history-v4.zh.json` | **History Page Data**. The English and Chinese timeline and text shown on the History page. |
 | `app/sitemap.ts` | **Sitemap**. Lists every page for search engines. Update it when adding a page. |
 | `.htaccess` | **Apache Settings**. Language redirect, caching, and compression on the cPanel server. |
 | `next.config.js` | **Build Settings**. Static export, trailing slashes, and the optional base path. |
@@ -39,7 +39,7 @@ This guide is designed to help you understand "what lives where" in this website
 *   **"I want to add a new sermon."**
     *   Go to `content/services/en/` and `content/services/zh/`.
 *   **"I want to edit the church history."**
-    *   Go to `church-history-v4.json`.
+    *   Go to `church-history-v4.json` (English) and `church-history-v4.zh.json` (Chinese).
 *   **"I want to change the logo."**
     *   Look at `components/Logo.tsx` and `public/images/logo/`.
 *   **"I want to change the primary purple color."**

@@ -67,7 +67,7 @@ bpcsite/
 - **basePath**: `next.config.js` reads `NEXT_PUBLIC_BASE_PATH`. `next/link` handles it automatically, but raw `<img src>`, `<link href>`, and manual `window.location` paths do not. Prefix them with `process.env.NEXT_PUBLIC_BASE_PATH || ''` (see `VisitPageClient.tsx`, `ImagePlaceholder.tsx`, `ImageCarousel.tsx`, `LanguageSwitcher.tsx`).
 - **Markdown detail pages** (`events/[slug]`, `services/[slug]`): `generateStaticParams` reads `content/<type>/<locale>/*.md` directly, with `dynamicParams = false`. If no files exist it returns a placeholder slug so the export doesn't fail. Each locale has its own files, so a slug that exists only in `en` has no `zh` page. Markdown is rendered with `remark-html` `sanitize: false`, so raw HTML in content is passed through.
 - **Sitemap**: `app/sitemap.ts` has a hardcoded `staticRoutes` list. Add new pages there.
-- **History page**: `components/ChurchHistory.tsx` is driven by `church-history-v4.json` at the repo root (imported via `@/church-history-v4.json`).
+- **History page**: `components/ChurchHistory.tsx` is driven by `church-history-v4.json` (English) and `church-history-v4.zh.json` (Chinese) at the repo root, chosen by locale. Both must keep the same structure (`ChurchHistoryData`); fixes to names or facts usually need making in both.
 - **Deployment**: pushing to `main` runs `.github/workflows/deploy.yml`, which publishes a **staging** site to GitHub Pages with `NEXT_PUBLIC_BASE_PATH=/bpctrialsite` for review. After approval, production is deployed by running `npm run build` (no base path) and uploading `out/` to cPanel `public_html/` by hand. Asset paths must work both with and without the base path. `.htaccess` at the repo root is copied into `out/` by `scripts/copy-htaccess.js`.
 
 ---

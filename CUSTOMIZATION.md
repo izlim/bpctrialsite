@@ -107,7 +107,7 @@ Text content is managed in different places depending on what it is.
 *   **Detailed Guide**: See [CONTENT_GUIDE.md](CONTENT_GUIDE.md).
 
 ### C. Church History
-*   **Location**: `church-history-v4.json` in the project root.
+*   **Location**: `church-history-v4.json` (English) and `church-history-v4.zh.json` (Chinese) in the project root.
 
 ### D. Images
 *   **Location**: `public/images/`. Reference them as `/images/<filename>`.

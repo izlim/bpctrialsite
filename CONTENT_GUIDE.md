@@ -8,7 +8,7 @@ The website uses three types of content:
 
 1.  **Sermons and Events (Markdown)**: Frequently updated items. Stored in `content/`.
 2.  **Static Page Content (JSON)**: Fixed text on pages like Home, About, Visit, etc. Stored in `translations/`.
-3.  **Church History (JSON)**: The timeline on the History page. Stored in `church-history-v4.json` at the project root.
+3.  **Church History (JSON)**: The timeline on the History page. Stored in `church-history-v4.json` (English) and `church-history-v4.zh.json` (Chinese) at the project root.
 
 ## 1. Managing Sermons and Events
 
@@ -107,7 +107,12 @@ To change the "About Us" title:
 
 ## 3. Managing the Church History Page
 
-The History page (`/en/history/`, `/zh/history/`) is built from `church-history-v4.json`. Edit the text values in that file the same way as the translation files. Keep the keys and structure unchanged.
+The History page is built from two files:
+
+*   `church-history-v4.json` - English (`/en/history/`)
+*   `church-history-v4.zh.json` - Chinese (`/zh/history/`)
+
+Edit the text values the same way as the translation files. Keep the keys and structure unchanged, and keep both files in step: a corrected name or date usually needs changing in both.
 
 ## Markdown Basics
 
