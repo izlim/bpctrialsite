@@ -4,12 +4,22 @@ This folder is where you put event posters so Claude can turn them into pages on
 
 ## One-time setup
 
-Ask the IT team to help you with these before your first time:
+Ask someone technical (the IT team, or a family member who knows computers) to set this up with you before your first time. The checklist below is for them.
 
-- Install Claude Code and sign in with your own account.
-- Get a copy of this project on your computer, with permission to send changes to GitHub.
-- Run `npm install` once in the project folder.
-- Get the cPanel login (only needed if you upload the final website yourself).
+### Setup checklist (for the person helping)
+
+1. **Tools:** on a Mac, run `xcode-select --install` if `git` or `python3` is missing. Install Node.js (LTS). `zip` comes with macOS.
+2. **Claude Code:** install it and sign in with the staff member's own account.
+3. **GitHub account:** the staff member needs a GitHub account that has been added as a collaborator on `izlim/bpctrialsite` (ask the website admin).
+4. **SSH key:** the repo uses SSH (`git@github.com:izlim/bpctrialsite.git`). Create a key with `ssh-keygen -t ed25519`, add the public key to their GitHub account, and check it with `ssh -T git@github.com`.
+5. **Git identity:** set their name and email so the history shows who added each event:
+   ```
+   git config --global user.name "Their Name"
+   git config --global user.email "their@email"
+   ```
+6. **Project:** `git clone git@github.com:izlim/bpctrialsite.git`, then run `npm install` in the project folder.
+7. **cPanel:** give them the cPanel login if they will upload the live website themselves.
+8. **Test run:** do one real poster together, from step 1 to step 5 below (staging), so any GitHub access problems show up while you're there.
 
 ## Adding an event
 
