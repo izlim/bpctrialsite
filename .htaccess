@@ -28,6 +28,13 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # This handles the case where a user refreshes on a sub-page
 RewriteRule . /index.html [L]
 
+# Security headers
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
 # Enable compression
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
