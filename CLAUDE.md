@@ -202,6 +202,20 @@ Markdown files live in `content/`:
   ```
 - **Custom Embeds**: In markdown body, use `{{ embed: https://... }}` for YouTube videos or Instagram posts.
 - The sermon detail page (`services/[slug]`) renders only frontmatter (YouTube from `videoUrl`, `notesUrl` link); the Markdown body and `audioUrl` are not displayed. Event pages do render the body.
+- Event `image` posters show uncropped at 16:9 on `EventCard` and in full at the top of the event page, where `ImageLightbox` opens them full-screen. Posters are usually 1600×900.
+
+### 7.1. Adding events from posters
+
+- `temp/` (git-ignored) is where new event posters are dropped for reference. Copy each poster into `public/images/` with a descriptive kebab-case name, write the `en` and `zh` markdown files from it, then empty `temp/`.
+- An event moves to "Past" the day after its `date`, so for multi-day events use the **last** day.
+- Copy registration deadlines as printed. Don't add wording that invites late sign-ups.
+- English names for Chinese terms that appear on posters:
+
+| Chinese | English |
+|---|---|
+| 主恩楼 | Grace Auditorium |
+| 秋娥牧师 / 洪秋娥牧师 | Rev. Serene Ang |
+| 佳佳姐妹 | Sister Jia Jia |
 
 ---
 
