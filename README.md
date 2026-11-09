@@ -1,14 +1,18 @@
 # Bethany Presbyterian Church Website
 
-A modern, maintainable church website built with Next.js, TypeScript, and Tailwind CSS.
+The website for Bethany Presbyterian Church Singapore, built with Next.js 14 (App Router), TypeScript, and Tailwind CSS, and exported as a fully static site.
 
 ## Features
 
-- ✅ **Multi-language Support**: English and Chinese (中文)
-- ✅ **Static Site Generation**: Fast, SEO-friendly static pages
-- ✅ **Markdown Content**: Easy content management for sermons, events, and resources
-- ✅ **Responsive Design**: Works perfectly on all devices
-- ✅ **Modern UI**: Clean, professional design with Tailwind CSS
+- ✅ **Two languages**: English (`/en/`) and Chinese (`/zh/`). Visitors to `/` are sent to the language matching their browser.
+- ✅ **Static export**: `npm run build` produces plain HTML/CSS/JS in `out/`, suitable for cPanel or any static host
+- ✅ **Markdown content**: Sermons (services) and events are Markdown files in `content/`
+- ✅ **Church history page**: An interactive 120-year timeline at `/[locale]/history`
+- ✅ **SEO**: Per-language metadata, Open Graph tags, and a generated `sitemap.xml`
+
+## Pages
+
+Home, About, History, Visit, What to Expect, Services (sermons), Events, Ministries, and Contact. Each one exists in both `/en/` and `/zh/`.
 
 ## Brand colors (Tailwind)
 
@@ -21,23 +25,16 @@ Design tokens follow [.cursorrules](.cursorrules) (Deep Violet, Aqua Teal, Warm 
 | `orange-*` | Accents only — dividers, tags, warm highlights (`orange-400` = `#FF6C0E`) |
 | `text-ink` / `#1a1040` | Text on teal buttons and light teal surfaces (contrast) |
 
-Utilities in [`app/globals.css`](app/globals.css): `btn-teal-primary`, `link-on-light`, `card-accent-primary` (violet top border), `card-accent-orange` (orange top border).
+Utilities in [`app/globals.css`](app/globals.css): `btn-teal-primary`, `link-on-light`, `card-accent-primary` (violet top border), `card-accent-orange` (orange top border), `bg-primary-gradient`, `bg-soft-gradient`.
 
 ## Getting Started
 
-First, install the dependencies:
-
 ```bash
 npm install
-```
-
-Then, run the development server:
-
-```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). You will be redirected to `/en/` or `/zh/`.
 
 ## Building for Production
 
@@ -45,97 +42,71 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 npm run build
 ```
 
-This will create a static export in the `out` directory.
+This creates a static export in `out/` and copies `.htaccess` into it. To build for a site that lives in a subfolder, set the base path:
+
+```bash
+NEXT_PUBLIC_BASE_PATH=/bpctrialsite npm run build
+```
+
+Other checks: `npm run lint` and `npx tsc --noEmit`. There is no automated test suite.
 
 ## Adding Content
 
+Content lives in language folders. To have an item appear in both languages, create a file with the **same filename** in both `en/` and `zh/`. Templates are in `content/templates/`.
+
 ### Adding Sermons
 
-Create a new markdown file in `content/sermons/` with the following frontmatter:
+Create `content/services/en/<name>.md` and `content/services/zh/<name>.md`:
 
 ```markdown
 ---
 title: "Sermon Title"
-date: "2024-01-15"
+date: "2026-05-17"
 speaker: "Pastor Name"
 series: "Series Name"
-videoUrl: "https://youtube.com/..."
-audioUrl: "https://..."
+videoUrl: "https://www.youtube.com/watch?v=..."
+audioUrl: ""
+notesUrl: "https://..."
 ---
-
-Sermon content here...
 ```
 
 ### Adding Events
 
-Create a new markdown file in `content/events/` with the following frontmatter:
+Create `content/events/en/<name>.md` and `content/events/zh/<name>.md`:
 
 ```markdown
 ---
 title: "Event Title"
-date: "2024-01-20"
-time: "7:00 PM"
-location: "Main Sanctuary"
+date: "2026-09-19"
+time: "6:30 PM - 9:30 PM"
+location: "Bethany Presbyterian Church Hall"
+recurring: false
+image: "/images/my-event.jpeg"
 ---
 
 Event description...
 ```
 
-### Adding Resources
-
-Create a new markdown file in `content/resources/` with the following frontmatter:
-
-```markdown
----
-title: "Resource Title"
-date: "2024-01-15"
-type: "devotion"
----
-
-Resource content...
-```
+See [CONTENT_GUIDE.md](CONTENT_GUIDE.md) for full details.
 
 ## Project Structure
 
-- `app/` - Next.js app router pages and layouts
+- `app/` - Next.js App Router pages and layouts
+  - `(root)/` - Language redirect at `/`
   - `[locale]/` - Language-specific pages (en, zh)
 - `components/` - Reusable React components
-- `content/` - Markdown content files
-- `lib/` - Utility functions
-- `translations/` - Language translation files (en.json, zh.json)
-- `public/` - Static assets
+- `content/` - Markdown sermons and events
+- `church-history-v4.json` - Data for the History page timeline
+- `lib/` - Utility functions (i18n, markdown, fonts, formatting)
+- `translations/` - UI text (`en.json`, `zh.json`)
+- `public/` - Images and fonts
 
-## SEO & Performance
-
-This site is optimized for:
-- **SEO**: All pages include proper metadata, Open Graph tags, and structured data
-- **Performance**: Static site generation for fast loading times
-- **Accessibility**: Semantic HTML and ARIA labels where appropriate
-- **Mobile**: Fully responsive design that works on all devices
-
-## Content Management
-
-See [CONTENT_GUIDE.md](CONTENT_GUIDE.md) for instructions on adding content to the website.
+See [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) for a guided tour.
 
 ## Internationalization (i18n)
 
-The website supports multiple languages. See [I18N_GUIDE.md](I18N_GUIDE.md) for details on:
-- How the language system works
-- Adding new pages with language support
-- Adding new languages
-- Using translations in components
+See [I18N_GUIDE.md](I18N_GUIDE.md) for how the language system works and how to add pages.
 
 ## Deployment
 
-This site can be deployed to:
-- **Vercel** (recommended for Next.js)
-- **Netlify**
-- **GitHub Pages** (with static export)
-- Any static hosting service
-
-To build for production:
-```bash
-npm run build
-```
-
-The static files will be in the `out` directory.
+Pushing to `main` publishes a staging copy to GitHub Pages for review. Once approved, build with `npm run build` and upload the contents of `out/` (including `.htaccess`) to `public_html/` on the cPanel server. See [DEPLOYMENT.md](DEPLOYMENT.md).

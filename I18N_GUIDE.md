@@ -4,21 +4,21 @@ This website supports multiple languages. Currently, English (en) and Chinese (z
 
 ## How It Works
 
-1. **Language Routes**: All pages are under `app/[locale]/` directory
-   - English pages: `/en/about`, `/en/sermons`, etc.
-   - Chinese pages: `/zh/about`, `/zh/sermons`, etc.
+1. **Language Routes**: All pages are under the `app/[locale]/` directory
+   - English pages: `/en/about/`, `/en/services/`, etc.
+   - Chinese pages: `/zh/about/`, `/zh/services/`, etc.
 
-2. **Language Detection**: The root page (`/`) automatically redirects to `/en` or `/zh` based on browser language
+2. **Language Detection**: The root page (`/`, in `app/(root)/`) redirects to `/zh/` if the browser language starts with `zh`, and to `/en/` otherwise. On Apache, `.htaccess` does the same redirect on the server using the `Accept-Language` header.
 
-3. **Language Switcher**: A language switcher in the header allows users to switch between languages
+3. **Current Language**: `components/LocaleProvider.tsx` reads the language from the first part of the URL path (not from page params) and provides the matching translations through the `useLocale()` hook.
 
-4. **Translations**: All text content is stored in JSON files:
+4. **Language Switcher**: `components/LanguageSwitcher.tsx` in the header swaps the language prefix on the current URL (respecting `NEXT_PUBLIC_BASE_PATH`).
+
+5. **Translations**: All UI text is stored in JSON files:
    - `translations/en.json` - English translations
    - `translations/zh.json` - Chinese translations
 
 ## Adding a New Page with Language Support
-
-To add a new page that supports multiple languages:
 
 1. **Create the page structure**:
    ```
@@ -45,6 +45,7 @@ To add a new page that supports multiple languages:
      return <YourPageClient />;
    }
    ```
+   Pages can also export `generateMetadata` to set a per-language title and description (see `app/[locale]/history/page.tsx`).
 
 3. **Create the client component** (`YourPageClient.tsx`):
    ```typescript
@@ -80,6 +81,10 @@ To add a new page that supports multiple languages:
    }
    ```
 
+5. **Add the page to the sitemap**: add its path to the `staticRoutes` list in `app/sitemap.ts`.
+
+6. **Link to it**: add it to `components/Navigation.tsx` and/or `components/Footer.tsx` if it should appear in the menus.
+
 ## Using Translations in Components
 
 ### In Client Components
@@ -91,7 +96,7 @@ import { useLocale } from '@/components/LocaleProvider';
 
 export default function MyComponent() {
   const { locale, t } = useLocale();
-  
+
   return <h1>{t.home.welcome}</h1>;
 }
 ```
@@ -133,11 +138,15 @@ const { locale } = useLocale();
    };
    ```
 
-2. Create translation file: `translations/ms.json`
+2. Create the translation file `translations/ms.json`, copying the structure from `en.json` and translating every string.
 
-3. Copy structure from `en.json` and translate all strings
+3. Register it in the `translations` map in `components/LocaleProvider.tsx`.
 
-4. Update language switcher if needed
+4. Add it to the `LOCALES` list in `app/sitemap.ts`.
+
+5. Add `content/services/ms/` and `content/events/ms/` folders for Markdown content.
+
+6. Update the per-language metadata in `app/[locale]/layout.tsx` and the redirect logic in `app/(root)/` and `.htaccess` if needed.
 
 ## Translation File Structure
 
@@ -150,6 +159,7 @@ Translations are organized by page/section:
   "home": { ... },          // Home page
   "about": { ... },         // About page
   "visit": { ... },         // Visit page
+  "footer": { ... },        // Footer (including the History link)
   // etc.
 }
 ```
@@ -160,28 +170,21 @@ Translations are organized by page/section:
 2. **Use getLocalizedPath**: For all internal navigation links
 3. **Keep translations organized**: Group by page/section
 4. **Test both languages**: Make sure all pages work in both languages
-5. **Handle missing translations**: The system falls back to English if a translation is missing
+5. **Keep both files in sync**: There is **no fallback** to English. A key missing from `zh.json` still passes the TypeScript check (types come from `en.json`) but shows as blank on the Chinese site.
 
 ## Current Pages with Language Support
 
 ✅ Home (`/[locale]`)
 ✅ About (`/[locale]/about`)
+✅ History (`/[locale]/history`)
 ✅ Visit (`/[locale]/visit`)
-✅ Sermons (`/[locale]/sermons`)
+✅ What to Expect (`/[locale]/what-to-expect`)
+✅ Services / sermons (`/[locale]/services`, `/[locale]/services/[slug]`)
+✅ Events (`/[locale]/events`, `/[locale]/events/[slug]`)
+✅ Ministries (`/[locale]/ministries`)
 ✅ Contact (`/[locale]/contact`)
 
-## Pages Still Needed
-
-The following pages need to be created following the same pattern:
-- `/[locale]/what-to-expect`
-- `/[locale]/beliefs`
-- `/[locale]/events`
-- `/[locale]/ministries`
-- `/[locale]/resources`
-- `/[locale]/give`
-- `/[locale]/sermons/[slug]`
-- `/[locale]/events/[slug]`
-- `/[locale]/resources/[slug]`
+The Beliefs, Resources, and Give pages were removed.
 
 ## Troubleshooting
 
@@ -195,4 +198,4 @@ The following pages need to be created following the same pattern:
 
 **Links breaking when switching languages?**
 - Make sure all links use `getLocalizedPath()`
-- Verify the target page exists in both language folders
+- Verify the target page exists in both language folders. For sermons and events, the Markdown file must exist in both `content/.../en/` and `content/.../zh/`.

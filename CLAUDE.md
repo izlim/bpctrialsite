@@ -1,6 +1,6 @@
-# CLAUDE.md - Bethany Presbyterian Church Website
+# CLAUDE.md
 
-Guidance for Claude Code when working in this repository.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ---
 
@@ -25,6 +25,9 @@ All commands run from the repository root:
 | `npm run lint` | Run ESLint across codebase |
 | `npx tsc --noEmit` | Check TypeScript types without emitting code |
 | `npm start` | Start Next.js production server (for local test, not static export) |
+| `NEXT_PUBLIC_BASE_PATH=/bpctrialsite npm run build` | Build for a subfolder deployment (the GitHub Pages staging build uses this; production does not) |
+
+There is no test suite. Verify changes with `npx tsc --noEmit`, `npm run lint`, and `npm run build` (the build catches missing `generateStaticParams` and static-export violations).
 
 ---
 
@@ -56,6 +59,16 @@ bpcsite/
 ├── tailwind.config.js         # Tailwind theme & brand color definitions
 └── next.config.js             # Static export configuration (output: 'export', unoptimized images)
 ```
+
+### 3.1. Cross-cutting behaviour worth knowing
+
+- **Two root layouts**: `app/(root)/layout.tsx` and `app/[locale]/layout.tsx` each render `<html>` and import `globals.css`. The root one only redirects (inline script + meta refresh) to `/zh/` if the browser language starts with `zh`, otherwise `/en/`. Per-locale SEO metadata (titles, keywords, OpenGraph, `metadataBase: https://bethanypc.org.sg`) lives in `app/[locale]/layout.tsx`.
+- **Locale comes from the URL path, not params**: `LocaleProvider` calls `getLocaleFromPath(usePathname())` and picks the dictionary. `t` is typed as `typeof en.json`, so a key added only to `en.json` type-checks but is `undefined` in Chinese. Always add it to both.
+- **basePath**: `next.config.js` reads `NEXT_PUBLIC_BASE_PATH`. `next/link` handles it automatically, but raw `<img src>`, `<link href>`, and manual `window.location` paths do not. Prefix them with `process.env.NEXT_PUBLIC_BASE_PATH || ''` (see `VisitPageClient.tsx`, `ImagePlaceholder.tsx`, `ImageCarousel.tsx`, `LanguageSwitcher.tsx`).
+- **Markdown detail pages** (`events/[slug]`, `services/[slug]`): `generateStaticParams` reads `content/<type>/<locale>/*.md` directly, with `dynamicParams = false`. If no files exist it returns a placeholder slug so the export doesn't fail. Each locale has its own files, so a slug that exists only in `en` has no `zh` page. Markdown is rendered with `remark-html` `sanitize: false`, so raw HTML in content is passed through.
+- **Sitemap**: `app/sitemap.ts` has a hardcoded `staticRoutes` list. Add new pages there.
+- **History page**: `components/ChurchHistory.tsx` is driven by `church-history-v4.json` at the repo root (imported via `@/church-history-v4.json`).
+- **Deployment**: pushing to `main` runs `.github/workflows/deploy.yml`, which publishes a **staging** site to GitHub Pages with `NEXT_PUBLIC_BASE_PATH=/bpctrialsite` for review. After approval, production is deployed by running `npm run build` (no base path) and uploading `out/` to cPanel `public_html/` by hand. Asset paths must work both with and without the base path. `.htaccess` at the repo root is copied into `out/` by `scripts/copy-htaccess.js`.
 
 ---
 
@@ -183,10 +196,12 @@ Markdown files live in `content/`:
   date: "2026-06-20"
   time: "7:00 PM"
   location: "Main Sanctuary"
-  category: "Fellowship"
+  recurring: true        # optional, shows a recurring badge
+  image: "/images/..."   # optional, used by EventCard
   ---
   ```
 - **Custom Embeds**: In markdown body, use `{{ embed: https://... }}` for YouTube videos or Instagram posts.
+- The sermon detail page (`services/[slug]`) renders only frontmatter (YouTube from `videoUrl`, `notesUrl` link); the Markdown body and `audioUrl` are not displayed. Event pages do render the body.
 
 ---
 

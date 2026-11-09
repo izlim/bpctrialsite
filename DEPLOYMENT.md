@@ -1,282 +1,92 @@
 # Deployment Guide
 
-This website is configured as a static site, which means it can be deployed to any web server that serves static files. Here are several deployment options:
+This website is a static site (`output: 'export'` in `next.config.js`). Building it produces plain HTML/CSS/JS files that any web server can host.
 
 ## Building the Site
-
-First, build the static site:
 
 ```bash
 npm install
 npm run build
 ```
 
-This creates an `out/` directory containing all the static files ready to upload to your web server.
+This creates an `out/` directory with all the static files and copies `.htaccess` into it (via `scripts/copy-htaccess.js`). Each page is written as its own folder with an `index.html` (`trailingSlash: true`), e.g. `out/en/about/index.html`.
 
-## Deployment Options
+### Base Path (deploying to a subfolder)
 
-### Option 1: Vercel (Recommended - Easiest)
+If the site is served from a subfolder (e.g. `example.com/bpctrialsite/`), set `NEXT_PUBLIC_BASE_PATH` when building. `next.config.js` reads it automatically, so you don't need to edit the config:
 
-Vercel is made by the creators of Next.js and offers the simplest deployment:
+```bash
+NEXT_PUBLIC_BASE_PATH=/bpctrialsite npm run build
+```
 
-1. **Install Vercel CLI** (optional, or use web interface):
-   ```bash
-   npm i -g vercel
-   ```
+Leave it unset when the site is served from the domain root.
 
-2. **Deploy**:
-   ```bash
-   vercel
-   ```
-   - Follow the prompts
-   - Your site will be live at a `*.vercel.app` URL
-   - You can add a custom domain later
+## Release Process
 
-3. **Or use GitHub integration**:
-   - Push your code to GitHub
-   - Go to [vercel.com](https://vercel.com)
-   - Import your repository
-   - Vercel will automatically deploy on every push
+1. **Staging review**: push to `main`. GitHub Actions builds the site and publishes it to GitHub Pages under `/bpctrialsite` so it can be reviewed before release (see below).
+2. **Production**: once the changes are approved, build locally and upload to `public_html/` on the cPanel server (next section).
 
-**Pros:** Free tier, automatic HTTPS, custom domains, automatic deployments
+## Deploying to Production
 
----
+The live site is deployed by uploading the build output straight to `public_html/` on the cPanel server.
 
-### Option 2: Netlify
-
-Similar to Vercel, very easy to use:
-
-1. **Install Netlify CLI**:
-   ```bash
-   npm install -g netlify-cli
-   ```
-
-2. **Deploy**:
-   ```bash
-   npm run build
-   netlify deploy --prod --dir=out
-   ```
-
-3. **Or use drag-and-drop**:
-   - Build the site: `npm run build`
-   - Go to [app.netlify.com](https://app.netlify.com)
-   - Drag and drop the `out/` folder
-   - Your site is live!
-
-**Pros:** Free tier, easy deployment, custom domains
-
----
-
-### Option 3: GitHub Pages
-
-Free hosting through GitHub:
-
-1. **Build the site**:
-   ```bash
-   npm run build
-   ```
-
-2. **Push to GitHub**:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git remote add origin https://github.com/yourusername/yourrepo.git
-   git push -u origin main
-   ```
-
-3. **Enable GitHub Pages**:
-   - Go to your repository on GitHub
-   - Settings → Pages
-   - Source: Deploy from a branch
-   - Branch: `main` (or `gh-pages`)
-   - Folder: `/out` (you'll need to configure this)
-
-4. **Or use GitHub Actions** (automated):
-   Create `.github/workflows/deploy.yml`:
-   ```yaml
-   name: Deploy to GitHub Pages
-   on:
-     push:
-       branches: [ main ]
-   jobs:
-     build-and-deploy:
-       runs-on: ubuntu-latest
-     steps:
-       - uses: actions/checkout@v3
-       - uses: actions/setup-node@v3
-         with:
-           node-version: '18'
-       - run: npm install
-       - run: npm run build
-       - uses: peaceiris/actions-gh-pages@v3
-         with:
-           github_token: ${{ secrets.GITHUB_TOKEN }}
-           publish_dir: ./out
-   ```
-
-**Pros:** Free, integrated with GitHub, custom domain support
-
----
-
-### Option 4: Traditional Web Server (cPanel, FTP, etc.)
-
-For traditional web hosting (shared hosting, VPS, etc.):
-
-1. **Build the site**:
-   ```bash
-   npm run build
-   ```
-
-2. **Upload files**:
-   - The `out/` directory contains all files
-   - Upload everything inside `out/` to your web server's public directory
-   - Usually: `public_html/`, `www/`, or `htdocs/`
-
-3. **Configure your server**:
-   - Ensure your server supports static file serving
-   - Point your domain to the uploaded files
-   - The site should work immediately
+1. Build the site: `npm run build`. Leave `NEXT_PUBLIC_BASE_PATH` unset, because the site is served from the domain root.
+2. Upload **everything inside** `out/`, including the hidden `.htaccess` file, to `public_html/` (with cPanel File Manager or FTP).
+3. Delete any old files on the server that are no longer in `out/`. For example, pages that were removed from the site will otherwise stay online.
 
 **File structure on server:**
 ```
 public_html/
-  ├── index.html
-  ├── about/
-  ├── sermons/
+  ├── .htaccess
+  ├── index.html          # redirects to /en/ or /zh/
+  ├── en/
+  │   ├── index.html
+  │   ├── about/index.html
+  │   ├── services/...
+  │   └── ...
+  ├── zh/
   ├── _next/
-  └── ... (all other files from out/)
+  ├── images/
+  ├── fonts/
+  └── sitemap.xml
 ```
 
-**Note:** Make sure your server is configured to:
-- Serve `index.html` for directory requests
-- Handle client-side routing (may need `.htaccess` for Apache)
+## Staging Site (GitHub Pages)
 
----
+`.github/workflows/deploy.yml` runs on every push to `main` (or by hand from the **Actions** tab). It builds with `NEXT_PUBLIC_BASE_PATH=/bpctrialsite`, because GitHub Pages serves the site from the `/bpctrialsite` subfolder, and publishes `out/` to GitHub Pages. This is the staging site for review before a production release.
 
-### Option 5: AWS S3 + CloudFront
+GitHub Pages must be enabled for the repository with **Source: GitHub Actions**.
 
-For scalable, professional hosting:
+Because staging lives in a subfolder, check new images and links there. Raw `<img src>` and other hand-written paths must be prefixed with `NEXT_PUBLIC_BASE_PATH` or they break on staging even though they work in production.
 
-1. **Build the site**:
-   ```bash
-   npm run build
-   ```
+## Apache `.htaccess`
 
-2. **Upload to S3**:
-   ```bash
-   aws s3 sync out/ s3://your-bucket-name --delete
-   ```
+The `.htaccess` in the repository root is copied into `out/` on every build. It:
 
-3. **Configure S3 bucket**:
-   - Enable static website hosting
-   - Set index document: `index.html`
-   - Set error document: `404.html`
+- Disables directory listings and sets `index.html` as the default file
+- Redirects `/` to `/zh/` when the browser's `Accept-Language` starts with `zh`, otherwise to `/en/` (temporary 302 redirects)
+- Rewrites requests for missing files to `/index.html`
+- Enables gzip compression and browser caching for images, CSS, and JavaScript
 
-4. **Set up CloudFront** (optional, for CDN):
-   - Create CloudFront distribution
-   - Point to S3 bucket
-   - Use for faster global delivery
+It uses `RewriteBase /` and absolute paths (`/en/`, `/zh/`, `/index.html`), which assume the site is at the domain root. If it is served from a subfolder, these paths need adjusting.
 
-**Pros:** Scalable, professional, CDN support
+## Other Hosts
 
----
+Config files for other static hosts are included but not used by the current setup:
 
-## Important Configuration
-
-### Custom Domain
-
-For any hosting option, you can add a custom domain:
-
-1. Point your domain's DNS to your hosting provider
-2. Configure the custom domain in your hosting dashboard
-3. Update `next.config.js` if needed (for absolute URLs)
-
-### Environment Variables
-
-If you need environment variables, create a `.env.local` file:
-```
-NEXT_PUBLIC_SITE_URL=https://yourdomain.com
-```
-
-Then rebuild: `npm run build`
-
-### Base Path (if deploying to subdirectory)
-
-If deploying to a subdirectory (e.g., `yoursite.com/church/`), update `next.config.js`:
-
-```javascript
-const nextConfig = {
-  output: 'export',
-  basePath: '/church',
-  images: {
-    unoptimized: true
-  }
-}
-```
-
----
-
-## Quick Deploy Commands
-
-**Vercel:**
-```bash
-npm i -g vercel && vercel
-```
-
-**Netlify:**
-```bash
-npm run build && netlify deploy --prod --dir=out
-```
-
-**Traditional Server:**
-```bash
-npm run build && scp -r out/* user@server:/path/to/public_html/
-```
-
----
+- **Vercel**: `vercel.json` (rewrites all routes to `/index.html`)
+- **Netlify**: `netlify.toml` (build command `npm run build`, publish directory `out`)
 
 ## Troubleshooting
 
-**404 errors on page refresh:**
-- This is normal for client-side routing
-- Configure your server to redirect all routes to `index.html`
-- For Apache, add `.htaccess` (see below)
+**Images or fonts not loading:**
+- Make sure all files from `out/` are uploaded, including `images/` and `fonts/`.
+- If the site is in a subfolder, check that it was built with the matching `NEXT_PUBLIC_BASE_PATH`. Pages built without it load assets from the domain root.
 
-**Images not loading:**
-- Make sure all files from `out/` are uploaded
-- Check that paths are relative (they should be by default)
+**Old pages still showing after a deploy:**
+- Uploading doesn't delete old files. Remove them from `public_html/` by hand.
 
 **Build errors:**
 - Make sure all dependencies are installed: `npm install`
-- Check Node.js version (18+ recommended)
-
----
-
-## Apache .htaccess (for traditional servers)
-
-Create `.htaccess` in your `out/` directory before building, or add it after:
-
-```apache
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.html$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.html [L]
-```
-
-This ensures client-side routing works correctly.
-
----
-
-## Recommended: Vercel or Netlify
-
-For easiest deployment, I recommend **Vercel** or **Netlify**:
-- Zero configuration needed
-- Free tier available
-- Automatic HTTPS
-- Custom domains
-- Automatic deployments from Git
-
-Just connect your GitHub repository and you're done!
+- Use Node.js 20 (matching the workflows)
+- Run `npx tsc --noEmit` and `npm run lint` for details

@@ -4,65 +4,83 @@ This guide will help non-technical users add and edit content on the church webs
 
 ## Overview
 
-The website uses two types of content:
+The website uses three types of content:
 
-1.  **Dynamic Content (Markdown)**: For frequently updated items like Sermons, Events, and Resources. Stored in `content/`.
-2.  **Static Page Content (JSON)**: For fixed text on pages like Home, About, Visit, etc. Stored in `translations/`.
+1.  **Sermons and Events (Markdown)**: Frequently updated items. Stored in `content/`.
+2.  **Static Page Content (JSON)**: Fixed text on pages like Home, About, Visit, etc. Stored in `translations/`.
+3.  **Church History (JSON)**: The timeline on the History page. Stored in `church-history-v4.json` at the project root.
 
-## 1. Managing Dynamic Content (Sermons, Events, Resources)
+## 1. Managing Sermons and Events
 
 Content is stored in the `content/` folder, organized by type and then by language:
 
+*   `content/services/en/` - English sermons
+*   `content/services/zh/` - Chinese sermons
 *   `content/events/en/` - English events
 *   `content/events/zh/` - Chinese events
-*   `content/resources/en/` - English resources
-*   `content/resources/zh/` - Chinese resources
-
-**Note:** Sermons are currently language-neutral and stored in `content/sermons/`.
 
 ### Getting Started
 
-1.  **Find the template files** in `content/templates/`
+1.  **Find the template files** in `content/templates/` (`service-template.md`, `event-template.md`)
 2.  **Copy a template** to the appropriate folder (e.g., `content/events/en/`)
 3.  **Rename the file** to something descriptive (use lowercase, hyphens for spaces)
 4.  **Edit the content** following the examples below
-5.  **(Optional) Create the translation:** Copy your new file to the corresponding `zh` folder and translate the content.
+5.  **Create the translation:** Copy your new file to the corresponding `zh` folder and translate the content.
 
 ### File Naming
 *   Use lowercase letters
 *   Use hyphens (-) instead of spaces
+*   The filename becomes part of the web address, e.g. `content/events/en/easter-service.md` → `/en/events/easter-service/`
 *   **Important:** To link English and Chinese versions of the same item, **they must have the exact same filename**.
     *   Example: `content/events/en/easter-service.md` AND `content/events/zh/easter-service.md`
+
+### Adding a Sermon
+1.  Copy `content/templates/service-template.md` to `content/services/en/`
+2.  Rename it (e.g., `17May26.md`, matching the existing files)
+3.  Edit the frontmatter (the section between `---` at the top):
+    ```markdown
+    ---
+    title: "The One Thing God Values Most in Your Life"
+    date: "2026-05-17"
+    speaker: "Rev Timothy Hoon"
+    series: ""
+    videoUrl: "https://www.youtube.com/watch?v=..."
+    audioUrl: ""
+    notesUrl: ""
+    ---
+    ```
+4.  Copy the file to `content/services/zh/` with the same name and translate the title.
+
+**Note:** The sermon page shows the title, series, speaker, date, the embedded YouTube video (from `videoUrl`), and a link to the notes (`notesUrl`). The text written below the frontmatter and the `audioUrl` field are **not currently shown** on the site.
 
 ### Adding an Event
 1.  Copy `content/templates/event-template.md` to `content/events/en/`
 2.  Rename it (e.g., `community-outreach.md`)
-3.  Edit the frontmatter (the section between `---` at the top):
-    ```markdown
-    ---
-    title: "Event Name"
-    date: "2024-02-20"
-    time: "7:00 PM"
-    location: "Main Sanctuary"
-    recurring: false
-    ---
-    ```
-4.  Write your event description below the frontmatter.
-5.  To add Chinese: Copy this file to `content/events/zh/community-outreach.md` and translate the title, location, and description.
-
-### Adding a Resource
-1.  Copy `content/templates/resource-template.md` to `content/resources/en/`
-2.  Rename it (e.g., `daily-devotion-1.md`)
 3.  Edit the frontmatter:
     ```markdown
     ---
-    title: "Resource Title"
-    date: "2024-02-15"
-    type: "devotion"  # specific types: devotion, study, article
+    title: "Event Name"
+    date: "2026-09-19"
+    time: "6:30 PM - 9:30 PM"
+    location: "Main Sanctuary"
+    recurring: false
+    image: "/images/community-outreach.jpeg"
     ---
     ```
-4.  Write content below.
-5.  To add Chinese: Copy to `content/resources/zh/` and translate.
+    *   `recurring` (optional): set to `true` to show a "recurring" badge.
+    *   `image` (optional): put the picture in `public/images/` and reference it as `/images/<filename>`.
+4.  Write your event description below the frontmatter.
+5.  To add Chinese: Copy this file to `content/events/zh/community-outreach.md` and translate the title, location, and description.
+
+### Embedding Videos and Instagram Posts
+In an event description, put a link on its own line like this:
+
+```markdown
+{{ embed: https://www.youtube.com/watch?v=VIDEO_ID }}
+{{ embed: https://www.instagram.com/p/POST_ID/ }}
+```
+
+YouTube links become an embedded player and Instagram links become an embedded post. Any other link becomes a plain link.
 
 ## 2. Managing Static Page Content
 
@@ -87,15 +105,21 @@ To change the "About Us" title:
 }
 ```
 
-## Markdown Basics (for Dynamic Content)
+## 3. Managing the Church History Page
+
+The History page (`/en/history/`, `/zh/history/`) is built from `church-history-v4.json`. Edit the text values in that file the same way as the translation files. Keep the keys and structure unchanged.
+
+## Markdown Basics
 
 *   **Headers**: `# Header 1`, `## Header 2`
 *   **Bold**: `**text**`
 *   **Italic**: `*text*`
 *   **Lists**: `- Item` or `1. Item`
 *   **Links**: `[Text](URL)`
+*   **Tables** are also supported.
 
 ## Help & Troubleshooting
 
-*   **Content not appearing?** Check if you saved the file in the correct language folder (`en` or `zh`) and that it ends in `.md`.
-*   **Translation missing?** If a Chinese version of an event is missing, the site might show an empty page or error (depending on implementation). Ensure both `en` and `zh` files exist if you want full coverage.
+*   **Content not appearing?** Check that the file is in the correct language folder (`en` or `zh`) and ends in `.md`. The site must be rebuilt and re-uploaded (see [DEPLOYMENT.md](DEPLOYMENT.md)) before changes appear.
+*   **Item only shows in one language?** Each language only lists the files in its own folder. If the `zh` file is missing, the item does not appear in Chinese, and its Chinese address shows "page not found". Create both files for full coverage.
+*   **Wrong order?** Sermons are sorted newest first and events oldest first, using the `date` field. Use the `YYYY-MM-DD` format.

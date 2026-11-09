@@ -1,49 +1,68 @@
 # Customization Guide
 
-This guide explains how to manually customize the website's appearance and content, specifically focusing on **Icons**, **Colors**, and **Text**.
+This guide explains how to manually customize the website's appearance and content, specifically focusing on **Colors**, **Fonts**, **Icons**, and **Text**.
 
 ## 1. Changing Colors
 
-The website uses [Tailwind CSS](https://tailwindcss.com/) for styling, and the color palette is defined in the configuration file.
+The website uses [Tailwind CSS](https://tailwindcss.com/) for styling. The colour palette is defined in `tailwind.config.js` and follows the church brand rules in [.cursorrules](.cursorrules).
 
-### Steps to Update the Theme Color
+### The Brand Palette
 
-1.  Open `tailwind.config.js` in the root directory.
-2.  Locate the `colors` object within the `theme.extend` section.
-3.  You will see a `primary` color object with shades from `50` to `900`.
-4.  Update the hex color codes to your desired palette.
+`theme.extend.colors` in `tailwind.config.js` defines three colour scales plus a text colour:
+
+| Scale | Main shade | Role |
+|---|---|---|
+| `primary` (Deep Violet) | `600: '#2E1A46'` | Navigation, heroes, footer, dark sections |
+| `teal` (Aqua Teal) | `400: '#2ED9C3'` | Primary buttons ("Plan your visit", "Watch sermon"), links |
+| `orange` (Warm Orange) | `400: '#FF6C0E'` | Accents and announcements, 1–2 per page |
+| `ink` | `'#1a1040'` | Text on teal buttons and light teal backgrounds |
 
 **Example:**
 
 ```javascript
 // tailwind.config.js
 module.exports = {
-  // ...
   theme: {
     extend: {
       colors: {
         primary: {
-          50: '#f4f1f8',  // Lightest shade
+          50: '#F2EFF7',  // Lightest shade
           // ...
-          600: '#2E1A46', // <--- MAIN THEME COLOR (Anchor)
+          600: '#2E1A46', // <--- MAIN BRAND COLOR (Anchor)
           // ...
-          900: '#130a1f', // Darkest shade
+          950: '#080510', // Darkest shade
         },
-        // ...
+        teal: { /* 50–900 */ },
+        orange: { /* 50–900 */ },
+        ink: '#1a1040',
       },
     },
   },
-  // ...
 }
 ```
 
-> **Tip:** You can use online tools like [Tailwind Colors](https://tailwindcss.com/docs/customizing-colors) or [shades generator](https://javisperez.github.io/tailwindcolorshades/) to generate a full palette from a single color.
+### Rules to Keep
+
+If you change colours, keep these accessibility rules from `.cursorrules`:
+*   Text on teal 400 or lighter must use the dark `ink` colour, never white.
+*   Never put orange text on a violet background.
+*   Don't use both teal and orange as the main button colour on the same page.
+
+Shared styles built from these colours (`btn-teal-primary`, `link-on-light`, `card-accent-primary`, `card-accent-orange`, `bg-primary-gradient`, `bg-soft-gradient`) are defined in `app/globals.css`.
 
 ---
 
-## 2. Changing Icons
+## 2. Fonts
 
-The website currently uses **inline SVG icons** directly within the React components. This means there isn't a single folder of icon files; instead, the SVG code is embedded in the component files (e.g., `Footer.tsx`, `Header.tsx`).
+*   **English text** uses Inter, loaded from `public/fonts/Inter-VariableFont.woff2` via `lib/fonts.ts`.
+*   **Chinese text** uses GenSen Rounded 2. The `@font-face` rules are in `public/fonts/gensen.css`, which is loaded by the page layouts. These fonts are served as plain static files (not through `next/font`) because of their size.
+*   The font stack is set under `fontFamily` in `tailwind.config.js`.
+
+---
+
+## 3. Changing Icons
+
+The website uses **inline SVG icons** directly within the React components. This means there isn't a single folder of icon files; instead, the SVG code is embedded in the component files (e.g., `Footer.tsx`, `Header.tsx`).
 
 ### Steps to Change an Icon
 
@@ -69,18 +88,26 @@ The website currently uses **inline SVG icons** directly within the React compon
 </svg>
 ```
 
+The transport pictures on the Visit page are images (`public/images/train.png`, `bus.png`, `car.png`), not SVGs.
+
 ---
 
-## 3. Changing Text & Content
+## 4. Changing Text & Content
 
-Text content is managed in two different ways depending on whether it is **static page text** or **dynamic content** (like events or sermons).
+Text content is managed in different places depending on what it is.
 
 ### A. Static Page Text (Headings, Buttons, Labels)
 *   **Location**: `translations/` folder (`en.json` for English, `zh.json` for Chinese).
 *   **How to Edit**: Open the JSON file and modify the text values. **Do not modify the keys** (the text on the left side).
 *   **Detailed Guide**: See [I18N_GUIDE.md](I18N_GUIDE.md).
 
-### B. Dynamic Content (Events, Resources)
-*   **Location**: `content/` folder.
+### B. Sermons and Events
+*   **Location**: `content/services/` and `content/events/`, each with `en/` and `zh/` folders.
 *   **How to Edit**: These are Markdown files. You can edit the "frontmatter" (metadata at the top) for dates/titles/speakers, and the body text for the description.
 *   **Detailed Guide**: See [CONTENT_GUIDE.md](CONTENT_GUIDE.md).
+
+### C. Church History
+*   **Location**: `church-history-v4.json` in the project root.
+
+### D. Images
+*   **Location**: `public/images/`. Reference them as `/images/<filename>`.
