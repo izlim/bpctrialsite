@@ -18,6 +18,7 @@ export default function Navigation() {
   const navLinks = [
     { href: '/', key: 'home' },
     { href: '/about', key: 'about' },
+    { href: '/history', key: 'history' },
     { href: '/visit', key: 'visit' },
     { href: '/what-to-expect', key: 'whatToExpect' },
     { href: '/services', key: 'services' },
