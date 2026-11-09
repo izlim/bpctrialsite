@@ -1,6 +1,6 @@
 ---
 title: "Blessing the Community"
-date: "2026-12-12"
+date: "2026-12-19"
 time: "12 & 19 December (briefing on 28 November)"
 location: "To be announced"
 recurring: false

@@ -1,6 +1,6 @@
 ---
 title: "祝福社区"
-date: "2026-12-12"
+date: "2026-12-19"
 time: "12月12日 & 12月19日（11月28日简报会）"
 location: "另行通知"
 recurring: false
