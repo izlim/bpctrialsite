@@ -37,5 +37,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# reference images for AI-assisted event entry (not deployed)
-/temp/
+# event posters waiting to be added (only the README is tracked)
+/poster-inbox/*
+!/poster-inbox/README.md

@@ -206,7 +206,7 @@ Markdown files live in `content/`:
 
 ### 7.1. Adding events from posters
 
-- `temp/` (git-ignored) is where new event posters are dropped for reference. Copy each poster into `public/images/` with a descriptive kebab-case name, write the `en` and `zh` markdown files from it, then empty `temp/`.
+- `poster-inbox/` is where new event posters are dropped. Only its `README.md` is tracked; everything else in it is git-ignored. Copy each poster into `public/images/` with a descriptive kebab-case name, write the `en` and `zh` markdown files from it, then **delete the poster from `poster-inbox/`**.
 - An event moves to "Past" the day after its `date`, so for multi-day events use the **last** day.
 - Copy registration deadlines as printed. Don't add wording that invites late sign-ups.
 - English names for Chinese terms that appear on posters:
