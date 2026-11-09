@@ -134,7 +134,9 @@
     "upcoming": "即将举行的活动",
     "past": "过去的活动",
     "noEvents": "目前没有安排活动。",
-    "noEventsDesc": "一旦将活动添加到内容文件夹，它们将显示在这里。"
+    "noEventsDesc": "一旦将活动添加到内容文件夹，它们将显示在这里。",
+    "viewImage": "查看完整图片",
+    "closeImage": "关闭图片"
   },
   "ministries": {
     "title": "事工",

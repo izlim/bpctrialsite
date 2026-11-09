@@ -134,7 +134,9 @@
     "upcoming": "Upcoming Events",
     "past": "Past Events",
     "noEvents": "No events scheduled at this time.",
-    "noEventsDesc": "Events will appear here once they are added to the content folder."
+    "noEventsDesc": "Events will appear here once they are added to the content folder.",
+    "viewImage": "View full image",
+    "closeImage": "Close image"
   },
   "ministries": {
     "title": "Ministries",

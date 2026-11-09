@@ -28,9 +28,11 @@ export default function EventCard({ event }: EventCardProps) {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
       <ImagePlaceholder
-        className="h-48 w-full"
+        className="aspect-video w-full"
         text="Event Image"
         src={event.frontmatter.image}
+        alt={event.frontmatter.title}
+        objectFit="contain"
       />
       <div className="p-6">
         <Link href={eventPath}>

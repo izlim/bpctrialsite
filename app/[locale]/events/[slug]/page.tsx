@@ -7,6 +7,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { locales, type Locale } from '@/lib/i18n';
 import InstagramEmbed from '@/components/InstagramEmbed';
+import ImageLightbox from '@/components/ImageLightbox';
 
 export const dynamic = 'force-static';
 export const dynamicParams = false;
@@ -75,6 +76,10 @@ export default async function EventPage({ params }: { params: { slug: string; lo
         </Link>
 
         <article className="bg-white rounded-lg shadow-md p-8">
+          {event.frontmatter.image && (
+            <ImageLightbox src={event.frontmatter.image} alt={event.frontmatter.title} className="mb-8" />
+          )}
+
           <h1 className="text-4xl font-bold mb-6">{event.frontmatter.title}</h1>
 
           <div className="bg-gray-50 p-6 rounded-lg mb-8">
