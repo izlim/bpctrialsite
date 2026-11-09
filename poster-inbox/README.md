@@ -8,7 +8,7 @@ Ask someone technical (the IT team, or a family member who knows computers) to s
 
 ### Setup checklist (for the person helping)
 
-1. **Tools:** on a Mac, run `xcode-select --install` if `git` or `python3` is missing. Install Node.js (LTS). `zip` comes with macOS.
+1. **Tools:** on a Mac, run `xcode-select --install` if `git` or `python3` is missing. Install Node.js (LTS).
 2. **Claude Code:** install it and sign in with the staff member's own account.
 3. **GitHub account:** the staff member needs a GitHub account that has been added as a collaborator on `izlim/bpctrialsite` (ask the website admin).
 4. **SSH key:** the repo uses SSH (`git@github.com:izlim/bpctrialsite.git`). Create a key with `ssh-keygen -t ed25519`, add the public key to their GitHub account, and check it with `ssh -T git@github.com`.
@@ -18,8 +18,7 @@ Ask someone technical (the IT team, or a family member who knows computers) to s
    git config --global user.email "12345678+username@users.noreply.github.com"
    ```
 6. **Project:** `git clone git@github.com:izlim/bpctrialsite.git`, then run `npm install` in the project folder.
-7. **cPanel:** give them the cPanel login if they will upload the live website themselves.
-8. **Test run:** do one real poster together, from step 1 to step 5 below (staging), so any GitHub access problems show up while you're there.
+7. **Test run:** do one real poster together, from step 1 to step 5 below (staging), so any GitHub access problems show up while you're there.
 
 ## Adding an event
 
@@ -35,17 +34,11 @@ Ask someone technical (the IT team, or a family member who knows computers) to s
    > Commit and push to staging.
 
    Wait a few minutes, then open the link Claude gives you on your phone. This is a test copy of the website, not the real one.
-6. **Put it on the real website.** When staging looks right, type:
-   > Build for production and zip it for upload.
+6. **When staging looks right**, let the website admin know. They approve it, and GitHub puts it on the real website.
 
-   Claude saves a zip file on your Desktop. Then in cPanel:
-   1. Open **File Manager** and go into `public_html`.
-   2. Click **Upload** and choose the zip from your Desktop.
-   3. Right-click the zip, choose **Extract**, and extract into `/public_html`. Allow it to overwrite files.
-   4. **Delete the zip** from `public_html` afterwards, so it can't be downloaded from the website.
-7. Open https://bethanypc.org.sg/en/events/ to check the live site.
+   If someone else changed the website at the same time, Claude may tell you your changes were saved separately for the admin to merge. That's fine, and nothing is lost. Just let the admin know.
 
 ## Good to know
 
-- An event stays under "Upcoming" until its last day. After that, the Events page moves it to "Past" by itself, but the homepage keeps showing it until the site is next rebuilt and uploaded. Uploading a fresh build from time to time keeps the homepage tidy.
+- An event stays under "Upcoming" until its last day. After that, the Events page moves it to "Past" by itself, but the homepage keeps showing it until the live website is next updated.
 - If you're unsure about anything, ask Claude. It can explain what it's doing in plain words.

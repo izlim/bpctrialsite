@@ -221,11 +221,11 @@ This workflow is run by **non-technical church staff** using their own Claude Co
 
 **3. Staging (when they ask)**
 - Commit and push to `main`. GitHub Pages redeploys in a few minutes at `https://izlim.github.io/bpctrialsite/en/events/` (replace `en` with `zh` for Chinese). Give them the direct event links so they can check on their phone.
+- If the push is rejected because `main` has moved on, run `git pull --rebase origin main`. If that applies cleanly, push again.
+- If it hits a **conflict, don't resolve it**. Run `git rebase --abort`, then `git branch events/<slug>` and `git push origin events/<slug>`. Only after that push succeeds, run `git reset --hard origin/main` so their `main` is up to date again (their work is safe on the branch). Tell them in plain words that their changes are saved and the website admin will merge them. The admin resolves all conflicts.
 
-**4. Production (only after they approve staging)**
-- `rm -rf out .next && npm run build` with no `NEXT_PUBLIC_BASE_PATH`. Check `grep -rl bpctrialsite out` finds nothing and `out/.htaccess` exists.
-- Zip the **contents** of `out/` (not the folder) to `~/Desktop/bpcsite-production-YYYY-MM-DD.zip`: `cd out && zip -qr -X ~/Desktop/<name>.zip . -x "*.DS_Store"`.
-- Tell them: cPanel → File Manager → `public_html/` → Upload the zip → Extract into `/public_html` (overwrite) → delete the zip from `public_html/` afterwards.
+**4. Live site**
+- Staff stop at staging. The website admin approves the live upload in GitHub, so don't build, zip or upload for production unless the admin asks.
 
 **Glossary**: English names for Chinese terms that appear on posters:
 
