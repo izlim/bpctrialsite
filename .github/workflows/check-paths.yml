@@ -1,0 +1,71 @@
+# Flags pushes that change files outside the event-content folders staff normally edit.
+# Pushes by the repo admin are not checked. When something is flagged, the run fails
+# and an issue is opened (mentioning the admin) listing the files.
+name: Check changed files
+
+on:
+  push:
+    branches: ["**"]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    if: github.actor != 'izlim'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: List files changed outside allowed folders
+        id: paths
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          # New branches (and force pushes to an unknown commit) are compared against main.
+          if [ "$BEFORE" = "0000000000000000000000000000000000000000" ] || ! git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
+            BEFORE=$(git merge-base origin/main "$AFTER")
+          fi
+
+          git diff --name-only "$BEFORE" "$AFTER" \
+            | grep -v -E '^(content/events/|public/images/|poster-inbox/|CLAUDE\.md$)' > outside.txt || true
+
+          if [ -s outside.txt ]; then
+            echo "found=true" >> "$GITHUB_OUTPUT"
+            echo "::warning::Files changed outside event content:"
+            cat outside.txt
+          fi
+
+      - name: Open an issue for the admin
+        if: steps.paths.outputs.found == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ACTOR: ${{ github.actor }}
+          REF: ${{ github.ref_name }}
+          SHA: ${{ github.sha }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          {
+            echo "@izlim, a push by **$ACTOR** to \`$REF\` changed files outside event content."
+            echo
+            echo "Commit: $SHA"
+            echo "Run: $RUN_URL"
+            echo
+            echo "Files:"
+            echo
+            sed 's/^/- `/; s/$/`/' outside.txt
+            echo
+            echo "Please review these before approving the live upload."
+          } > body.md
+          gh issue create --repo "${{ github.repository }}" \
+            --title "Push by $ACTOR changed files outside event content" \
+            --body-file body.md
+
+      - name: Fail the check
+        if: steps.paths.outputs.found == 'true'
+        run: exit 1
