@@ -25,13 +25,14 @@ The project is a **Next.js Static Site (Export)**. This architecture inherently 
 ### 4. Dependencies
 *   **Observation**: Standard Next.js ecosystem (`next`, `react`, `remark`).
 *   **Recommendation**: Regularly run `npm audit` to ensure these packages remain up to date.
+*   **Status (2026-11-09)**: `npm audit fix` applied. The remaining `next` and `postcss` advisories need Next.js 16 and affect server features or build-time tooling only, not the static export.
 
 ## Recommendations
 
 ### 1. Add Security Headers
 Even for static sites, it is best practice to include security headers to protect users from XSS and Clickjacking.
 
-Since you are using a static export, these should be configured in your hosting provider configuration. The site is hosted on cPanel (Apache), so add them to `.htaccess` with `Header set` (requires `mod_headers`). They are not set yet.
+Since you are using a static export, these should be configured in your hosting provider configuration. The site is hosted on cPanel (Apache), so add them to `.htaccess` with `Header set` (requires `mod_headers`). `X-Content-Type-Options`, `X-Frame-Options: SAMEORIGIN` and `Referrer-Policy` are now set there (2026-11-09). A Content-Security-Policy is not set yet.
 
 **Recommended Headers:**
 ```text
