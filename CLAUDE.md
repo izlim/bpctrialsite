@@ -206,10 +206,28 @@ Markdown files live in `content/`:
 
 ### 7.1. Adding events from posters
 
-- `poster-inbox/` is where new event posters are dropped. Only its `README.md` is tracked; everything else in it is git-ignored. Copy each poster into `public/images/` with a descriptive kebab-case name, write the `en` and `zh` markdown files from it, then **delete the poster from `poster-inbox/`**.
+This workflow is run by **non-technical church staff** using their own Claude Code. Their steps are in `poster-inbox/README.md`. Talk to them in plain language, without git or Next.js jargon, and explain what each step does. Never commit, push or build for production until they say to.
+
+**1. Write the events**
+- `poster-inbox/` is where staff drop event posters. Only its `README.md` is tracked; everything else in it is git-ignored. Copy each poster into `public/images/` with a descriptive kebab-case name, write the `en` and `zh` markdown files from it, then **delete the poster from `poster-inbox/`**.
+- Translate the poster faithfully. Don't invent details it doesn't give (write "To be announced" / "另行通知" where the poster says so).
 - An event moves to "Past" the day after its `date`, so for multi-day events use the **last** day.
 - Copy registration deadlines as printed. Don't add wording that invites late sign-ups.
-- English names for Chinese terms that appear on posters:
+- Use the glossary below for names. If a name or place isn't in it and isn't elsewhere in the repo, **ask the staff member** for the English name, then add it to the glossary.
+- Then summarise what was added and list anything they should double-check.
+
+**2. Local preview**
+- `npm run dev` currently returns 500 on every event detail page (a dev-server issue with `output: 'export'`; the build is fine). Preview the static build instead: `npm run build`, then `python3 -I -m http.server 3000 --directory out` in the background, and give them `http://localhost:3000/en/events/` links. Rebuild after every change. Stop the server when they're done.
+
+**3. Staging (when they ask)**
+- Commit and push to `main`. GitHub Pages redeploys in a few minutes at `https://izlim.github.io/bpctrialsite/en/events/` (replace `en` with `zh` for Chinese). Give them the direct event links so they can check on their phone.
+
+**4. Production (only after they approve staging)**
+- `rm -rf out .next && npm run build` with no `NEXT_PUBLIC_BASE_PATH`. Check `grep -rl bpctrialsite out` finds nothing and `out/.htaccess` exists.
+- Zip the **contents** of `out/` (not the folder) to `~/Desktop/bpcsite-production-YYYY-MM-DD.zip`: `cd out && zip -qr -X ~/Desktop/<name>.zip . -x "*.DS_Store"`.
+- Tell them: cPanel → File Manager → `public_html/` → Upload the zip → Extract into `/public_html` (overwrite) → delete the zip from `public_html/` afterwards.
+
+**Glossary**: English names for Chinese terms that appear on posters:
 
 | Chinese | English |
 |---|---|
