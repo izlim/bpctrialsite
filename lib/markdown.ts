@@ -65,12 +65,6 @@ export interface EventFrontmatter {
   image?: string;
 }
 
-export interface ResourceFrontmatter {
-  title: string;
-  date: string;
-  type?: string;
-}
-
 export async function getServices(locale: string = 'en'): Promise<Array<{ slug: string; frontmatter: ServiceFrontmatter }>> {
   const servicesDirectory = path.join(contentDirectory, 'services', locale);
 
@@ -171,58 +165,6 @@ export async function getEventBySlug(slug: string, locale: string = 'en'): Promi
 
   return {
     frontmatter: data as EventFrontmatter,
-    content: contentHtml,
-  };
-}
-
-export async function getResources(locale: string = 'en'): Promise<Array<{ slug: string; frontmatter: ResourceFrontmatter }>> {
-  const resourcesDirectory = path.join(contentDirectory, 'resources', locale);
-
-  if (!fs.existsSync(resourcesDirectory)) {
-    return [];
-  }
-
-  const fileNames = fs.readdirSync(resourcesDirectory);
-  const resources = fileNames
-    .filter(name => name.endsWith('.md'))
-    .map((fileName) => {
-      const slug = fileName.replace(/\.md$/, '');
-      const fullPath = path.join(resourcesDirectory, fileName);
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
-      const { data } = matter(fileContents);
-
-      return {
-        slug,
-        frontmatter: data as ResourceFrontmatter,
-      };
-    });
-
-  return resources.sort((a, b) => {
-    return new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime();
-  });
-}
-
-export async function getResourceBySlug(slug: string, locale: string = 'en'): Promise<{ frontmatter: ResourceFrontmatter; content: string } | null> {
-  const resourcesDirectory = path.join(contentDirectory, 'resources', locale);
-  const fullPath = path.join(resourcesDirectory, `${slug}.md`);
-
-  if (!fs.existsSync(fullPath)) {
-    return null;
-  }
-
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { data, content } = matter(fileContents);
-
-  const contentWithEmbeds = processEmbeds(content);
-
-  const processedContent = await remark()
-    .use(remarkGfm)
-    .use(remarkHtml, { sanitize: false })
-    .process(contentWithEmbeds);
-  const contentHtml = processedContent.toString();
-
-  return {
-    frontmatter: data as ResourceFrontmatter,
     content: contentHtml,
   };
 }

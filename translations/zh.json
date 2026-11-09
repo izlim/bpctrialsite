@@ -4,12 +4,9 @@
     "about": "关于我们",
     "visit": "访问我们",
     "whatToExpect": "新朋友指南",
-    "beliefs": "信仰",
     "services": "崇拜录像",
     "events": "活动",
     "ministries": "事工",
-    "resources": "资源",
-    "give": "奉献",
     "contact": "联系我们"
   },
   "common": {
@@ -72,8 +69,6 @@
     "aboutDesc": "认识我们的使命、历史与牧养团队",
     "ministries": "事工",
     "ministriesDesc": "在服侍中成长，与弟兄姊妹同行",
-    "resources": "资源",
-    "resourcesDesc": "灵修材料、查经资料等",
     "whatToExpectDesc": "第一次来访？欢迎先了解一下",
     "liveStream": {
       "title": "主日直播",
@@ -123,21 +118,6 @@
     "readyToVisit": "准备访问了吗？",
     "readyText": "我们很乐意在本周日见到您！如果您在访问前有任何问题，请随时与我们联系。"
   },
-  "beliefs": {
-    "title": "我们的信仰",
-    "intro": "我们的信仰基于圣经，我们相信圣经是上帝所默示、无误的话语。作为长老会，我们持守改革宗传统所表达的历史性基督教信仰。",
-    "coreBeliefs": "核心信仰",
-    "bible": "圣经",
-    "god": "上帝",
-    "jesus": "耶稣基督",
-    "holySpirit": "圣灵",
-    "salvation": "救恩",
-    "church": "教会",
-    "return": "基督再来",
-    "distinctives": "长老会特色",
-    "confessions": "信条标准",
-    "questions": "有问题吗？"
-  },
   "services": {
     "title": "崇拜回顾",
     "description": "回顾我们主日崇拜的YouTube直播。所有信息均基于圣经，旨在帮助您与上帝的关系不断成长。",
@@ -164,28 +144,6 @@
     "servingTitle": "服侍机会",
     "outreachTitle": "外展事工",
     "signUp": "报名"
-  },
-  "resources": {
-    "title": "资源",
-    "description": "通过我们的灵修、圣经学习和有用资源集合，在您的信仰中成长。",
-    "latest": "最新资源",
-    "noResources": "目前没有资源。",
-    "noResourcesDesc": "一旦将资源添加到内容文件夹，它们将显示在这里。"
-  },
-  "give": {
-    "title": "奉献",
-    "intro": "感谢您支持伯大尼长老会事工的心。您的慷慨奉献使我们能够服务社区、支持宣教并分享基督的爱。",
-    "whyGive": "我们为什么奉献",
-    "waysToGive": "奉献方式",
-    "online": "在线奉献",
-    "bankTransfer": "银行转账",
-    "checkCash": "支票或现金",
-    "mobileApp": "移动应用",
-    "whatSupports": "您的奉献支持什么",
-    "local": "本地事工",
-    "outreach": "外展与宣教",
-    "transparency": "财务透明度",
-    "taxDeductible": "可抵税奉献"
   },
   "contact": {
     "title": "联系我们",
@@ -227,10 +185,7 @@
     "whatToExpectLink": "新朋友指南",
     "servicesLink": "崇拜录像",
     "eventsLink": "活动",
-    "ministriesLink": "事工",
-    "beliefsLink": "信仰",
-    "resourcesLink": "资源",
-    "giveLink": "奉献"
+    "ministriesLink": "事工"
   },
   "social": {
     "facebook": "https://www.facebook.com/bethanypcsg/",

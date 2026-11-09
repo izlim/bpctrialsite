@@ -4,12 +4,9 @@
     "about": "About",
     "visit": "Visit Us",
     "whatToExpect": "What to Expect",
-    "beliefs": "Beliefs",
     "services": "Services",
     "events": "Events",
     "ministries": "Ministries",
-    "resources": "Resources",
-    "give": "Give",
     "contact": "Contact"
   },
   "common": {
@@ -72,8 +69,6 @@
     "aboutDesc": "Learn about our mission, history, and leadership team",
     "ministries": "Ministries",
     "ministriesDesc": "Find a place to serve and connect with others",
-    "resources": "Resources",
-    "resourcesDesc": "Daily devotions, Bible studies, and more",
     "whatToExpectDesc": "Want to know more before visiting?",
     "liveStream": {
       "title": "Upcoming Live Stream",
@@ -123,21 +118,6 @@
     "readyToVisit": "Ready to Visit?",
     "readyText": "We'd love to see you this Sunday! If you have any questions before your visit, please don't hesitate to reach out."
   },
-  "beliefs": {
-    "title": "What We Believe",
-    "intro": "Our beliefs are grounded in the Bible, which we believe to be the inspired, inerrant Word of God. As a Presbyterian church, we hold to the historic Christian faith as expressed in the Reformed tradition.",
-    "coreBeliefs": "Core Beliefs",
-    "bible": "The Bible",
-    "god": "God",
-    "jesus": "Jesus Christ",
-    "holySpirit": "The Holy Spirit",
-    "salvation": "Salvation",
-    "church": "The Church",
-    "return": "The Return of Christ",
-    "distinctives": "Presbyterian Distinctives",
-    "confessions": "Confessional Standards",
-    "questions": "Have Questions?"
-  },
   "services": {
     "title": "Services",
     "description": "Watch our past Sunday service live streams. All messages are grounded in Scripture and designed to help you grow in your relationship with God.",
@@ -164,28 +144,6 @@
     "servingTitle": "Serving Opportunities",
     "outreachTitle": "Outreach Ministry",
     "signUp": "Sign Up"
-  },
-  "resources": {
-    "title": "Resources",
-    "description": "Grow in your faith with our collection of devotions, Bible studies, and helpful resources.",
-    "latest": "Latest Resources",
-    "noResources": "No resources available yet.",
-    "noResourcesDesc": "Resources will appear here once they are added to the content folder."
-  },
-  "give": {
-    "title": "Give",
-    "intro": "Thank you for your heart to support the ministry of Bethany Presbyterian Church. Your generous giving enables us to serve our community, support missions, and share the love of Christ.",
-    "whyGive": "Why We Give",
-    "waysToGive": "Ways to Give",
-    "online": "Online Giving",
-    "bankTransfer": "Bank Transfer",
-    "checkCash": "Check or Cash",
-    "mobileApp": "Mobile App",
-    "whatSupports": "What Your Giving Supports",
-    "local": "Local Ministry",
-    "outreach": "Outreach & Missions",
-    "transparency": "Financial Transparency",
-    "taxDeductible": "Tax-Deductible Giving"
   },
   "contact": {
     "title": "Contact Us",
@@ -227,10 +185,7 @@
     "whatToExpectLink": "What to Expect",
     "servicesLink": "Service Recordings",
     "eventsLink": "Events",
-    "ministriesLink": "Ministries",
-    "beliefsLink": "Beliefs",
-    "resourcesLink": "Resources",
-    "giveLink": "Give"
+    "ministriesLink": "Ministries"
   },
   "social": {
     "facebook": "https://www.facebook.com/bethanypcsg/",
