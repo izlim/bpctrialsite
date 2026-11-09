@@ -12,10 +12,10 @@ Ask someone technical (the IT team, or a family member who knows computers) to s
 2. **Claude Code:** install it and sign in with the staff member's own account.
 3. **GitHub account:** the staff member needs a GitHub account that has been added as a collaborator on `izlim/bpctrialsite` (ask the website admin).
 4. **SSH key:** the repo uses SSH (`git@github.com:izlim/bpctrialsite.git`). Create a key with `ssh-keygen -t ed25519`, add the public key to their GitHub account, and check it with `ssh -T git@github.com`.
-5. **Git identity:** set their name and email so the history shows who added each event:
+5. **Git identity:** set their name and email so the history shows who added each event. **This repo is public**, so use their GitHub "noreply" address (GitHub → Settings → Emails, also tick "Keep my email addresses private"), not their real email:
    ```
    git config --global user.name "Their Name"
-   git config --global user.email "their@email"
+   git config --global user.email "12345678+username@users.noreply.github.com"
    ```
 6. **Project:** `git clone git@github.com:izlim/bpctrialsite.git`, then run `npm install` in the project folder.
 7. **cPanel:** give them the cPanel login if they will upload the live website themselves.
