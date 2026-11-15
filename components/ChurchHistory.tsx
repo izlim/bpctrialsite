@@ -680,6 +680,7 @@ export default function ChurchHistory({
                         <ImageLightbox
                           src={mainPhoto.src}
                           alt={mainPhoto.caption}
+                          caption={mainPhoto.caption}
                           className="rounded-xl overflow-hidden border border-gray-200/80 hover:border-primary-300 transition-colors"
                           imgClassName="w-full aspect-[4/3] object-contain bg-primary-50"
                         />
@@ -949,6 +950,7 @@ export default function ChurchHistory({
                                             <ImageLightbox
                                               src={photo.src}
                                               alt={photo.caption}
+                                              caption={photo.caption}
                                               className="rounded-lg overflow-hidden border border-gray-200/80 hover:border-primary-300 transition-colors"
                                               imgClassName="w-full aspect-[4/3] object-contain bg-primary-50"
                                             />

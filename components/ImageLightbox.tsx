@@ -6,6 +6,8 @@ import { useLocale } from '@/components/LocaleProvider';
 interface ImageLightboxProps {
     src: string;
     alt: string;
+    // Shown under the image in the full-screen view
+    caption?: string;
     className?: string;
     imgClassName?: string;
 }
@@ -13,6 +15,7 @@ interface ImageLightboxProps {
 export default function ImageLightbox({
     src,
     alt,
+    caption,
     className = '',
     imgClassName = 'w-full h-auto rounded-lg',
 }: ImageLightboxProps) {
@@ -67,13 +70,32 @@ export default function ImageLightbox({
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                        src={fullSrc}
-                        alt={alt}
-                        onClick={(e) => e.stopPropagation()}
-                        className="max-h-full max-w-full object-contain rounded-lg"
-                    />
+                    {caption ? (
+                        <figure
+                            onClick={(e) => e.stopPropagation()}
+                            className="flex max-h-full max-w-full flex-col items-center"
+                        >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src={fullSrc}
+                                alt={alt}
+                                className="min-h-0 max-w-full object-contain rounded-lg"
+                            />
+                            <figcaption className="mt-3 max-w-3xl shrink-0 text-center text-sm leading-relaxed text-white/90">
+                                {caption}
+                            </figcaption>
+                        </figure>
+                    ) : (
+                        <>
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src={fullSrc}
+                                alt={alt}
+                                onClick={(e) => e.stopPropagation()}
+                                className="max-h-full max-w-full object-contain rounded-lg"
+                            />
+                        </>
+                    )}
                 </div>
             )}
         </>
