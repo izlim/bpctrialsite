@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useLocale } from '@/components/LocaleProvider';
 import { getLocalizedPath } from '@/lib/i18n';
@@ -30,7 +31,13 @@ export default function HomePageClient({ featuredService, upcomingEvents }: Home
     return (match && match[2].length === 11) ? match[2] : null;
   };
 
-  const liveStreamYoutubeId = t.home.liveStream?.youtubeUrl ? getYoutubeId(t.home.liveStream.youtubeUrl) : null;
+  const [showAnnouncement, setShowAnnouncement] = useState(true);
+  useEffect(() => {
+    const expiresAt = new Date(`${t.home.announcement.showUntil}T23:59:59+08:00`);
+    setShowAnnouncement(new Date() <= expiresAt);
+  }, [t]);
+
+  const liveStreamYoutubeId =t.home.liveStream?.youtubeUrl ? getYoutubeId(t.home.liveStream.youtubeUrl) : null;
 
   return (
     <div>
@@ -68,6 +75,23 @@ export default function HomePageClient({ featuredService, upcomingEvents }: Home
           </div>
         </div>
       </section>
+
+      {/* Announcement (hidden after its showUntil date, Singapore time) */}
+      {showAnnouncement && (
+        <section className="bg-white pt-8">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto bg-orange-50 border-l-4 border-orange-400 rounded-r-lg p-5 text-orange-900">
+              <p>
+                <span className="font-bold mr-2">{t.home.announcement.label}:</span>
+                {t.home.announcement.text}{' '}
+                <Link href={getLocalizedPath(t.home.announcement.link, locale)} className="font-semibold underline hover:no-underline">
+                  {t.home.announcement.linkText} →
+                </Link>
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Service Times */}
       <section className="py-20 bg-soft-gradient relative overflow-hidden">

@@ -235,6 +235,10 @@ This workflow is run by **non-technical church staff** using their own Claude Co
 | 主恩楼 | Grace Auditorium |
 | 秋娥牧师 / 洪秋娥牧师 | Rev. Serene Ang |
 | 佳佳姐妹 | Sister Jia Jia |
+| 董家骅牧师 | Rev. David Doong |
+| 正堂 | Main Sanctuary |
+| 图书馆 | Library |
+| 外展主日 | Mission Sunday |
 
 ---
 

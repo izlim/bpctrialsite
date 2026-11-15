@@ -29,6 +29,13 @@
     "downloadNotes": "Download Notes"
   },
   "home": {
+    "announcement": {
+      "label": "Update",
+      "showUntil": "2026-11-22",
+      "text": "Sunday, 22 November, is Mission Sunday. There will be one combined service at 10:00 AM in the Main Sanctuary, instead of the usual 9:30 AM and 11:30 AM services.",
+      "linkText": "Mission Sunday details",
+      "link": "/events/mission-sunday-2026"
+    },
     "welcome": "Welcome to Bethany Presbyterian Church",
     "officialWebsite": "The official website of Bethany Presbyterian Church, Singapore.",
     "subtitle": "A welcoming community of believers committed to serving God and our neighbors. Join us as we grow in faith, love, and service together.",

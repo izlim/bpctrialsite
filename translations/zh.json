@@ -29,6 +29,13 @@
     "downloadNotes": "下载笔记"
   },
   "home": {
+    "announcement": {
+      "label": "通知",
+      "showUntil": "2026-11-22",
+      "text": "11月22日主日为外展主日，当天只有一堂联合崇拜，于上午 10:00 在正堂举行，取代平时上午 9:30 及 11:30 的崇拜。",
+      "linkText": "外展主日详情",
+      "link": "/events/mission-sunday-2026"
+    },
     "welcome": "欢迎您来到伯大尼长老会",
     "officialWebsite": "伯大尼长老会新加坡官方网站。",
     "subtitle": "我们是一个以服事上帝、关怀邻舍为使命的教会大家庭，诚邀您与我们一同在信心、爱心与服事中成长。",
