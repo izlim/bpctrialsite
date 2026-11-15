@@ -19,7 +19,7 @@ The project is a **Next.js Static Site (Export)**. This architecture inherently 
 
 ### 3. Input Handling (Safe)
 *   **Observation**: `ContactForm.tsx` collects user input.
-*   **Analysis**: The form builds a `mailto:hello@bethanypc.org.sg` link and opens the visitor's own email app. No data is sent to a server, so there is no risk of injection attacks or data processing vulnerabilities at this stage.
+*   **Analysis**: The form builds a `mailto:admin01@bethanypc.org.sg` link and opens the visitor's own email app. No data is sent to a server, so there is no risk of injection attacks or data processing vulnerabilities at this stage.
 *   **Recommendation**: When a backend (e.g., EmailJS, serverless function) is connected, ensure that **server-side validation** is implemented to sanitize inputs.
 
 ### 4. Dependencies

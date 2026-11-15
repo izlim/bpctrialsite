@@ -153,7 +153,7 @@ export default function LocaleLayout({
                 addressCountry: 'SG',
               },
               telephone: '+65 6280 0011',
-              email: 'hello@bethanypc.org.sg',
+              email: 'admin01@bethanypc.org.sg',
             }),
           }}
         />

@@ -25,7 +25,7 @@ export default function ContactForm() {
     );
 
     // Open user's email client
-    window.location.href = `mailto:hello@bethanypc.org.sg?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:admin01@bethanypc.org.sg?subject=${subject}&body=${body}`;
 
     setSubmitted(true);
     setTimeout(() => {

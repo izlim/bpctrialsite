@@ -4,7 +4,6 @@ import { useLocale } from '@/components/LocaleProvider';
 import { getLocalizedPath } from '@/lib/i18n';
 import Link from 'next/link';
 import ImagePlaceholder from '@/components/ImagePlaceholder';
-import ChurchHistory from '@/components/ChurchHistory';
 
 export default function AboutPageClient() {
   const { locale, t } = useLocale();
@@ -44,11 +43,11 @@ export default function AboutPageClient() {
 
           {/* Our History */}
           <section className="mb-20">
-            <div className="bg-primary-50 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden border border-primary-100 mb-8">
+            <div className="bg-primary-50 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden border border-primary-100">
               <div className="absolute top-0 right-0 w-40 h-40 bg-orange-100 rounded-full blur-2xl opacity-30 -mr-10 -mt-10" />
               <div className="relative z-10">
                 <span className="inline-block px-3 py-1 rounded-full bg-orange-100 text-orange-900 text-xs font-bold uppercase tracking-wider mb-3">
-                  1902 – Present · 120+ Years
+                  {t.about.historyBadge}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary-900">{t.about.history}</h2>
                 <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-6">
@@ -67,9 +66,6 @@ export default function AboutPageClient() {
                 </div>
               </div>
             </div>
-
-            {/* Interactive Timeline & Milestones Component */}
-            <ChurchHistory showHeroHeader={false} />
           </section>
 
           {/* Our Leadership */}
