@@ -87,6 +87,36 @@
           "year": "1950",
           "event": "Formally named Bethany Presbyterian Church under Presbyterian Synod."
         }
+      ],
+      "photos": [
+        {
+          "src": "/images/history/1903-cha-swa-church.jpg",
+          "caption": "The church building at Cha Swa"
+        },
+        {
+          "src": "/images/history/1903-cha-swa-congregation.jpg",
+          "caption": "The congregation gathered at Cha Swa"
+        },
+        {
+          "src": "/images/history/1903-wu-zhe-mu.jpg",
+          "year": "1903",
+          "caption": "Preacher Wu Zhe Mu, the church's first female preacher"
+        },
+        {
+          "src": "/images/history/1903-li-yuan-jun.jpg",
+          "year": "1903",
+          "caption": "Li Yuan Jun, founding pioneer"
+        },
+        {
+          "src": "/images/history/1903-elder-ng-kim-chuan.jpg",
+          "year": "1903",
+          "caption": "Elder Ng Kim Chuan"
+        },
+        {
+          "src": "/images/history/1950-official-name.jpg",
+          "year": "1950",
+          "caption": "The church's name: Chinese Christian Church, Bethany Congregation"
+        }
       ]
     },
     {
@@ -113,6 +143,18 @@
         {
           "year": "1954",
           "event": "Leased Kim Chuan Road site at $23/month."
+        }
+      ],
+      "photos": [
+        {
+          "src": "/images/history/1951-kim-chuan-road-church.jpg",
+          "year": "1951",
+          "caption": "The church at Kim Chuan Road"
+        },
+        {
+          "src": "/images/history/1975-paya-lebar-airport.jpg",
+          "year": "1975",
+          "caption": "Paya Lebar Airport around 1975. The church's first site at Cha Swa was taken for the airport, and the area looks very different today"
         }
       ]
     },
@@ -144,6 +186,23 @@
         {
           "year": "1967",
           "event": "Youth and Women fellowships established."
+        }
+      ],
+      "photos": [
+        {
+          "src": "/images/history/1955-rev-tan-choo-ai.jpg",
+          "year": "1955",
+          "caption": "Rev. Tan Choo-Ai (1904–1970)"
+        },
+        {
+          "src": "/images/history/1967-elder-lim-shye-hong.jpg",
+          "year": "1967",
+          "caption": "Elder Lim Shye Hong (speaking, right)"
+        },
+        {
+          "src": "/images/history/1967-youth-fellowship.jpg",
+          "year": "1967",
+          "caption": "The Youth Fellowship at the Kim Chuan Road church"
         }
       ]
     },
@@ -179,6 +238,27 @@
         {
           "year": "1983",
           "event": "First service Jan 2; 70th Anniversary & Dedication March 12."
+        }
+      ],
+      "photos": [
+        {
+          "src": "/images/history/elder-ng-swee-koon-seven-sisters.jpg",
+          "caption": "Elder Ng Swee Koon with seven sisters"
+        },
+        {
+          "src": "/images/history/1982-church-364a.jpg",
+          "year": "1982",
+          "caption": "The church at 364A Upper Paya Lebar Road"
+        },
+        {
+          "src": "/images/history/1983-new-church-building.jpg",
+          "year": "1983",
+          "caption": "The new church building at Upper Paya Lebar Road"
+        },
+        {
+          "src": "/images/history/1983-three-sites-map.jpg",
+          "year": "1983",
+          "caption": "The church's three homes: Cha Swa (1903), Kim Chuan Road (1954) and Upper Paya Lebar Road (1983)"
         }
       ]
     },
@@ -218,6 +298,38 @@
         {
           "year": "2022",
           "event": "Rev. Sim Ang Lee becomes Senior Pastor."
+        }
+      ],
+      "photos": [
+        {
+          "src": "/images/history/1993-90th-anniversary.jpg",
+          "year": "1993",
+          "caption": "Ng family worship service"
+        },
+        {
+          "src": "/images/history/2003-congregation.jpg",
+          "year": "2003",
+          "caption": "The congregation in the sanctuary"
+        },
+        {
+          "src": "/images/history/2005-church-building.jpg",
+          "year": "2005",
+          "caption": "The church building"
+        },
+        {
+          "src": "/images/history/2011-youth-service.jpg",
+          "year": "2011",
+          "caption": "The Youth Service"
+        },
+        {
+          "src": "/images/history/2016-church-building.jpg",
+          "year": "2016",
+          "caption": "The church building"
+        },
+        {
+          "src": "/images/history/2025-ordination.jpg",
+          "year": "2025",
+          "caption": "Ordination of Rev. Alex Foo. From left: Rev. Timothy Hoon, Rev. William Sim, Rev. Alex Foo and Rev. Serene Ang"
         }
       ]
     }

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import historyDataEnRaw from '@/church-history-v4.json';
 import historyDataZhRaw from '@/church-history-v4.zh.json';
 import { useLocale } from './LocaleProvider';
+import ImageLightbox from './ImageLightbox';
 
 // Type definitions matching church-history-v4.json and church-history-v4.zh.json
 export interface HeroGlanceItem {
@@ -28,6 +29,12 @@ export interface Milestone {
   event: string;
 }
 
+export interface EraPhoto {
+  src: string;
+  year?: string;
+  caption: string;
+}
+
 export interface EraItem {
   id: string;
   period: string;
@@ -36,6 +43,7 @@ export interface EraItem {
   details: string;
   keyFigures: KeyFigure[];
   milestones: Milestone[];
+  photos?: EraPhoto[];
 }
 
 export interface ChurchHistoryData {
@@ -575,10 +583,12 @@ export default function ChurchHistory({
           {/* ========================================================== */}
           {/* The Vertical Timeline with Accordion Cards                 */}
           {/* ========================================================== */}
-          <div className="relative pl-4 sm:pl-8 md:pl-10 space-y-6">
+          {/* On desktop the line runs down the middle, with each era card on one
+              side and its photos on the other, alternating left and right. */}
+          <div className="relative pl-4 sm:pl-8 md:pl-10 lg:pl-0 space-y-8 lg:space-y-12">
             {/* Continuous Vertical Timeline Line */}
             <div
-              className="absolute left-4 sm:left-8 md:left-10 top-6 bottom-6 w-0.5 bg-gradient-to-b from-primary-400 via-teal-400 to-orange-400 -translate-x-1/2 pointer-events-none"
+              className="absolute left-4 sm:left-8 md:left-10 lg:left-1/2 top-6 bottom-6 w-0.5 bg-gradient-to-b from-primary-400 via-teal-400 to-orange-400 -translate-x-1/2 pointer-events-none"
               aria-hidden="true"
             />
 
@@ -586,16 +596,17 @@ export default function ChurchHistory({
               const isExpanded = !!expandedEras[era.id];
               const contentId = `era-content-${era.id}`;
               const buttonId = `era-btn-${era.id}`;
+              const cardOnRight = index % 2 === 1;
 
               return (
                 <div
                   key={era.id}
                   id={era.id}
-                  className="relative group transition-all duration-300"
+                  className="relative group transition-all duration-300 lg:grid lg:grid-cols-2 lg:gap-x-16 lg:items-start"
                 >
                   {/* Timeline Node Marker on the vertical line */}
                   <div
-                    className={`absolute -left-4 sm:-left-8 md:-left-10 -translate-x-1/2 top-7 w-5 h-5 rounded-full border-4 border-white shadow transition-all duration-300 z-10 ${
+                    className={`absolute -left-4 sm:-left-8 md:-left-10 lg:left-1/2 -translate-x-1/2 top-7 w-5 h-5 rounded-full border-4 border-white shadow transition-all duration-300 z-10 ${
                       isExpanded
                         ? 'bg-teal-500 scale-125 ring-4 ring-teal-100'
                         : 'bg-primary-600 group-hover:scale-110'
@@ -605,7 +616,7 @@ export default function ChurchHistory({
 
                   {/* Accordion Card Container */}
                   <div
-                    className={`bg-white rounded-2xl border transition-all duration-300 shadow-sm overflow-hidden ${
+                    className={`lg:row-start-1 lg:sticky lg:top-24 ${cardOnRight ? 'lg:col-start-2' : 'lg:col-start-1'} bg-white rounded-2xl border transition-all duration-300 shadow-sm overflow-hidden ${
                       isExpanded
                         ? 'border-primary-400 shadow-lg ring-1 ring-primary-100'
                         : 'border-gray-200/90 hover:border-primary-300 hover:shadow-md'
@@ -722,7 +733,7 @@ export default function ChurchHistory({
                               </h4>
                             </div>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                               {era.keyFigures.map((person, pIdx) => {
                                 // Extract initials for the avatar badge
                                 const initials = person.name
@@ -822,6 +833,38 @@ export default function ChurchHistory({
                       </div>
                     )}
                   </div>
+
+                  {/* Era Photos: opposite the card on desktop, a swipeable strip below it on mobile.
+                      Click a photo to view it full-screen. */}
+                  {era.photos && era.photos.length > 0 && (
+                    <div
+                      className={`mt-4 lg:mt-0 lg:row-start-1 ${cardOnRight ? 'lg:col-start-1' : 'lg:col-start-2'}`}
+                    >
+                      <h4 className="sr-only">
+                        {isZh ? `${era.period} 历史照片` : `Photos from ${era.period}`}
+                      </h4>
+                      <div className="flex gap-3 overflow-x-auto snap-x pb-2 lg:grid lg:grid-cols-3 lg:gap-3 lg:overflow-visible lg:pb-0">
+                        {era.photos.map((photo) => (
+                          <figure key={photo.src} className="w-44 sm:w-52 shrink-0 snap-start lg:w-auto min-w-0">
+                            <ImageLightbox
+                              src={photo.src}
+                              alt={photo.caption}
+                              className="rounded-xl overflow-hidden border border-gray-200/80 shadow-sm hover:border-primary-300 hover:shadow-md transition-all"
+                              imgClassName="w-full aspect-[4/3] object-contain bg-primary-50"
+                            />
+                            <figcaption className="mt-1.5 text-xs text-gray-600 leading-snug">
+                              {photo.year && (
+                                <span className="font-mono font-bold text-primary-800 mr-1.5">
+                                  {photo.year}
+                                </span>
+                              )}
+                              {photo.caption}
+                            </figcaption>
+                          </figure>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               );
             })}

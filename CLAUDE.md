@@ -239,6 +239,7 @@ This workflow is run by **non-technical church staff** using their own Claude Co
 | 正堂 | Main Sanctuary |
 | 图书馆 | Library |
 | 外展主日 | Mission Sunday |
+| 黄金泉长老 | Elder Ng Kim Chuan |
 
 ---
 

@@ -87,6 +87,36 @@
           "year": "1950",
           "event": "经长老大会正式命名为“长老会伯大尼堂”。"
         }
+      ],
+      "photos": [
+        {
+          "src": "/images/history/1903-cha-swa-church.jpg",
+          "caption": "柴山的教堂"
+        },
+        {
+          "src": "/images/history/1903-cha-swa-congregation.jpg",
+          "caption": "柴山堂会的会众"
+        },
+        {
+          "src": "/images/history/1903-wu-zhe-mu.jpg",
+          "year": "1903",
+          "caption": "吴鐸姆传道，教会首位女传道"
+        },
+        {
+          "src": "/images/history/1903-li-yuan-jun.jpg",
+          "year": "1903",
+          "caption": "李远君，开拓先驱"
+        },
+        {
+          "src": "/images/history/1903-elder-ng-kim-chuan.jpg",
+          "year": "1903",
+          "caption": "黄金泉长老"
+        },
+        {
+          "src": "/images/history/1950-official-name.jpg",
+          "year": "1950",
+          "caption": "教会名称：中华基督教伯大尼堂"
+        }
       ]
     },
     {
@@ -113,6 +143,18 @@
         {
           "year": "1954",
           "event": "以每月23新元租用金泉路土地。"
+        }
+      ],
+      "photos": [
+        {
+          "src": "/images/history/1951-kim-chuan-road-church.jpg",
+          "year": "1951",
+          "caption": "金泉路的教堂"
+        },
+        {
+          "src": "/images/history/1975-paya-lebar-airport.jpg",
+          "year": "1975",
+          "caption": "1975年前后的巴耶利峇机场。教会最初的柴山地段被征用兴建机场，今日面貌已大不相同"
         }
       ]
     },
@@ -144,6 +186,23 @@
         {
           "year": "1967",
           "event": "成立青年团契和妇女团契。"
+        }
+      ],
+      "photos": [
+        {
+          "src": "/images/history/1955-rev-tan-choo-ai.jpg",
+          "year": "1955",
+          "caption": "陈慈爱牧师（1904–1970）"
+        },
+        {
+          "src": "/images/history/1967-elder-lim-shye-hong.jpg",
+          "year": "1967",
+          "caption": "林赛丰长老（右，讲话者）"
+        },
+        {
+          "src": "/images/history/1967-youth-fellowship.jpg",
+          "year": "1967",
+          "caption": "青年团契摄于金泉路教堂"
         }
       ]
     },
@@ -179,6 +238,27 @@
         {
           "year": "1983",
           "event": "1月2日举行第一次崇拜；3月12日举行献堂礼暨建堂70周年庆典。"
+        }
+      ],
+      "photos": [
+        {
+          "src": "/images/history/elder-ng-swee-koon-seven-sisters.jpg",
+          "caption": "黄瑞坤长老与七位姐妹"
+        },
+        {
+          "src": "/images/history/1982-church-364a.jpg",
+          "year": "1982",
+          "caption": "巴耶利峇路上段364A的教堂"
+        },
+        {
+          "src": "/images/history/1983-new-church-building.jpg",
+          "year": "1983",
+          "caption": "巴耶利峇路上段的新堂"
+        },
+        {
+          "src": "/images/history/1983-three-sites-map.jpg",
+          "year": "1983",
+          "caption": "教会的三个地段：柴山（1903）、金泉路（1954）、巴耶利峇路上段（1983）"
         }
       ]
     },
@@ -218,6 +298,38 @@
         {
           "year": "2022",
           "event": "沈洪利牧师就任主任牧师。"
+        }
+      ],
+      "photos": [
+        {
+          "src": "/images/history/1993-90th-anniversary.jpg",
+          "year": "1993",
+          "caption": "黄氏家族崇拜"
+        },
+        {
+          "src": "/images/history/2003-congregation.jpg",
+          "year": "2003",
+          "caption": "会众摄于圣殿"
+        },
+        {
+          "src": "/images/history/2005-church-building.jpg",
+          "year": "2005",
+          "caption": "教堂外观"
+        },
+        {
+          "src": "/images/history/2011-youth-service.jpg",
+          "year": "2011",
+          "caption": "青年崇拜"
+        },
+        {
+          "src": "/images/history/2016-church-building.jpg",
+          "year": "2016",
+          "caption": "教堂外观"
+        },
+        {
+          "src": "/images/history/2025-ordination.jpg",
+          "year": "2025",
+          "caption": "符基明牧师按立。左起：洪茂祥牧师、沈洪利牧师、符基明牧师、洪秋娥牧师"
         }
       ]
     }

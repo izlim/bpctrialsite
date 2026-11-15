@@ -7,9 +7,15 @@ interface ImageLightboxProps {
     src: string;
     alt: string;
     className?: string;
+    imgClassName?: string;
 }
 
-export default function ImageLightbox({ src, alt, className = '' }: ImageLightboxProps) {
+export default function ImageLightbox({
+    src,
+    alt,
+    className = '',
+    imgClassName = 'w-full h-auto rounded-lg',
+}: ImageLightboxProps) {
     const { t } = useLocale();
     const [isOpen, setIsOpen] = useState(false);
     const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -39,7 +45,7 @@ export default function ImageLightbox({ src, alt, className = '' }: ImageLightbo
                 className={`block w-full cursor-zoom-in ${className}`}
             >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={fullSrc} alt={alt} className="w-full h-auto rounded-lg" />
+                <img src={fullSrc} alt={alt} className={imgClassName} />
             </button>
 
             {isOpen && (
