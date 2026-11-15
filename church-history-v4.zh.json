@@ -91,7 +91,8 @@
       "photos": [
         {
           "src": "/images/history/1903-cha-swa-church.jpg",
-          "caption": "柴山的教堂"
+          "caption": "柴山的教堂",
+          "main": true
         },
         {
           "src": "/images/history/1903-cha-swa-congregation.jpg",
@@ -149,7 +150,8 @@
         {
           "src": "/images/history/1951-kim-chuan-road-church.jpg",
           "year": "1951",
-          "caption": "金泉路的教堂"
+          "caption": "金泉路的教堂",
+          "main": true
         },
         {
           "src": "/images/history/1975-paya-lebar-airport.jpg",
@@ -202,7 +204,8 @@
         {
           "src": "/images/history/1967-youth-fellowship.jpg",
           "year": "1967",
-          "caption": "青年团契摄于金泉路教堂"
+          "caption": "青年团契摄于金泉路教堂",
+          "main": true
         }
       ]
     },
@@ -253,7 +256,8 @@
         {
           "src": "/images/history/1983-new-church-building.jpg",
           "year": "1983",
-          "caption": "巴耶利峇路上段的新堂"
+          "caption": "巴耶利峇路上段的新堂",
+          "main": true
         },
         {
           "src": "/images/history/1983-three-sites-map.jpg",
@@ -329,7 +333,8 @@
         {
           "src": "/images/history/2025-ordination.jpg",
           "year": "2025",
-          "caption": "符基明牧师按立。左起：洪茂祥牧师、沈洪利牧师、符基明牧师、洪秋娥牧师"
+          "caption": "符基明牧师按立。左起：洪茂祥牧师、沈洪利牧师、符基明牧师、洪秋娥牧师",
+          "main": true
         }
       ]
     }

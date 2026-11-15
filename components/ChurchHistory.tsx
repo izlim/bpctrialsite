@@ -33,6 +33,8 @@ export interface EraPhoto {
   src: string;
   year?: string;
   caption: string;
+  // The era's main photo, shown on the card even when it is collapsed
+  main?: boolean;
 }
 
 export interface EraItem {
@@ -60,6 +62,48 @@ export interface ChurchHistoryData {
 
 const historyDataEn = historyDataEnRaw as ChurchHistoryData;
 const historyDataZh = historyDataZhRaw as ChurchHistoryData;
+
+interface EraTimelineEntry {
+  year?: string;
+  event?: string;
+  photos: EraPhoto[];
+}
+
+// "1960-1970" -> [1960, 1970]; "1903" -> [1903, 1903]
+const yearRange = (year: string) => {
+  const [start, end = start] = year.split('-').map((y) => parseInt(y, 10));
+  return [start, end];
+};
+
+// Merges an era's milestones with its photos (except the main one). A photo joins the
+// milestone whose year covers it; otherwise it gets its own entry in date order.
+// Undated photos go first.
+function buildEraTimeline(era: EraItem): EraTimelineEntry[] {
+  const milestones: EraTimelineEntry[] = era.milestones.map((m) => ({ ...m, photos: [] }));
+  const undated: EraTimelineEntry = { photos: [] };
+  const photoOnly: EraTimelineEntry[] = [];
+
+  for (const photo of era.photos ?? []) {
+    if (photo.main) continue;
+    if (!photo.year) {
+      undated.photos.push(photo);
+      continue;
+    }
+    const [y] = yearRange(photo.year);
+    const target =
+      milestones.find((m) => {
+        const [start, end] = yearRange(m.year!);
+        return y >= start && y <= end;
+      }) ?? photoOnly.find((e) => e.year === photo.year);
+    if (target) target.photos.push(photo);
+    else photoOnly.push({ year: photo.year, photos: [photo] });
+  }
+
+  const dated = [...milestones, ...photoOnly].sort(
+    (a, b) => yearRange(a.year!)[0] - yearRange(b.year!)[0]
+  );
+  return undated.photos.length > 0 ? [undated, ...dated] : dated;
+}
 
 interface ChurchHistoryProps {
   className?: string;
@@ -583,12 +627,10 @@ export default function ChurchHistory({
           {/* ========================================================== */}
           {/* The Vertical Timeline with Accordion Cards                 */}
           {/* ========================================================== */}
-          {/* On desktop the line runs down the middle, with each era card on one
-              side and its photos on the other, alternating left and right. */}
-          <div className="relative pl-4 sm:pl-8 md:pl-10 lg:pl-0 space-y-8 lg:space-y-12">
+          <div className="relative pl-4 sm:pl-8 md:pl-10 space-y-6">
             {/* Continuous Vertical Timeline Line */}
             <div
-              className="absolute left-4 sm:left-8 md:left-10 lg:left-1/2 top-6 bottom-6 w-0.5 bg-gradient-to-b from-primary-400 via-teal-400 to-orange-400 -translate-x-1/2 pointer-events-none"
+              className="absolute left-4 sm:left-8 md:left-10 top-6 bottom-6 w-0.5 bg-gradient-to-b from-primary-400 via-teal-400 to-orange-400 -translate-x-1/2 pointer-events-none"
               aria-hidden="true"
             />
 
@@ -596,17 +638,17 @@ export default function ChurchHistory({
               const isExpanded = !!expandedEras[era.id];
               const contentId = `era-content-${era.id}`;
               const buttonId = `era-btn-${era.id}`;
-              const cardOnRight = index % 2 === 1;
+              const mainPhoto = era.photos?.find((p) => p.main);
 
               return (
                 <div
                   key={era.id}
                   id={era.id}
-                  className="relative group transition-all duration-300 lg:grid lg:grid-cols-2 lg:gap-x-16 lg:items-start"
+                  className="relative group transition-all duration-300"
                 >
                   {/* Timeline Node Marker on the vertical line */}
                   <div
-                    className={`absolute -left-4 sm:-left-8 md:-left-10 lg:left-1/2 -translate-x-1/2 top-7 w-5 h-5 rounded-full border-4 border-white shadow transition-all duration-300 z-10 ${
+                    className={`absolute -left-4 sm:-left-8 md:-left-10 -translate-x-1/2 top-7 w-5 h-5 rounded-full border-4 border-white shadow transition-all duration-300 z-10 ${
                       isExpanded
                         ? 'bg-teal-500 scale-125 ring-4 ring-teal-100'
                         : 'bg-primary-600 group-hover:scale-110'
@@ -616,7 +658,7 @@ export default function ChurchHistory({
 
                   {/* Accordion Card Container */}
                   <div
-                    className={`lg:row-start-1 lg:sticky lg:top-24 ${cardOnRight ? 'lg:col-start-2' : 'lg:col-start-1'} bg-white rounded-2xl border transition-all duration-300 shadow-sm overflow-hidden ${
+                    className={`bg-white rounded-2xl border transition-all duration-300 shadow-sm overflow-hidden ${
                       isExpanded
                         ? 'border-primary-400 shadow-lg ring-1 ring-primary-100'
                         : 'border-gray-200/90 hover:border-primary-300 hover:shadow-md'
@@ -625,13 +667,33 @@ export default function ChurchHistory({
                     {/* -------------------------------------------------- */}
                     {/* Unexpanded Header / Interactive Accordion Trigger   */}
                     {/* -------------------------------------------------- */}
+                    <div className="flex flex-col sm:flex-row">
+                    {/* Main era photo, visible even when collapsed (click to view full-screen) */}
+                    {mainPhoto && (
+                      <figure className="px-5 pt-5 sm:p-6 md:p-7 sm:pr-0 md:pr-0 sm:w-52 md:w-64 shrink-0">
+                        <ImageLightbox
+                          src={mainPhoto.src}
+                          alt={mainPhoto.caption}
+                          className="rounded-xl overflow-hidden border border-gray-200/80 hover:border-primary-300 transition-colors"
+                          imgClassName="w-full aspect-[4/3] object-contain bg-primary-50"
+                        />
+                        <figcaption className="mt-1.5 text-xs text-gray-600 leading-snug">
+                          {mainPhoto.year && (
+                            <span className="font-mono font-bold text-primary-800 mr-1.5">
+                              {mainPhoto.year}
+                            </span>
+                          )}
+                          {mainPhoto.caption}
+                        </figcaption>
+                      </figure>
+                    )}
                     <button
                       type="button"
                       id={buttonId}
                       aria-expanded={isExpanded}
                       aria-controls={contentId}
                       onClick={() => toggleEra(era.id)}
-                      className="w-full text-left p-5 sm:p-6 md:p-7 flex items-start justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 cursor-pointer"
+                      className="w-full sm:flex-1 min-w-0 text-left p-5 sm:p-6 md:p-7 flex items-start justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 cursor-pointer"
                     >
                       <div className="flex-1">
                         {/* Period Badge & Era Index */}
@@ -675,6 +737,7 @@ export default function ChurchHistory({
                         </svg>
                       </div>
                     </button>
+                    </div>
 
                     {/* -------------------------------------------------- */}
                     {/* Expanded Content: Details, Key Figures & Milestones */}
@@ -733,7 +796,7 @@ export default function ChurchHistory({
                               </h4>
                             </div>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
                               {era.keyFigures.map((person, pIdx) => {
                                 // Extract initials for the avatar badge
                                 const initials = person.name
@@ -805,9 +868,9 @@ export default function ChurchHistory({
                                 aria-hidden="true"
                               />
 
-                              {era.milestones.map((m, mIdx) => (
+                              {buildEraTimeline(era).map((entry, eIdx) => (
                                 <div
-                                  key={mIdx}
+                                  key={eIdx}
                                   className="relative flex items-start space-x-3 text-sm sm:text-base group"
                                 >
                                   {/* Milestone node dot */}
@@ -817,14 +880,41 @@ export default function ChurchHistory({
                                   />
 
                                   {/* Year Pill Tag */}
-                                  <span className="shrink-0 font-mono text-xs font-bold px-2 py-0.5 rounded bg-teal-50 text-teal-800 border border-teal-200/80">
-                                    {m.year}
-                                  </span>
+                                  {entry.year && (
+                                    <span className="shrink-0 font-mono text-xs font-bold px-2 py-0.5 rounded bg-teal-50 text-teal-800 border border-teal-200/80">
+                                      {entry.year}
+                                    </span>
+                                  )}
 
-                                  {/* Milestone Event Description */}
-                                  <p className="text-gray-700 leading-relaxed flex-1 text-sm sm:text-base">
-                                    {m.event}
-                                  </p>
+                                  <div className="flex-1 min-w-0">
+                                    {/* Milestone Event Description */}
+                                    {entry.event && (
+                                      <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                                        {entry.event}
+                                      </p>
+                                    )}
+
+                                    {/* Photos from this year (click to view full-screen) */}
+                                    {entry.photos.length > 0 && (
+                                      <div
+                                        className={`grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 ${entry.event ? 'mt-2.5' : ''}`}
+                                      >
+                                        {entry.photos.map((photo) => (
+                                          <figure key={photo.src} className="min-w-0">
+                                            <ImageLightbox
+                                              src={photo.src}
+                                              alt={photo.caption}
+                                              className="rounded-lg overflow-hidden border border-gray-200/80 hover:border-primary-300 transition-colors"
+                                              imgClassName="w-full aspect-[4/3] object-contain bg-primary-50"
+                                            />
+                                            <figcaption className="mt-1 text-xs text-gray-600 leading-snug">
+                                              {photo.caption}
+                                            </figcaption>
+                                          </figure>
+                                        ))}
+                                      </div>
+                                    )}
+                                  </div>
                                 </div>
                               ))}
                             </div>
@@ -833,38 +923,6 @@ export default function ChurchHistory({
                       </div>
                     )}
                   </div>
-
-                  {/* Era Photos: opposite the card on desktop, a swipeable strip below it on mobile.
-                      Click a photo to view it full-screen. */}
-                  {era.photos && era.photos.length > 0 && (
-                    <div
-                      className={`mt-4 lg:mt-0 lg:row-start-1 ${cardOnRight ? 'lg:col-start-1' : 'lg:col-start-2'}`}
-                    >
-                      <h4 className="sr-only">
-                        {isZh ? `${era.period} 历史照片` : `Photos from ${era.period}`}
-                      </h4>
-                      <div className="flex gap-3 overflow-x-auto snap-x pb-2 lg:grid lg:grid-cols-3 lg:gap-3 lg:overflow-visible lg:pb-0">
-                        {era.photos.map((photo) => (
-                          <figure key={photo.src} className="w-44 sm:w-52 shrink-0 snap-start lg:w-auto min-w-0">
-                            <ImageLightbox
-                              src={photo.src}
-                              alt={photo.caption}
-                              className="rounded-xl overflow-hidden border border-gray-200/80 shadow-sm hover:border-primary-300 hover:shadow-md transition-all"
-                              imgClassName="w-full aspect-[4/3] object-contain bg-primary-50"
-                            />
-                            <figcaption className="mt-1.5 text-xs text-gray-600 leading-snug">
-                              {photo.year && (
-                                <span className="font-mono font-bold text-primary-800 mr-1.5">
-                                  {photo.year}
-                                </span>
-                              )}
-                              {photo.caption}
-                            </figcaption>
-                          </figure>
-                        ))}
-                      </div>
-                    </div>
-                  )}
                 </div>
               );
             })}
