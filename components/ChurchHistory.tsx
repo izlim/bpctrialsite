@@ -37,6 +37,11 @@ export interface EraPhoto {
   main?: boolean;
 }
 
+export interface EraVideo {
+  youtubeId: string;
+  caption: string;
+}
+
 export interface EraItem {
   id: string;
   period: string;
@@ -46,6 +51,7 @@ export interface EraItem {
   keyFigures: KeyFigure[];
   milestones: Milestone[];
   photos?: EraPhoto[];
+  video?: EraVideo;
 }
 
 export interface ChurchHistoryData {
@@ -771,6 +777,45 @@ export default function ChurchHistory({
                             {era.details}
                           </p>
                         </div>
+
+                        {/* Documentary Video (YouTube embed) */}
+                        {era.video && (
+                          <div className="mb-8">
+                            <div className="flex items-center gap-2 mb-4">
+                              <div className="w-7 h-7 rounded-lg bg-primary-100 text-primary-900 flex items-center justify-center shrink-0">
+                                <svg
+                                  className="w-4 h-4"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                  strokeWidth={2}
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                                  />
+                                </svg>
+                              </div>
+                              <h4 className="text-base sm:text-lg font-bold text-primary-950">
+                                {isZh ? '纪录片' : 'Documentary'}
+                              </h4>
+                            </div>
+                            <div className="aspect-video">
+                              <iframe
+                                src={`https://www.youtube.com/embed/${era.video.youtubeId}`}
+                                title={era.video.caption}
+                                className="w-full h-full rounded-xl"
+                                loading="lazy"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                              ></iframe>
+                            </div>
+                            <p className="mt-2 text-xs text-gray-600 leading-snug">
+                              {era.video.caption}
+                            </p>
+                          </div>
+                        )}
 
                         {/* 2. Key Figures Section (Avatar Cards) */}
                         {era.keyFigures && era.keyFigures.length > 0 && (
