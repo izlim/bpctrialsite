@@ -4,7 +4,7 @@ date: "2026-11-22"
 time: "Sunday, 10:00 AM - 12:00 PM"
 location: "Main Sanctuary"
 recurring: false
-image: "/images/mission-sunday-2026.jpeg"
+image: "/images/mission-sunday-2026-v2.jpeg"
 ---
 
 **Speaker:** Rev. David Doong
@@ -14,7 +14,7 @@ image: "/images/mission-sunday-2026.jpeg"
 **"Missional Disciples and Workplace Mission"**
 
 - **Time:** 1:00 PM - 2:00 PM
-- **Location:** Grace Auditorium
+- **Location:** Main Sanctuary
 
 ## Conversation with Young People
 

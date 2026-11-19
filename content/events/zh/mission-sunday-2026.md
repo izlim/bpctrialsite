@@ -4,7 +4,7 @@ date: "2026-11-22"
 time: "2026年11月22日（主日）上午 10:00 至 中午 12:00"
 location: "正堂"
 recurring: false
-image: "/images/mission-sunday-2026.jpeg"
+image: "/images/mission-sunday-2026-v2.jpeg"
 ---
 
 **讲员：** 董家骅牧师
@@ -14,7 +14,7 @@ image: "/images/mission-sunday-2026.jpeg"
 **《使命门徒之职场宣教》**
 
 - **时间：** 下午 1:00 至 2:00
-- **地点：** 主恩楼
+- **地点：** 正堂
 
 ## 与青年人交流
 
