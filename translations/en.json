@@ -203,5 +203,29 @@
     "facebook": "https://www.facebook.com/bethanypcsg/",
     "instagram": "https://www.instagram.com/bethanypc.sg/?hl=en",
     "youtube": "https://www.youtube.com/@bethanypresbyterianchurchs3856"
+  },
+  "downloads": {
+    "title": "Downloads",
+    "intro": "Reports and resources from Bethany Presbyterian Church, free to download and share.",
+    "download": "Download PDF",
+    "pages": "pages",
+    "iphoneTip": "On iPhone, the PDF may open in your browser first. Tap the Share button, then \"Save to Files\" to keep a copy.",
+    "files": {
+      "researchEn": {
+        "language": "English",
+        "title": "2026 Research on Singapore Chinese Speaking Churches",
+        "description": "Key findings and implications, prepared by Apphia Research (November 2026)."
+      },
+      "researchZh": {
+        "language": "Chinese",
+        "title": "2026 Research on Singapore Chinese Speaking Churches (Chinese edition)",
+        "description": "The same report in Chinese: 2026 新加坡华语教会研究：主要发现与启示."
+      },
+      "futureChurch": {
+        "language": "Chinese",
+        "title": "Future Church: Are We Ready? Participant Handbook",
+        "description": "Handbook for the Future Church forum, 23 November 2026 at Bethany Presbyterian Church."
+      }
+    }
   }
 }

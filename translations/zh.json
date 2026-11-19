@@ -203,5 +203,29 @@
     "facebook": "https://www.facebook.com/bethanypcsg/",
     "instagram": "https://www.instagram.com/bethanypc.sg/?hl=en",
     "youtube": "https://www.youtube.com/@bethanypresbyterianchurchs3856"
+  },
+  "downloads": {
+    "title": "资料下载",
+    "intro": "长老会伯大尼堂的报告与资源，欢迎免费下载和分享。",
+    "download": "下载 PDF",
+    "pages": "页",
+    "iphoneTip": "在 iPhone 上，PDF 可能会先在浏览器中打开。点击“分享”按钮，再选择“存储到文件”即可保存。",
+    "files": {
+      "researchEn": {
+        "language": "英文",
+        "title": "2026 新加坡华语教会研究（英文版）",
+        "description": "同一份报告的英文版（Research on Singapore Chinese Speaking Churches）。"
+      },
+      "researchZh": {
+        "language": "中文",
+        "title": "2026 新加坡华语教会研究",
+        "description": "主要发现与启示，Apphia Research 编制（2026 年 11 月）。"
+      },
+      "futureChurch": {
+        "language": "中文",
+        "title": "未来教会：我们准备好了吗？参加者手册",
+        "description": "未来教会｜新加坡中文教会未来研讨会，2026 年 11 月 23 日于长老会伯大尼堂举行。"
+      }
+    }
   }
 }

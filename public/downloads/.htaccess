@@ -1,0 +1,8 @@
+# Make browsers save PDFs in this folder instead of opening them,
+# so links and QR codes pointing straight at a file start a download.
+# Only works on the live cPanel (Apache) site, not on GitHub Pages staging.
+<IfModule mod_headers.c>
+  <FilesMatch "\.pdf$">
+    Header set Content-Disposition "attachment"
+  </FilesMatch>
+</IfModule>
